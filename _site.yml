@@ -1,0 +1,21 @@
+name: "Ro Allen"
+navbar:
+  title: "Ro Allen"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Blog"
+      href: blog.html
+    - text: "Bioconductor"
+      href: bioconductor.html
+    - text: "QIIME2"
+      href: qiime2.html
+    - text: "CoDa"
+      href: coda.html      
+    - text: "Publications"
+      href: publications.html 
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+output_dir: "."
