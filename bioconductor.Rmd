@@ -9,8 +9,8 @@ knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)
 ```
 
 
-###Install dada2
-The first stage is to install dada2 if it is not already available on the machine. 
+###Install DADA2
+The first stage is to install DADA2 if it is not already available on the machine. 
 ```{r, eval=FALSE}
 source("https://bioconductor.org/biocLite.R")
 biocLite("dada2")
