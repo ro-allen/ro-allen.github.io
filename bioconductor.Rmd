@@ -8,7 +8,7 @@ The [bioconductor pipeline](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4955027
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)
 ```
 
-
+<p>&nbsp;</p>
 ###Install DADA2
 The first stage is to install DADA2 if it is not already available on the machine. 
 ```{r, eval=FALSE}
@@ -22,6 +22,7 @@ library(dada2)
 library(phyloseq)
 library(ggplot2)
 ```
+<p>&nbsp;</p>
 
 ###Read files
 .fastq.gz files must be unzipped to .fastq files prior to processing in the dada2 pipeline. Unzipped files should be saved in a specific folder. Note that unzipping these files will use a substantial amount of memory. *Reading files will fail if they are not unzipped*.
@@ -40,6 +41,7 @@ r.names = as.vector(list.files(path, pattern = "_R2_001.fastq", full.names = F))
 fnFs = sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
 fnRs = sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
 ```
+<p>&nbsp;</p>
 
 ###Plot quality scores from .fastq files
 Plot the Q scores associated with each .fastq file. Look for drop offs in sequence quality, whilst considering that a QS of 30 is equivalent to a 99.9% probability of accurate base calling and a QS of 20 is equivalent to a 99% probaility of accurate base calling. The number of plots is 36 in this case, as there are 36 samples; this should be adjusted to the number of samples in your investigation.
@@ -52,6 +54,7 @@ plotQualityProfile(fnFs[1:2])
 ```
 
 The gray block in the background of the plots represent the density of sequences in that sample which have a quality score at that position. This should result in a dark grey band >30 QS, and a much more pale distribution of blocks below. The solid green line represents the mean QS, the solid orange line represents the median QS, and the dashed orange lines represent the 25th and 75th quantiles.
+<p>&nbsp;</p>
 
 ###Filter and trim (quality control)
 The first step in the filtering and trimming script is to setup a new directory for the filtered and trimed .fastq files to be saved in. This is achieved using the *file.path()* function to create a subdirectory in the *path* location. We then create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them ("_F_filt.fastq.gz" / "_R_filt.fastq.gz")
@@ -72,6 +75,7 @@ out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(240,181), trimLeft=c
 
 head(out) #check the results
 ```
+<p>&nbsp;</p>
 
 ###Learning error rates
 The dada2 algorithm relies on a error model calculated from each amplicon dataset. This model is then used downstream to distinguish true sequence variants from sequence variants which have arisen from sequencing errors (using a probability approach). From the pipeline authors: *"The learnErrors method learns the error model from the data, by alternating estimation of the error rates and inference of sample composition until they converge on a jointly consistent solution. As in many optimization problems, the algorithm must begin with an initial guess, for which the maximum possible error rates in this data are used (the error rates if only the most abundant sequence is correct and all the rest are errors)."*
@@ -87,6 +91,7 @@ plot.errR = plotErrors(errR, nominalQ=TRUE) + theme_bw() + theme(panel.grid.majo
 ```
 
 The error rates for each possible between-base call are shown. The red line represents the expected error according to the Q value (e.g. 99.9% accuracy for QS 30). The black line represents the estimated error rate, fitted to the observed error rates (points). Estimated error rates should decrease with increasing quality scores. Note that this algorithm calculates errors based on the first 1M reads, to reduce computational demand. If your error plots look unreasonable (e.g. a trend of increasing error with increasing quality score) you can manually increase the number of reads to consider (increasing computational demand, and therefore runtime) using the *nreads* variable in the *learnErrors* function.
+<p>&nbsp;</p>
 
 ###Dereplicate sequences
 Dereplication merges all identical sequence reads into a new file containing only unique sequences, with a corresponding abundance metadata. This is done to reduce the computational demand of calculations downstream by removing redundant comparisons. The pipeline then runs signficantly faster. 
@@ -99,6 +104,7 @@ derepRs = derepFastq(filtRs, verbose=TRUE)
 names(derepFs) = f.names
 names(derepRs) = r.names
 ```
+<p>&nbsp;</p>
 
 ###DADA2 core sequence variant inference algorithm
 At this stage the DADA2 takes all the information provided in the dereplicated sequences and the error models to determine which sequences represent true amplicon sequence variants, and which sequences have arisen from errors. Thus we end up with a list of true amplicon sequence variants, avoiding the archaic practice of clustering. 
@@ -111,6 +117,7 @@ dadaRs[[1]]
 ```
 
 By calling *dadaFs[[1]]* the number of real sequences (named sample sequences) infered from the number of unique input sequences are displayed for sample number 1. There is much more information available which can be accessed through *help("dada-class")*.
+<p>&nbsp;</p>
 
 ###Merge paired reads
 The forward and reverse reads are then merged using the *mergePairs* function. Note that the forward and reverse reads must be in matching order at this stage. 
@@ -121,6 +128,7 @@ mergers = mergePairs(dadaFs, derepFs, dadaRs, derepRs, verbose = TRUE)
 #Check merger success by sample ([[1]] refers to sample 1)
 head(mergers[[1]]) 
 ```
+<p>&nbsp;</p>
 
 ###Generate sequence table
 A sequence table can be constructed from the merged sequence file. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.
@@ -129,6 +137,7 @@ seqtab = makeSequenceTable(mergers)
 dim(seqtab)
 table(nchar(getSequences(seqtab))) 
 ```
+<p>&nbsp;</p>
 
 ###Plot amplicon length distribution
 Plotting amplicon length frequency allows us to visualise the distribution of amplicon sizes, informing the amplicon length to conserve versus lengths to discard. 
@@ -137,6 +146,7 @@ ex = as.data.frame(table(nchar(getSequences(seqtab))))
 ex.plot = ggplot(ex, aes(Var1, Freq)) + geom_bar(stat = "identity", aes(fill = Var1)) + ylab("Frequency") + xlab("Merged Sequence Length") + scale_x_discrete(breaks = c(220,240,250,260,270,300,330,360)) + theme_bw() + theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank()) + theme(legend.position="none")
 ex.plot
 ```
+<p>&nbsp;</p>
 
 ###Excise amplicons of desired length
 Here we select only amplicons between 250 and 256bp in length to carry forward.
@@ -144,12 +154,14 @@ Here we select only amplicons between 250 and 256bp in length to carry forward.
 seqtab.ex = seqtab[,nchar(colnames(seqtab)) %in% seq(250,256)]
 table(nchar(getSequences(seqtab.ex)))
 ```
+<p>&nbsp;</p>
 
 ###Remove chimeras
 Note that if you lose a large number of sequence reads at this stage, it is likely that primer sequences still remain in your reads. These should have been removed manually at the trim and truncate stage. 
 ```{r, eval=FALSE}
 seqtab.ex.chi = removeBimeraDenovo(seqtab.ex, method = 'consensus', multithread = T, verbose = T)
 ```
+<p>&nbsp;</p>
 
 ###Track sequence loss
 Here we track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.
@@ -160,6 +172,7 @@ colnames(track) = c("input", "filtered", "denoised", "merged", "tabled", "no chi
 rownames(track) = f.names
 head(track)
 ```
+<p>&nbsp;</p>
 
 ###Assign taxonomy
 It is important to consider which taxonomic database to use for this step. The two most common options are SILVA and Greengenes. Typically, Greengenes offers more reliable taxonomic classifications, but has less coverage, and is not updated regularly (last update ~2014). SILVA is a curate database which is updated frequently, but can be less reliable than Greengenes in certain cases. Some studies use integrated approaches where taxonomies are assigned from numerous databases, and checked for agreement. The bioconductor pipeline team maintain taxonomic classfiers from the SILVA, Greengenes, and RDP databases for the Earth Microbiome Project (EMP) primers 515-F (or Y for marine samples) & 806R. In this case, these classifiers can be [downloaded directly](https://benjjneb.github.io/dada2/training.html).
@@ -168,6 +181,7 @@ Once you have downloaded your desired classifier, place it in a folder, and call
 ```{r, eval=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=50)}
 gg.taxa = assignTaxonomy(seqtab.ex.chi, "~/geotraces-exp/Geotraces_exp_unzipped/gg_13_8_train_set_97.fa", multithread = T)
 ```
+<p>&nbsp;</p>
 
 ###Upload metadata
 The metadata file associated with your sequences should be uploaded with samples as rows and variables as columns. Various file formats can be supported with the ultimate goal of creating a metadata dataframe in R which can then be incorporated into a phyloseq object. It is critical that the sample order in your metadata table matches the sample order in your sequence table (in this case *seqtab.ex.chi*).
@@ -176,6 +190,7 @@ sd.geo = read.csv("~/geotraces-exp/geo-mapping.csv")
 head(sd.geo)
 #if your variable names (column names) are unclear, rename them at this stage.
 ```
+<p>&nbsp;</p>
 
 ###Rename samples and ASVs
 Before we construct the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream. 
@@ -206,6 +221,7 @@ asv.names = as.data.frame(asv.names)
 row.names(seqtab.ex.chi) = asv.names$asv.names
 head(seqtab.ex.chi)
 ```
+<p>&nbsp;</p>
 
 ###Construct a phyloseq object
 Finally, a phyloseq object is created which can be handled easily for statistical analyses. The phyloseq object from this tutorial is notably missing a phylogenetic tree. This can easily be constructed and will be added to this tutorial at a later date. 
