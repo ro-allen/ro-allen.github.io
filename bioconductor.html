@@ -227,7 +227,7 @@ $(document).ready(function () {
 </p>
 <div id="install-dada2" class="section level3">
 <h3>Install DADA2</h3>
-<p>The first stage is to install DADA2 if it is not already available on the machine.</p>
+<p>The first stage is to install DADA2 if it is not already available on your computer.</p>
 <pre class="r"><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
 biocLite(&quot;dada2&quot;)
 biocLite(&quot;phyloseq&quot;)</code></pre>
@@ -241,7 +241,7 @@ library(ggplot2)</code></pre>
 <div id="read-files" class="section level3">
 <h3>Read files</h3>
 <p>.fastq.gz files must be unzipped to .fastq files prior to processing in the dada2 pipeline. Unzipped files should be saved in a specific folder. Note that unzipping these files will use a substantial amount of memory. <em>Reading files will fail if they are not unzipped</em>.</p>
-<p>Reading files into dada2 first requires an appropriate path to be set. This should lead to the folder in which the raw .fastq files for your project are saved. It is important that only .fastq files from your specific project are in this folder, as the script will read all files in this folder. We confirm that we have set the path to the correct location using the list.files command.</p>
+<p>Reading files into dada2 first requires an appropriate path to be set. This should lead to the folder in which the raw .fastq files for your project are saved. It is important that only .fastq files from your specific project are in this folder, as the script will read all files in this folder. Confirm that the correct path has been set, using the list.files command.</p>
 <pre class="r"><code>path = &quot;~/geotraces-exp/Geotraces_exp_fastq&quot;
 # check the file path is correct using list.files(path).
 
@@ -269,15 +269,15 @@ qp.r = plotQualityProfile(fnRs[1:36])
 
 # illustration of plot outputs (first 2 only)
 plotQualityProfile(fnFs[1:2])</code></pre>
-The gray block in the background of the plots represent the density of sequences in that sample which have a quality score at that position. This should result in a dark grey band &gt;30 QS, and a much more pale distribution of blocks below. The solid green line represents the mean QS, the solid orange line represents the median QS, and the dashed orange lines represent the 25th and 75th quantiles.
+<p>The gray block in the background of the plots represent the density of sequences in that sample which have a quality score at that position. This should result in a dark grey band &gt;30 QS, and a much more pale distribution of blocks below. The solid green line represents the mean QS, the solid orange line represents the median QS, and the dashed orange lines represent the 25th and 75th quantiles.</p>
 <p>
  
 </p>
 </div>
 <div id="filter-and-trim-quality-control" class="section level3">
 <h3>Filter and trim (quality control)</h3>
-<p>The first step in the filtering and trimming script is to setup a new directory for the filtered and trimed .fastq files to be saved in. This is achieved using the <em>file.path()</em> function to create a subdirectory in the <em>path</em> location. We then create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them (“_F_filt.fastq.gz&quot; / “_R_filt.fastq.gz“)</p>
-<p>After inspecting the quality plots, we can determine the trim and truncate parameters for .fastq files.</p>
+<p>The first step in the filtering and trimming script is to setup a new directory in which the filtered and trimmed .fastq files will be saved. This is achieved using the <em>file.path()</em> function to create a subdirectory in the <em>path</em> location. Create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them (“_F_filt.fastq.gz&quot; / “_R_filt.fastq.gz“)</p>
+<p>After inspecting the quality plots, determine the trim and truncate parameters for .fastq files.</p>
 <p><em>Check raw .fastq files for primer sequences, and remove using the trim function if necessary</em></p>
 <p>In this instance, forward and reverse primers are still present. The forward primer is 19 bp, whilst the reverse primer is 20 bp, these will be removed by setting the trim parameters to c(19,20). The truncation length should be set to cut off where any signfiicant drop off in quality occurs, but it is advisable to remove approximately the last 10 bp anyway as these reads can be unreliable.</p>
 <pre class="r"><code>filt_path = file.path(path, &quot;filtered&quot;)  #place filtered files in &#39;filtered&#39; subdirectory
@@ -347,7 +347,7 @@ head(mergers[[1]])</code></pre>
 </div>
 <div id="generate-sequence-table" class="section level3">
 <h3>Generate sequence table</h3>
-<p>A sequence table can be constructed from the merged sequence file. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.</p>
+<p>Construct a sequence table from the merged sequence object. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.</p>
 <pre class="r"><code>seqtab = makeSequenceTable(mergers)
 dim(seqtab)
 table(nchar(getSequences(seqtab)))</code></pre>
@@ -357,7 +357,7 @@ table(nchar(getSequences(seqtab)))</code></pre>
 </div>
 <div id="plot-amplicon-length-distribution" class="section level3">
 <h3>Plot amplicon length distribution</h3>
-<p>Plotting amplicon length frequency allows us to visualise the distribution of amplicon sizes, informing the amplicon length to conserve versus lengths to discard.</p>
+<p>Plot amplicon length frequency to visualise the distribution of amplicon sizes, informing the amplicon length range to conserve versus the length range to discard.</p>
 <pre class="r"><code>ex = as.data.frame(table(nchar(getSequences(seqtab))))
 ex.plot = ggplot(ex, aes(Var1, Freq)) + geom_bar(stat = &quot;identity&quot;, 
     aes(fill = Var1)) + ylab(&quot;Frequency&quot;) + xlab(&quot;Merged Sequence Length&quot;) + 
@@ -371,7 +371,7 @@ ex.plot</code></pre>
 </div>
 <div id="excise-amplicons-of-desired-length" class="section level3">
 <h3>Excise amplicons of desired length</h3>
-<p>Here we select only amplicons between 250 and 256bp in length to carry forward.</p>
+<p>In this case, only amplicons between 250 and 256bp in length are selected. Amplicons outside of this range are discarded.</p>
 <pre class="r"><code>seqtab.ex = seqtab[, nchar(colnames(seqtab)) %in% seq(250, 256)]
 table(nchar(getSequences(seqtab.ex)))</code></pre>
 <p>
@@ -389,7 +389,7 @@ table(nchar(getSequences(seqtab.ex)))</code></pre>
 </div>
 <div id="track-sequence-loss" class="section level3">
 <h3>Track sequence loss</h3>
-<p>Here we track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.</p>
+<p>Track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.</p>
 <pre class="r"><code>getN = function(x) sum(getUniques(x))
 track = cbind(out, sapply(dadaFs, getN), sapply(mergers, getN), 
     rowSums(seqtab.ex), rowSums(seqtab.ex.chi))
@@ -424,7 +424,7 @@ head(sd.geo)
 </div>
 <div id="rename-samples-and-asvs" class="section level3">
 <h3>Rename samples and ASVs</h3>
-<p>Before we construct the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream.</p>
+<p>Before constructing the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream.</p>
 <pre class="r"><code># create a vector for sample names
 s.vec = as.vector(1:36)  #number should reflect your total number of samples
 s.nam = cbind(&quot;sample_&quot;, s.vec)

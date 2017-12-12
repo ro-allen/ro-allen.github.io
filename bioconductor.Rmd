@@ -11,7 +11,7 @@ knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)
 <p>&nbsp;</p>
 
 ###Install DADA2
-The first stage is to install DADA2 if it is not already available on the machine. 
+The first stage is to install DADA2 if it is not already available on your computer. 
 ```{r, eval=FALSE}
 source("https://bioconductor.org/biocLite.R")
 biocLite("dada2")
@@ -23,12 +23,13 @@ library(dada2)
 library(phyloseq)
 library(ggplot2)
 ```
+
 <p>&nbsp;</p>
 
 ###Read files
 .fastq.gz files must be unzipped to .fastq files prior to processing in the dada2 pipeline. Unzipped files should be saved in a specific folder. Note that unzipping these files will use a substantial amount of memory. *Reading files will fail if they are not unzipped*.
 
-Reading files into dada2 first requires an appropriate path to be set. This should lead to the folder in which the raw .fastq files for your project are saved. It is important that only .fastq files from your specific project are in this folder, as the script will read all files in this folder. We confirm that we have set the path to the correct location using the list.files command. 
+Reading files into dada2 first requires an appropriate path to be set. This should lead to the folder in which the raw .fastq files for your project are saved. It is important that only .fastq files from your specific project are in this folder, as the script will read all files in this folder. Confirm that the correct path has been set, using the list.files command. 
 
 ```{r, eval=FALSE}
 path = "~/geotraces-exp/Geotraces_exp_fastq"
@@ -42,6 +43,7 @@ r.names = as.vector(list.files(path, pattern = "_R2_001.fastq", full.names = F))
 fnFs = sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
 fnRs = sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
 ```
+
 <p>&nbsp;</p>
 
 ###Plot quality scores from .fastq files
@@ -55,12 +57,13 @@ plotQualityProfile(fnFs[1:2])
 ```
 
 The gray block in the background of the plots represent the density of sequences in that sample which have a quality score at that position. This should result in a dark grey band >30 QS, and a much more pale distribution of blocks below. The solid green line represents the mean QS, the solid orange line represents the median QS, and the dashed orange lines represent the 25th and 75th quantiles.
+
 <p>&nbsp;</p>
 
 ###Filter and trim (quality control)
-The first step in the filtering and trimming script is to setup a new directory for the filtered and trimed .fastq files to be saved in. This is achieved using the *file.path()* function to create a subdirectory in the *path* location. We then create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them ("_F_filt.fastq.gz" / "_R_filt.fastq.gz")
+The first step in the filtering and trimming script is to setup a new directory in which the filtered and trimmed .fastq files will be saved. This is achieved using the *file.path()* function to create a subdirectory in the *path* location. Create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them ("_F_filt.fastq.gz" / "_R_filt.fastq.gz")
 
-After inspecting the quality plots, we can determine the trim and truncate parameters for .fastq files. 
+After inspecting the quality plots, determine the trim and truncate parameters for .fastq files. 
 
   *Check raw .fastq files for primer sequences, and remove using the trim function if necessary*
 
@@ -76,6 +79,7 @@ out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=c(240,181), trimLeft=c
 
 head(out) #check the results
 ```
+
 <p>&nbsp;</p>
 
 ###Learning error rates
@@ -105,6 +109,7 @@ derepRs = derepFastq(filtRs, verbose=TRUE)
 names(derepFs) = f.names
 names(derepRs) = r.names
 ```
+
 <p>&nbsp;</p>
 
 ###DADA2 core sequence variant inference algorithm
@@ -129,32 +134,36 @@ mergers = mergePairs(dadaFs, derepFs, dadaRs, derepRs, verbose = TRUE)
 #Check merger success by sample ([[1]] refers to sample 1)
 head(mergers[[1]]) 
 ```
+
 <p>&nbsp;</p>
 
 ###Generate sequence table
-A sequence table can be constructed from the merged sequence file. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.
+Construct a sequence table from the merged sequence object. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.
 ```{r, eval=FALSE}
 seqtab = makeSequenceTable(mergers)
 dim(seqtab)
 table(nchar(getSequences(seqtab))) 
 ```
+
 <p>&nbsp;</p>
 
 ###Plot amplicon length distribution
-Plotting amplicon length frequency allows us to visualise the distribution of amplicon sizes, informing the amplicon length to conserve versus lengths to discard. 
+Plot amplicon length frequency to visualise the distribution of amplicon sizes, informing the amplicon length range to conserve versus the length range to discard. 
 ```{r, eval=FALSE}
 ex = as.data.frame(table(nchar(getSequences(seqtab))))
 ex.plot = ggplot(ex, aes(Var1, Freq)) + geom_bar(stat = "identity", aes(fill = Var1)) + ylab("Frequency") + xlab("Merged Sequence Length") + scale_x_discrete(breaks = c(220,240,250,260,270,300,330,360)) + theme_bw() + theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank()) + theme(legend.position="none")
 ex.plot
 ```
+
 <p>&nbsp;</p>
 
 ###Excise amplicons of desired length
-Here we select only amplicons between 250 and 256bp in length to carry forward.
+In this case, only amplicons between 250 and 256bp in length are selected. Amplicons outside of this range are discarded.
 ```{r, eval=FALSE}
 seqtab.ex = seqtab[,nchar(colnames(seqtab)) %in% seq(250,256)]
 table(nchar(getSequences(seqtab.ex)))
 ```
+
 <p>&nbsp;</p>
 
 ###Remove chimeras
@@ -162,10 +171,11 @@ Note that if you lose a large number of sequence reads at this stage, it is like
 ```{r, eval=FALSE}
 seqtab.ex.chi = removeBimeraDenovo(seqtab.ex, method = 'consensus', multithread = T, verbose = T)
 ```
+
 <p>&nbsp;</p>
 
 ###Track sequence loss
-Here we track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.
+Track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.
 ```{r, eval=FALSE}
 getN = function(x) sum(getUniques(x))
 track = cbind(out, sapply(dadaFs, getN), sapply(mergers, getN), rowSums(seqtab.ex), rowSums(seqtab.ex.chi))
@@ -173,6 +183,7 @@ colnames(track) = c("input", "filtered", "denoised", "merged", "tabled", "no chi
 rownames(track) = f.names
 head(track)
 ```
+
 <p>&nbsp;</p>
 
 ###Assign taxonomy
@@ -182,6 +193,7 @@ Once you have downloaded your desired classifier, place it in a folder, and call
 ```{r, eval=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=50)}
 gg.taxa = assignTaxonomy(seqtab.ex.chi, "~/geotraces-exp/Geotraces_exp_unzipped/gg_13_8_train_set_97.fa", multithread = T)
 ```
+
 <p>&nbsp;</p>
 
 ###Upload metadata
@@ -191,10 +203,11 @@ sd.geo = read.csv("~/geotraces-exp/geo-mapping.csv")
 head(sd.geo)
 #if your variable names (column names) are unclear, rename them at this stage.
 ```
+
 <p>&nbsp;</p>
 
 ###Rename samples and ASVs
-Before we construct the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream. 
+Before constructing the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream. 
 ```{r, eval=FALSE}
 #create a vector for sample names
 s.vec = as.vector(1:36) #number should reflect your total number of samples
@@ -222,6 +235,7 @@ asv.names = as.data.frame(asv.names)
 row.names(seqtab.ex.chi) = asv.names$asv.names
 head(seqtab.ex.chi)
 ```
+
 <p>&nbsp;</p>
 
 ###Construct a phyloseq object
