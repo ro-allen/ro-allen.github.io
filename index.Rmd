@@ -5,8 +5,8 @@
 
 <center>
 <div style="width:300px; height=200px">
-![](ro-allen.github.io/Github_pic.jpg)
 
+![](ro-allen.github.io/Github_pic.jpg)
 </div>
 </center>
   
