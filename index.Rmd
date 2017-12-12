@@ -2,4 +2,15 @@
 title: "Home"
 ---
 
-My website!
+I am a current PhD candidate in the Department of Botany at the University of Otago, supervised by Dr. Linn Hoffmann and Dr. Tina Summerfield. Prior to the University of Otago, I completed an M.Res. in marine biology at Plymouth University supervised by Prof. Jason Hall-Spencer and Dr. Andy Foggo. My research interests centre around the use of high-throughput amplicon sequencing to investigate the community level responses of marine protists and bacteria to climate change. I am particularly interested in the handling of high-throughput sequencing data. 
+
+I am currently working on four main research topics
+
+####1. The impact of ocean acidification on marine biofilms
+
+####2. Bacterioplankton responses to climate change in the oligotrophic ocean
+
+####3. Eukaryotic phytoplankton responses to climate change
+
+####4. Oceanic fronts: a tool for investigating phytoplankton-bacteria interactions
+
