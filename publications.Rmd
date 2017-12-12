@@ -11,7 +11,7 @@ title: "Publications"
 
 <p>&nbsp;</p>
 
-###Conference Talks
+###Conference Papers
 
 [Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre cacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
 
