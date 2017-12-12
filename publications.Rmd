@@ -1,4 +1,5 @@
 ---
+title: "Publications"
 ---
 <p>&nbsp;</p>
 
