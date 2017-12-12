@@ -1,16 +1,42 @@
 ---
-title: "Home"
 ---
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
-I am a current PhD candidate in the Department of Botany at the University of Otago, supervised by Dr. Linn Hoffmann and Dr. Tina Summerfield. Prior to the University of Otago, I completed an M.Res. in marine biology at Plymouth University supervised by Prof. Jason Hall-Spencer and Dr. Andy Foggo. My research interests centre around the use of high-throughput amplicon sequencing to investigate the community level responses of marine protists and bacteria to climate change. I am particularly interested in the handling of high-throughput sequencing data. 
+<center>
+<div style="width:300px; height=200px">
+![](/Users/rohanallen/Desktop/PhD/Github/Github_pic.jpg)
+</div>
+</center>
+  
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+  
+<p style="text-align:justify">
+I am a PhD candidate at the University of Otago Department of Botany, supervised by Dr. Linn Hoffmann and Dr. Tina Summerfield.  Previously, I completed an M.Res. in marine biology at Plymouth University supervised by Prof. Jason Hall-Spencer and Dr. Andy Foggo. My research interests centre around the use of high-throughput amplicon sequencing to investigate the community level responses of marine protists and bacteria to climate change. I am particularly interested in the handling of high-throughput sequencing data. 
+</p>
 
-I am currently working on four main research topics
+<p>&nbsp;</p>
+    
+<b>The impact of ocean acidification on marine biofilms</b>
 
-####1. The impact of ocean acidification on marine biofilms
+<p style="text-align:justify">
+Marine biolfilms are heterogenous microhabitats populated by phylogenetically diverse lifeforms. Interestingly, biofilms independently harbour significant biodiversity, from bacterial and protistan autotrophs, to protozoan grazers and predators, and heterotrophic bacterial decomposers. Marine biofilms provide a fundamental grazing resource for larger organisms such as gastropods in shallow marine ecosystems, whilst bacteria in biofilms play a further key role by cuing settlement in habitat forming organisms like scleractinian corals. 
+</p>
+  
+<p style="text-align:justify">   
+Understanding the effects of ocean acidification on biofilm community composition and succession from both a eukaryotic and prokaryotic perspective is critical, as potential shifts will have ramifications for the settlement of habitat forming organisms, trophic energy transfer in shallow marine ecosystems, and biodiversity directly associated with biofilms. High-throughput amplicon sequencing has opened the door to high taxonomic resolution profiling of marine biofilms, and here I aim to characterise differences in biofilm community composition and succession by using volcanic CO<sub>2</sub> seeps as a proxy of future acidified conditions. 
+</p>
 
-####2. Bacterioplankton responses to climate change in the oligotrophic ocean
+<p>&nbsp;</p>
 
-####3. Eukaryotic phytoplankton responses to climate change
+<b>Bacterioplankton responses to climate change in the oligotrophic ocean</b>
 
-####4. Oceanic fronts: a tool for investigating phytoplankton-bacteria interactions
+<p>&nbsp;</p>
+
+<b>Eukaryotic phytoplankton responses to climate change</b>
+
+<p>&nbsp;</p>
+
+<b>Oceanic fronts: a tool for investigating phytoplankton-bacteria interactions</b>
 

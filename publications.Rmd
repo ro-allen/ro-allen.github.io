@@ -1,8 +1,6 @@
 ---
-title: "Publications"
 ---
-$~$
-$~$
+<p>&nbsp;</p>
 
 ###Journal Articles
 
@@ -10,8 +8,7 @@ $~$
 
 [Hall-Spencer, J. M., & Allen, R. (2015)](https://www.dovepress.com/the-impact-of-co2-emissions-on-39nuisance39-marine-species-peer-reviewed-article-RRBS). The impact of CO<sub>2</sub> emissions on “nuisance” marine species. *Research and Reports in Biodiversity Studies*, 4, 33-46.
 
-$~$
-$~$
+<p>&nbsp;</p>
 
 ###Conference Talks
 
@@ -26,8 +23,7 @@ $~$
 
 [Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology* 
 
-$~$
-$~$
+<p>&nbsp;</p>
 
 ###Media
 
@@ -41,6 +37,7 @@ The Conversation [Attack of the jellies: the winners of ocean acidification](htt
 
 X-Ray Magazine [Ocean acidification may well be helping invasive species](http://www.xray-mag.com/content/ocean-acidification-may-well-be-helping-invasive-species)
 
-```{r}
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=xvlHH0y2hwE" frameborder="0" allowfullscreen></iframe>
-```
+<p>&nbsp;</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xvlHH0y2hwE" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</center>
