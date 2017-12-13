@@ -1,28 +1,34 @@
-name: "Ro Allen"
+name: Ro Allen
 navbar:
-  title: "Ro Allen"
+  title: Ro Allen
   left:
-    - text: "Home"
-      icon: fa-user
-      href: index.html
-    - text: "Blog"
-      icon: fa-coffee
-      href: blog.html
-    - text: "Pipelines"
-      icon: fa-database
-      menu:
-        - text: "Bioconductor"
-          href: bioconductor.html
-        - text: "QIIME2"
-          href: qiime2.html
-    - text: "CoDa"
-      icon: fa-pie-chart
-      href: coda.html      
-    - text: "Publications"
-      icon: fa-mortar-board
-      href: publications.html 
+  - text: ' Home'
+    icon: fa-user
+    href: index.html
+  - text: ' Blog'
+    icon: fa-coffee
+    href: blog.html
+  - text: ' Pipelines'
+    icon: fa-database
+    menu:
+    - text: ' Bioconductor'
+      href: bioconductor.html
+    - text: ' QIIME2'
+      href: qiime2.html
+  - text: ' CoDa'
+    icon: fa-pie-chart
+    href: coda.html
+  - text: ' Publications'
+    icon: fa-mortar-board
+    href: publications.html
+  - text: ' CV'
+    icon: fa-file-text
+    href: cv.html
 output:
   html_document:
     theme: flatly
     highlight: textmate
-output_dir: "."
+    lib_dir: site_libs
+    self_contained: no
+output_dir: .
+

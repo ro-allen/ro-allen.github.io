@@ -5,24 +5,39 @@ title: "Publications"
 
 ###Journal Articles
 
+<p style="text-align:justify">
 [Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2016)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
+</p>
 
+<p style="text-align:justify">
 [Hall-Spencer, J. M., & Allen, R. (2015)](https://www.dovepress.com/the-impact-of-co2-emissions-on-39nuisance39-marine-species-peer-reviewed-article-RRBS). The impact of CO<sub>2</sub> emissions on “nuisance” marine species. *Research and Reports in Biodiversity Studies*, 4, 33-46.
+</p>
+
 
 <p>&nbsp;</p>
 
 ###Conference Papers
 
+<p style="text-align:justify">
 [Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
+</p>
 
-[Gutierrez-Rodriguez, A., Safi, K., Gall, M., MacAskill, S., Allen, R., Rudminat, F., Hoffmann, L., Nodder, S. (2017)](https://www.uts.edu.au/research-and-teaching/our-research/climate-change-cluster/events/c3-2017-colloquium-aquafluo-ii). Phytoplankton photophysiology and productivity across contrasting subtropical and subantarctic waters of the South West Pacific. *Climate Change Cluster Colloquium – AquaFluo II*  
+<p style="text-align:justify">
+[Gutierrez-Rodriguez, A., Safi, K., Gall, M., MacAskill, S., Allen, R., Rudminat, F., Hoffmann, L., Nodder, S. (2017)](https://www.uts.edu.au/research-and-teaching/our-research/climate-change-cluster/events/c3-2017-colloquium-aquafluo-ii). Phytoplankton photophysiology and productivity across contrasting subtropical and subantarctic waters of the South West Pacific. *Climate Change Cluster Colloquium – AquaFluo II*.
+</p>
 
+<p style="text-align:justify">
 [Allen, R., Law, C., Summerfield, T., Hoffmann, L.  (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification  
-*10th New Zealand Ocean Acidification Workshop*  
+*10th New Zealand Ocean Acidification Workshop*.
+</p>
 
-[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://nzoac.nz/workshops/). The effect of ocean acidification on coral reef invertebrate recruitment at CO<sub>2</sub> seeps in Papua New Guinea. *9th New Zealand Ocean Acidification Workshop*
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://nzoac.nz/workshops/). The effect of ocean acidification on coral reef invertebrate recruitment at CO<sub>2</sub> seeps in Papua New Guinea. *9th New Zealand Ocean Acidification Workshop*.
+</p>
 
-[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology* 
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology*. 
+</p>
 
 <p>&nbsp;</p>
 

@@ -1,0 +1,361 @@
+---
+---
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<center>
+#**Ro Allen**
+</center>
+
+<p>&nbsp;</p>
+
+</p>
+<center>
+<div style="width:200px; height=200px">
+<p><a href="https://www.researchgate.net/profile/Ro_Allen"><img src="researchgate_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://github.com/ro-allen"><img src="github_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://scholar.google.co.uk/citations?user=D15DFzgAAAAJ&amp;hl=en"><img src="scholar_icon.png" style="width:15.0%" /></a></p>
+</div>
+</center>
+<p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:justify">
+I am a PhD candidate at the University of Otago, New Zealand. My thesis uses high throughput amplicon sequencing to investigate the responses of eukaryotic and prokaryotic marine microbes to ocean acidification. I am particularly interested in the fundamental dynamics of marine microbial communities, and the treatment of high throughput sequencing data. 
+</p>
+  
+<p>&nbsp;</p>
+
+###Education
+
+***
+
+<p style="text-align:center">
+<b> University of Otago </b> [2016-Present]    
+PhD Candidate Botany  
+"Marine microbial community responses to ocean acidification"    
+Dr. Linn Hoffmann & Dr. Tina Summerfield     
+</p>
+<p>&nbsp;</p>
+<p style="text-align:center">
+<b> Plymouth University</b> [2014-2015]    
+MRes Marine Biology (Distinction)   
+Prof. Jason Hall-Spencer & Dr. Andy Foggo     
+</p>
+<p>&nbsp;</p>
+<p style="text-align:center">
+<b> Plymouth University</b> [2010-2013]    
+BSc Hons. Marine Biology & Coastal Ecology (2:1)   
+Prof. Jason Hall-Spencer  
+</p>
+
+<p>&nbsp;</p>
+
+###Publications
+
+***
+
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2016)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
+</p>
+
+<p style="text-align:justify">
+[Hall-Spencer, J. M., & Allen, R. (2015)](https://www.dovepress.com/the-impact-of-co2-emissions-on-39nuisance39-marine-species-peer-reviewed-article-RRBS). The impact of CO<sub>2</sub> emissions on “nuisance” marine species. *Research and Reports in Biodiversity Studies*, 4, 33-46.
+</p>
+
+<p>&nbsp;</p>
+
+###Conference Papers
+
+***
+<p style="text-align:justify">
+[Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*. [Talk]
+</p>
+
+<p style="text-align:justify">
+[Gutierrez-Rodriguez, A., Safi, K., Gall, M., MacAskill, S., Allen, R., Rudminat, F., Hoffmann, L., Nodder, S. (2017)](https://www.uts.edu.au/research-and-teaching/our-research/climate-change-cluster/events/c3-2017-colloquium-aquafluo-ii). Phytoplankton photophysiology and productivity across contrasting subtropical and subantarctic waters of the South West Pacific. *Climate Change Cluster Colloquium – AquaFluo II*. [Talk]
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Law, C., Summerfield, T., Hoffmann, L.  (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification
+*10th New Zealand Ocean Acidification Workshop*. [Talk]
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://nzoac.nz/workshops/). The effect of ocean acidification on coral reef invertebrate recruitment at CO<sub>2</sub> seeps in Papua New Guinea. *9th New Zealand Ocean Acidification Workshop*. [Talk]
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology*. [Poster]
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2015)](https://www.qub.ac.uk/sites/12thmba/). The impact of ocean acidification on invertebrate settlement at CO<sub>2</sub> seeps. *12th Marine Biological Association Postgraduate Conference*. [Poster]
+</p>
+
+<p>&nbsp;</p>
+
+###Key Skills
+
+***
+
+<style>
+.column-left{
+  float: left;
+  width: 33%;
+  text-align: left;
+}
+.column-center{
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+}
+.column-right{
+  float: right;
+  width: 33%;
+  text-align: right;
+}
+</style>
+
+<div class="column-left">
+<center>
+[<i class="fa fa-flask" style="font-size:30px"></i>]()     
+<br>Amplicon sequencing</br>
+<br>PCR & qPCR</br>
+<br>Primer design</br>
+<br>DNA extraction</br> 
+<center>
+</div>
+<div class="column-center">
+<center>
+[<i class="fa fa-line-chart" style="font-size:30px"></i>]()     
+<br>Mulitvariate statistics</br>
+<br>Compositional statistics</br>
+<br>Bioinformatics</br>
+<br>R</br>
+</center>
+</div>
+<div class="column-right">
+<center>
+[<i class="fa fa-tint" style="font-size:30px"></i>]()     
+<br>Cell culture</br>
+<br>Flow cytometry</br>
+<br>Scanning electron microscopy</br>
+<br>Fast repetition rate fluorometry</br>
+</center>
+</div>
+
+<p>&nbsp;</p>
+
+###Grants 
+
+***
+
+<p style="text-align:justify">
+<b> Doctoral Scholarship </b> (~$100,000)  
+    University of Otago [2016-Present]  
+</p>
+
+<p style="text-align:justify">
+<b> Seed Funding Grant </b> ($4852)  
+    University of Otago Polar Environments Research Theme [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Seed Funding Grant </b> ($2500)  
+    University of Otago Ocean Acidification Research Theme [2016]  
+</p>
+
+<p style="text-align:justify">
+<b> International Travel Grant </b> ($2000)  
+    University of Otago Division of Sciences [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Student Travel Grant </b> ($300)  
+    New Zealand Ocean Acidification Community [2016]  
+</p>
+
+<p style="text-align:justify">
+<b> Student Travel Grant </b> (£200)  
+    Plymouth University [2015]  
+</p>
+
+<p>&nbsp;</p>
+
+###Awards
+
+***
+
+<p style="text-align:justify">
+<b> Best Talk Award </b>   
+    University of Otago Department of Botany Colloquium [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Best Talk Award </b>   
+    10th New Zealand Ocean Acidification Workshop [2016]  
+</p>
+
+<p>&nbsp;</p>
+
+###Teaching
+
+***
+
+<p style="text-align:justify">
+<b> Lecture Series: </b> [Marine and Freshwater Botany](http://www.otago.ac.nz/botany/study/papers/btny203.html)        
+    University of Otago [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Senior Demonstrator: </b> [Plants: How They Shape the World](http://www.otago.ac.nz/botany/study/papers/biol123.html)  
+    University of Otago [2017-Present]  
+</p>
+
+<p style="text-align:justify">
+<b> Demonstrator: </b> [Cell and Molecular Biology](http://www.otago.ac.nz/courses/papers/?papercode=CELS191#2018)  
+    University of Otago [2016-Present]  
+</p>
+
+<p style="text-align:justify">
+<b> Demonstrator: </b> [Applied Plant Science](http://www.otago.ac.nz/courses/papers/index.html?papercode=PLBI301#2018)  
+    University of Otago [2016-Present]  
+</p>
+
+<p style="text-align:justify">
+<b> Demonstrator: </b> [Marine and Freshwater Botany](http://www.otago.ac.nz/botany/study/papers/btny203.html)  
+    University of Otago [2016-Present]  
+</p>
+
+<p>&nbsp;</p>
+
+###Outreach
+
+***
+
+<p style="text-align:justify">
+<b> Programme Designer: </b> [Hands-On at Otago](http://www.otago.ac.nz/hands-on-at-otago/index.html)   
+    University of Otago Department of Botany [2018]  
+</p>
+
+<p style="text-align:justify">
+<b> Scientist and Collaborator: </b> [Art + Oceans](http://sustainableseaschallenge.co.nz/news-updates/art-oceans-2018)   
+    University of Otago & Dunedin School of Art [2017-2018]  
+</p>
+
+<p style="text-align:justify">
+<b> Scientist: </b> [8 Billion Angels Documentary](8billionangels.org)   
+    8 Billion Angels Productions LLC [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Representative: </b> [Tertiary Open Day](http://www.otago.ac.nz/about/open_day_pgm.html)   
+    University of Otago Department of Botany [2017]  
+</p>
+
+<p style="text-align:justify">
+<b> Organiser: </b> [Department Colloquium](http://www.otago.ac.nz/botany/index.html)   
+    University of Otago Department of Botany [2017]  
+</p>
+
+<p>&nbsp;</p>
+
+###Qualifications
+
+***
+
+<p style="text-align:justify">
+HSE Part IV Professional Air Diver  
+</p>
+
+<p style="text-align:justify">
+PADI Open Water Scuba Instructor (#260394)
+</p>
+
+<p style="text-align:justify">
+RYA Powerboat Level 2 License 
+</p>
+
+<p style="text-align:justify">
+VHF Radio Qualified
+</p>
+
+<p style="text-align:justify">
+HSE Certificate of Competence: Automatic External Defibrillation 
+</p>
+
+<p style="text-align:justify">
+HSE Certificate of Competence: Oxygen Administration
+</p>
+
+<p style="text-align:justify">
+HSE Certificate of Competence: Manual Handling Techniques
+</p>
+
+<p style="text-align:justify">
+MCA Certificate of Competence: Personal Survival Techniques 
+</p>
+
+<p style="text-align:justify">
+MCA Certificate of Competence: Personal Safety & Social Responsibility
+</p>
+
+<p style="text-align:justify">
+Institution of Fire Engineers: Basic Fire Awareness Training
+</p>
+
+<p>&nbsp;</p>
+
+###Memberships
+
+***
+
+<p style="text-align:justify">
+New Zealand Ocean Acidification Community: [Council Member](http://nzoac.nz)
+</p>
+
+<p style="text-align:justify">
+Genetics Otago 
+</p>
+
+<p style="text-align:justify">
+Marine Biological Associations
+</p>
+
+<p style="text-align:justify">
+British Ecological Society
+</p>
+
+<p style="text-align:justify">
+New Zealand Marine Science Society
+</p>
+
+<p>&nbsp;</p>
+
+###Extra-Curricular
+
+***
+
+<p style="text-align:justify">
+University of Otago Rugby League First XIII [2016-Present]
+</p>
+
+<p style="text-align:justify">
+University of Otago Rugby League Executive Committee [2016-2018]
+</p>
+
+<p style="text-align:justify">
+New Zealand Universities Invitational Rugby League Tournament [2017]
+</p>
+
+<p style="text-align:justify">
+Cherwell School First XV Rugby Union Captain [2008-2009]
+</p>
+
+<p style="text-align:justify">
+Muay-Thai TFC English Title Challenger [2012]
+</p>
+
+<p style="text-align:justify">
+Muay-Thai Coach [2010-2013]
+</p>
