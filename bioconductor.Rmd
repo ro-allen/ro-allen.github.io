@@ -2,7 +2,7 @@
 title: 'Bioconductor Pipeline'
 ---
 
-The [bioconductor pipeline](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4955027.2/) is an amplicon sequencing pipeline which can be fully implemented in the R environment. The pipeline relies on the denoising alogrith [DADA2](https://www.nature.com/articles/nmeth.3869?WT.feed_name=subjects_statistical-methods) to generate a table of specific amplicon sequence variants (ASVs) rather than clusered operational taxoonmic units (OTUs). This page provides a complete walkthrough of the pipeline, using illumina MiSeq data from the *GEOTRACES* ocean acidification experiment. This page is modified from a [tutorial produced by the pipeline authors](https://benjjneb.github.io/dada2/tutorial.html).
+The [bioconductor pipeline](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4955027.2/) is an amplicon sequencing pipeline which can be fully implemented in the R environment. The pipeline relies on the denoising alogrithm [DADA2](https://www.nature.com/articles/nmeth.3869?WT.feed_name=subjects_statistical-methods) to generate a table of specific amplicon sequence variants (ASVs) rather than clusered operational taxoonmic units (OTUs). This page provides a complete walkthrough of the pipeline, using illumina MiSeq data from the *GEOTRACES* ocean acidification experiment. This page is modified from a [tutorial produced by the pipeline authors](https://benjjneb.github.io/dada2/tutorial.html).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)

@@ -234,7 +234,7 @@ Prof. Jason Hall-Spencer
 ***
 
 <p style="text-align:justify">
-<b> Programme Designer: </b> [Hands-On at Otago](http://www.otago.ac.nz/hands-on-at-otago/index.html)   
+<b> Programme Coordinator: </b> [Hands-On at Otago](http://www.otago.ac.nz/hands-on-at-otago/index.html)   
     University of Otago Department of Botany [2018]  
 </p>
 
@@ -244,7 +244,7 @@ Prof. Jason Hall-Spencer
 </p>
 
 <p style="text-align:justify">
-<b> Scientist: </b> [8 Billion Angels Documentary](8billionangels.org)   
+<b> Interviewee: </b> [8 Billion Angels Documentary](8billionangels.org)   
     8 Billion Angels Productions LLC [2017]  
 </p>
 
@@ -254,7 +254,7 @@ Prof. Jason Hall-Spencer
 </p>
 
 <p style="text-align:justify">
-<b> Organiser: </b> [Department Colloquium](http://www.otago.ac.nz/botany/index.html)   
+<b> Coordinator: </b> [Department Colloquium](http://www.otago.ac.nz/botany/index.html)   
     University of Otago Department of Botany [2017]  
 </p>
 
