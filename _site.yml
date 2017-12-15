@@ -8,13 +8,9 @@ navbar:
   - text: ' Blog'
     icon: fa-coffee
     href: blog.html
-  - text: ' Pipelines'
-    icon: fa-database
-    menu:
-    - text: ' Bioconductor'
-      href: bioconductor.html
-    - text: ' QIIME2'
-      href: qiime2.html
+  - text: ' Bioconductor'
+    icon: fa-spinner
+    href: bioconductor.html
   - text: ' CoDa'
     icon: fa-pie-chart
     href: coda.html
