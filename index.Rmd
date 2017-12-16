@@ -6,7 +6,7 @@
 
 <center>
 <div style="width:300px; height=200px">
-![](Github_pic.jpg)
+![](Github_pic.png)
 </div>
 </center>
 
