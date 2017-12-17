@@ -4,6 +4,7 @@ title: "Publications"
 <p>&nbsp;</p>
 
 ###Journal Articles
+***
 
 <p style="text-align:justify">
 [Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2016)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
@@ -17,6 +18,7 @@ title: "Publications"
 <p>&nbsp;</p>
 
 ###Conference Papers
+***
 
 <p style="text-align:justify">
 [Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
@@ -42,6 +44,7 @@ title: "Publications"
 <p>&nbsp;</p>
 
 ###Media
+***
 
 CBS News [Ocean acidification benefits invasive species](https://www.cbsnews.com/news/ocean-acidification-benefits-invasive-species/)
 
