@@ -6,7 +6,7 @@ Analysis of high-throughput sequencing data (e.g. 16S amplicon sequencing, RNA-s
 </p>
 <p>&nbsp;</p>
 
-```{r, echo=FALSE, eval=TRUE, message=FALSE, fig.width=15, fig.height=5, fig.cap=paste("<font size=2><b>Figure 1.</b> An illustration of the lack of idenpendence between features in high-throughput sequencing data. <b>A:</b> The true abundance of each ASV in each condition. <b>B:</b> The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-10 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-10.</font>")}
+```{r, echo=FALSE, eval=TRUE, message=FALSE, fig.width=15, fig.height=10, fig.cap=paste("<font size=2><b>Figure 1.</b> An illustration of the lack of idenpendence between features in high-throughput sequencing data. <b>A:</b> The true abundance of each ASV in each condition. <b>B:</b> The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-10 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-10.</font>")}
 library(ggplot2)
 library(cowplot)
 
@@ -34,8 +34,33 @@ rva = as.data.frame(rva)
 rva$Condition = c(rep("Control",10), rep("Treatment", 10))
 rva$species = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10", "ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10")
 rva$species = factor(rva$species, levels = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10"))
+#55 tot sum, 10 = 18.1818, ASV 2-10 = 5 (n=9, tot = 45)
+rq = matrix(nrow = 10, ncol = 2)
+rq[,1] = 10
+rq[,2] = 5
+rq[1,2] = 10
+rq = as.data.frame(rq)
+rvq = lapply(rq, function(x) x/sum(x))
+rvq = cbind(rvq$V1, rvq$V2)
+rvq = as.vector(as.matrix(rvq))
+rvq = as.data.frame(rvq)
+rvq$Condition = c(rep("Control",10), rep("Treatment", 10))
+rvq$species = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10", "ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10")
+rvq$species = factor(rvd$species, levels = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10"))
 
+rw = matrix(nrow = 10, ncol = 2)
+rw[,1] = 10
+rw[,2] = 5
+rw[1,2] = 10
+rw = as.data.frame(rw)
+rvw = cbind(rw[1], rw[2])
+rvw = as.vector(as.matrix(rvw))
+rvw = as.data.frame(rvw)
+rvw$Condition = c(rep("Control",10), rep("Treatment", 10))
+rvw$species = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10", "ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10")
+rvw$species = factor(rvw$species, levels = c("ASV 1", "ASV 2", "ASV 3", "ASV 4", "ASV 5", "ASV 6", "ASV 7", "ASV 8", "ASV 9", "ASV 10"))
 
+#end
 p1 = ggplot(rvd, aes(species, rv, fill = Condition)) + geom_bar(stat = "identity", position = "dodge") + theme_bw() + ylab("Proportion") + xlab("Amplicon Sequence Variant") + 
   scale_y_continuous(expand = c(0, 0), limits = c(0, 0.21)) + 
   scale_fill_manual(values = c("skyblue2", "darkblue"))
@@ -44,7 +69,15 @@ p2 = ggplot(rva, aes(species, rva, fill = Condition)) + geom_bar(stat = "identit
   scale_y_continuous(expand = c(0, 0), limits = c(0, 21)) + 
   scale_fill_manual(values = c("skyblue2", "darkblue"))
 
-plot_grid(p2, p1, labels = c('A', 'B'))
+p3 = ggplot(rvq, aes(species, rvq, fill = Condition)) + geom_bar(stat = "identity", position = "dodge") + theme_bw() + ylab("Proportion") + xlab("Amplicon Sequence Variant") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 0.21)) + 
+  scale_fill_manual(values = c("lightcoral", "darkred"))
+
+p4 = ggplot(rvw, aes(species, rvw, fill = Condition)) + geom_bar(stat = "identity", position = "dodge") + theme_bw() + ylab("Abundance") + xlab("Amplicon Sequence Variant") + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 21)) + 
+  scale_fill_manual(values = c("lightcoral", "darkred"))
+
+plot_grid(p2, p1, p4, p3, labels = c('A', 'B', 'C', 'D'), ncol = 2)
 ```
 <p>&nbsp;</p>
 <p style="text-align:justify">
