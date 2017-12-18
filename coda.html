@@ -237,21 +237,24 @@ $(document).ready(function () {
 </div>
 
 
-Analysis of high-throughput sequencing data (e.g. 16S amplicon sequencing, RNA-seq, metagenomics, metatranscriptomics) is complicated by the fact that these data are invariably compositional. This is the case because sequencing technologies (e.g. <em>Illumina MiSeq</em>) return an arbritrary number of reads per sample. Subsequently, these data only hold valuable information about the relative composition of samples, not absolute abundances. Compositional data do not lend themselves well to classical statistical analyses, as these data violate assumptions of independence (Fig. 1). Fortunately, a range of compositional analyses are currently available for handling high-throughput sequencing data. For a brief introduction to the challenge of compositionality in high-throughput sequencing data, see <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2017.02224/full">Microbiome Datasets Are Compositional: And This Is Not Optional</a>.<br />
-
+<p style="text-align:justify">
+Analysis of high-throughput sequencing data (e.g. 16S amplicon sequencing, RNA-seq, metagenomics, metatranscriptomics) is complicated by the fact that these data are invariably compositional. This is the case because sequencing technologies (e.g. <em>Illumina MiSeq</em>) return an arbitrary total number of reads per sample. Subsequently, these data only hold valuable information about the relative composition of samples, not absolute abundances. Compositional data do not lend themselves well to classical statistical analyses, as these data violate assumptions of independence (Fig. 1). Fortunately, a range of compositional analyses are currently available for handling high-throughput sequencing data. For a brief introduction to the challenge of compositionality in high-throughput sequencing data, see <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2017.02224/full">Microbiome Datasets Are Compositional: And This Is Not Optional</a>.
+</p>
 <p>
  
 </p>
 <div class="figure">
-<img src="coda_files/figure-html/unnamed-chunk-1-1.png" alt="&lt;font size=2&gt;&lt;b&gt;Figure 1.&lt;/b&gt; An illustration of the lack of idenpendence between features in high throughput sequencing data. &lt;b&gt;A:&lt;/b&gt; The true abundance of each ASV in each condition. &lt;b&gt;B:&lt;/b&gt; The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-9 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-9.&lt;/font&gt;" width="1440" />
+<img src="coda_files/figure-html/unnamed-chunk-1-1.png" alt="&lt;font size=2&gt;&lt;b&gt;Figure 1.&lt;/b&gt; An illustration of the lack of idenpendence between features in high-throughput sequencing data. &lt;b&gt;A:&lt;/b&gt; The true abundance of each ASV in each condition. &lt;b&gt;B:&lt;/b&gt; The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-10 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-10.&lt;/font&gt;" width="1440" />
 <p class="caption">
-<font size=2><b>Figure 1.</b> An illustration of the lack of idenpendence between features in high throughput sequencing data. <b>A:</b> The true abundance of each ASV in each condition. <b>B:</b> The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-9 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-9.</font>
+<font size=2><b>Figure 1.</b> An illustration of the lack of idenpendence between features in high-throughput sequencing data. <b>A:</b> The true abundance of each ASV in each condition. <b>B:</b> The proportion of each ASV in each condition. When dealing with proportional data, it appears that ASV 2-10 are less abundant in the treatment condition compared to the control condition. In reality the true abundances are identical. This occurs as the increased abundance of ASV 1 in the treatment condition incidentally reduces the proportion of reads attributed to ASV 2-10.</font>
 </p>
 </div>
 <p>
  
 </p>
-<p>Below, I provide an introduction to compositional beta-diversity and differential abundance anaylses of high throughput sequencing data in R, using Aitchison’s distance based PERMANOVA (<a href="https://cran.r-project.org/web/packages/vegan/index.html">Vegan</a> <em>adonis</em> function) and <a href="https://bioconductor.org/packages/release/bioc/html/ALDEx2.html">ALDEx2</a> respectively. The input data are structured as a phyloseq object. Note that the optimal analytical approach depends on the data in question.</p>
+<p style="text-align:justify">
+Below, I provide an introduction to compositional beta-diversity and differential abundance anaylses of high throughput sequencing data in the R environment. To test differences between communities, Aitchison’s distance is used as an input for PERMANOVA, executed in the <a href="https://cran.r-project.org/web/packages/vegan/index.html">Vegan</a> R package using the <em>adonis</em> function. Differential abundance of features (ASVs) are tested using the <a href="https://bioconductor.org/packages/release/bioc/html/ALDEx2.html">ALDEx2</a> method. The input data are structured as a phyloseq object. Note that the optimal analyses depend on the data in question.
+</p>
 
 
 
