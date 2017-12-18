@@ -44,5 +44,5 @@ p2 = ggplot(rva, aes(species, rva, fill = Condition)) + geom_bar(stat = "identit
 plot_grid(p2, p1, labels = c('A', 'B'))
 ```
 <p>&nbsp;</p>
-Below, I provide an introduction to compositional beta-diversity and differential abundance anaylses of high throughput sequencing data in R, using Aitchison's distance based PERMANOVA ([Vegan](https://cran.r-project.org/web/packages/vegan/index.html) *adonis* function) and [ALDEx2](https://bioconductor.org/packages/release/bioc/html/ALDEx2.html) respectively. The input data are structured in a phyloseq object. Note that the optimal analytical approach depends on the data in question. 
+Below, I provide an introduction to compositional beta-diversity and differential abundance anaylses of high throughput sequencing data in R, using Aitchison's distance based PERMANOVA ([Vegan](https://cran.r-project.org/web/packages/vegan/index.html) *adonis* function) and [ALDEx2](https://bioconductor.org/packages/release/bioc/html/ALDEx2.html) respectively. The input data are structured as a phyloseq object. Note that the optimal analytical approach depends on the data in question. 
 
