@@ -3,7 +3,6 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-
 <center>
 <div style="width:300px; height=200px">
 ![](Github_pic.png)
@@ -18,7 +17,6 @@
 <p><a href="https://www.researchgate.net/profile/Ro_Allen"><img src="researchgate_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://github.com/ro-allen"><img src="github_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://scholar.google.co.uk/citations?user=D15DFzgAAAAJ&amp;hl=en"><img src="gscholar.svg" style="width:15.0%" /></a></p>
 </div>
 </center>
-<p>
 
 <p>&nbsp;</p>
 
@@ -28,7 +26,7 @@ I am a PhD candidate at the University of Otago Department of Botany, supervised
 
 <p>&nbsp;</p>
 
-###Projects
+###Current Projects
 ***
     
 <b>The impact of ocean acidification on marine biofilms: a CO<sub>2</sub> seep study</b>
@@ -60,3 +58,5 @@ The phytoplankton are a phylogenetically diverse group of autotrophic organisms,
 <p style="text-align:justify">
 Oceanic fronts are dynamic regions where distinct water masses converge. These regions provide an opportunity to investigate environmental modulation of phytoplankton-bacteria interactions. Using high spatial resolution sampling, we aim to construct a region specific phytoplankton-bacteria interaction network and elucidate the influence of environmental conditions on these interactions. 
 </p>
+
+
