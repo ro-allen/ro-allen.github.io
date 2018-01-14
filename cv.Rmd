@@ -308,6 +308,32 @@ Institution of Fire Engineers: Basic Fire Awareness Training
 
 <p>&nbsp;</p>
 
+###Professional Development
+
+***
+
+<p style="text-align:justify">
+RNA-Seq: What is state of the art? Bioinformatics Workshop
+</p>
+
+<p style="text-align:justify">
+Research Bazaar Otago – Statistics and Data Manipulation
+</p>
+
+<p style="text-align:justify">
+Software Carpentry for ‘R’
+</p>
+
+<p style="text-align:justify">
+Data Visualization with 'ggplot2' Workshop
+</p>
+
+<p style="text-align:justify">
+University of Otago Demonstrating/Tutoring Workshop
+</p>
+
+<p>&nbsp;</p>
+
 ###Memberships
 
 ***
