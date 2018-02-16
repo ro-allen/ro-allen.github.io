@@ -24,11 +24,11 @@ title: "Publications"
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2018)](http://nzoac.nz/workshops/). Bacterioplankton resistance to acidification and warming in the oligotrophic ocean. *11th New Zealand Ocean Acidification Workshop*. [Talk]
+[Allen, R., Hoffmann, L., Law, C., Rudminat, F., Summerfield, T. (2018)](http://nzoac.nz/workshops/). Bacterioplankton resistance to acidification and warming in the oligotrophic ocean. *11th New Zealand Ocean Acidification Workshop*. [Talk]
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Rudminat, F., Law, C., Hoffmann, L., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
+[Allen, R., Hoffmann, L., Law, C., Rudminat, F., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
 </p>
 
 <p style="text-align:justify">
@@ -36,7 +36,7 @@ title: "Publications"
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Law, C., Summerfield, T., Hoffmann, L.  (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification  
+[Allen, R., Summerfield, T., Law, C., Hoffmann, L.  (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification  
 *10th New Zealand Ocean Acidification Workshop*.
 </p>
 
