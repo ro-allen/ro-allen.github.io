@@ -28,11 +28,11 @@ I am a PhD candidate at the University of Otago Department of Botany, supervised
 
 ###Current Projects
 ***
-    
-<b>The impact of ocean acidification on marine biofilms: a CO<sub>2</sub> seep study</b>
+
+<b>Drivers of microbial biogeography in the euphotic oligotrophic ocean</b>
 
 <p style="text-align:justify">
-Marine biolfilms are heterogenous microhabitats dominated by protists and bacteria. Marine biofilms provide a fundamental grazing resource for larger organisms such as gastropods in shallow marine ecosystems, whilst bacteria in biofilms play a further key role by cuing settlement in scleractinian corals and other habitat forming organisms. Understanding the effects of ocean acidification on biofilm community composition and succession from both a eukaryotic and prokaryotic perspective is critical, as potential shifts will have ramifications for the settlement of habitat forming organisms, trophic energy transfer in shallow marine ecosystems, and biodiversity directly associated with biofilms. High-throughput amplicon sequencing has opened the door to high-resolution profiling of marine biofilms. Here, we aim to characterise the effect of ocean acidification on biofilm community composition and succession by using volcanic CO<sub>2</sub> seeps as a proxy of future acidified conditions. 
+The South Pacific Gyre (SPG) is the largest oligotrophic ocean region on Earth. During the *GEOTRACES* transect through the SPG aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), 24 CTD casts were performed to describe the physical and chemical environment of the euphotic zone, combined with 16S rRNA based characterisation of microbial communities. These data form one of the most detailed investigations of the euphotic zone in the oligotrophic ocean, and provide an unprecedented opportunity to investigate the drivers of microbial community structure in these regions, with implications for global change. 
 </p>
 
 <p>&nbsp;</p>
@@ -40,7 +40,7 @@ Marine biolfilms are heterogenous microhabitats dominated by protists and bacter
 <b>Bacterioplankton responses to climate change in the oligotrophic ocean</b>
 
 <p style="text-align:justify">
-Oligotrophic oceans represent ~40% of total ocean surface area, and account ~20% of marine primary production. Bacterioplankton are responsible for the majority of photosynthesis, nitrogen fixation, and recycling of organic material in these regions. The productivity of the oligotrophic ocean is closely coupled with the efficiency of organic matter recycling by heterotrophic bacteria as this process largely controls nutrient availability, due to limited inputs from vertical transport and low rates of nitrogen fixation.  The responses of oligotrophic ocean bacterioplankton communities to ocean acidification and warming are likely to influence overall marine productivity and global biogeochemical cycles. During a transect through the oligotrophic ocean aboard the *RV Tangaroa*, a team of scientists from NIWA and the University of Otago conducted trace-metal clean deckboard incubation experiment providing early data on this topic. 
+Oligotrophic oceans represent ~40% of total ocean surface area, and account ~20% of marine primary production. Bacterioplankton are responsible for the majority of photosynthesis, nitrogen fixation, and recycling of organic material in these regions. The productivity of the oligotrophic ocean is closely coupled with the efficiency of organic matter recycling by heterotrophic bacteria as this process largely controls nutrient availability, due to limited inputs from vertical transport and low rates of nitrogen fixation.  The responses of oligotrophic ocean bacterioplankton communities to ocean acidification and warming are likely to influence overall marine productivity and global biogeochemical cycles. During the *GEOTRACES* transect through the oligotrophic ocean aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), a team of scientists from NIWA and the University of Otago conducted trace-metal clean deckboard incubation experiment providing early data on this topic. 
 </p>
 
 <p>&nbsp;</p>
@@ -53,10 +53,18 @@ The phytoplankton are a phylogenetically diverse group of autotrophic organisms,
 
 <p>&nbsp;</p>
 
+<b>The impact of ocean acidification on marine biofilms: a CO<sub>2</sub> seep study</b>
+
+<p style="text-align:justify">
+Marine biolfilms are heterogenous microhabitats dominated by protists and bacteria. Marine biofilms provide a fundamental grazing resource for larger organisms such as gastropods in shallow marine ecosystems, whilst bacteria in biofilms play a further key role by cuing settlement in scleractinian corals and other habitat forming organisms. Understanding the effects of ocean acidification on biofilm community composition and succession from both a eukaryotic and prokaryotic perspective is critical, as potential shifts will have ramifications for the settlement of habitat forming organisms, trophic energy transfer in shallow marine ecosystems, and biodiversity directly associated with biofilms. High-throughput amplicon sequencing has opened the door to high-resolution profiling of marine biofilms. Here, we aim to characterise the effect of ocean acidification on biofilm community composition and succession by using volcanic CO<sub>2</sub> seeps as a proxy of future acidified conditions. 
+</p>
+
+<p>&nbsp;</p>
+
 <b>Oceanic fronts: a tool for investigating phytoplankton-bacteria interactions</b>
 
 <p style="text-align:justify">
-Oceanic fronts are dynamic regions where distinct water masses converge. These regions provide an opportunity to investigate environmental modulation of phytoplankton-bacteria interactions. Using high spatial resolution sampling, we aim to construct a region specific phytoplankton-bacteria interaction network and elucidate the influence of environmental conditions on these interactions. 
+Oceanic fronts are dynamic regions where distinct water masses converge. These regions provide an opportunity to investigate environmental modulation of phytoplankton-bacteria interactions. Using high spatial resolution sampling of the [Munida transect](https://www.st.nmfs.noaa.gov/copepod/time-series/nz-10101/), we aim to construct a region specific phytoplankton-bacteria interaction network and elucidate the influence of environmental conditions on these interactions. 
 </p>
 
 
