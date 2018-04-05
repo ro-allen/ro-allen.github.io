@@ -356,19 +356,23 @@ New Zealand Ocean Acidification Community: [Council Member](http://nzoac.nz)
 </p>
 
 <p style="text-align:justify">
-Genetics Otago 
+[International Society for Microbial Ecology](https://www.isme-microbes.org)
 </p>
 
 <p style="text-align:justify">
-Marine Biological Associations
+[Genetics Otago](www.otago.ac.nz/genetics/index.html) 
 </p>
 
 <p style="text-align:justify">
-British Ecological Society
+[Marine Biological Association](www.mba.ac.uk)
 </p>
 
 <p style="text-align:justify">
-New Zealand Marine Science Society
+[British Ecological Society](britishecologicalsociety.org)
+</p>
+
+<p style="text-align:justify">
+[New Zealand Marine Sciences Society](nzmss.org)
 </p>
 
 <p>&nbsp;</p>

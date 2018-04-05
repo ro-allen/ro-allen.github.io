@@ -29,10 +29,10 @@ I am a PhD candidate at the University of Otago Department of Botany, supervised
 ###Current Projects
 ***
 
-<b>Drivers of microbial biogeography in the euphotic oligotrophic ocean</b>
+<b>Microbial community assembly in the oligotrophic ocean</b>
 
 <p style="text-align:justify">
-The South Pacific Gyre (SPG) is the largest oligotrophic ocean region on Earth. During the *GEOTRACES* transect through the SPG aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), 24 CTD casts were performed to describe the physical and chemical environment of the euphotic zone, combined with 16S rRNA based characterisation of microbial communities. These data form one of the most detailed investigations of the euphotic zone in the oligotrophic ocean, and provide an unprecedented opportunity to investigate the drivers of microbial community structure in these regions, with implications for global change. 
+The patterns and processes involved in microbial community assembly in the marine environment are not well understood, particularly in the oligotrophic open ocean where data on the structure and distribution of microbial communites are scarce. During the ~2000 km *GEOTRACES* transect of the South Pacific Gyre aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), we sampled seawater from 24 locations at 4 depths to determine microbial community structure (16S amplicon sequencing) alongiside a suite of environmental parameters in order to investigate the drivers of microbial community assembly in these regions. These high-resolution data will act to inform fundamental mechanisms underpinning the distribution of microbes in the oligotrophic ocean, and have implications for the region in a changing environment. 
 </p>
 
 <p>&nbsp;</p>
@@ -40,15 +40,15 @@ The South Pacific Gyre (SPG) is the largest oligotrophic ocean region on Earth. 
 <b>Bacterioplankton responses to climate change in the oligotrophic ocean</b>
 
 <p style="text-align:justify">
-Oligotrophic oceans represent ~40% of total ocean surface area, and account ~20% of marine primary production. Bacterioplankton are responsible for the majority of photosynthesis, nitrogen fixation, and recycling of organic material in these regions. The productivity of the oligotrophic ocean is closely coupled with the efficiency of organic matter recycling by heterotrophic bacteria as this process largely controls nutrient availability, due to limited inputs from vertical transport and low rates of nitrogen fixation.  The responses of oligotrophic ocean bacterioplankton communities to ocean acidification and warming are likely to influence overall marine productivity and global biogeochemical cycles. During the *GEOTRACES* transect through the oligotrophic ocean aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), a team of scientists from NIWA and the University of Otago conducted trace-metal clean deckboard incubation experiment providing early data on this topic. 
+Oligotrophic oceans represent ~40% of total ocean surface area, and account ~20% of marine primary production. Bacterioplankton are responsible for the majority of photosynthesis, nitrogen fixation, and recycling of organic material in these regions. The productivity of the oligotrophic ocean is closely coupled with the efficiency of organic matter recycling by heterotrophic bacteria as this process largely controls nutrient availability, due to limited inputs from vertical transport and low rates of nitrogen fixation.  Subsequently, the responses of oligotrophic ocean bacterioplankton communities to ocean acidification and warming are likely to influence overall marine productivity and the global carbon cycle. During the *GEOTRACES* transect through the oligotrophic ocean aboard the [RV Tangaroa](https://www.niwa.co.nz/services/vessels/niwa-vessels/rv-tangaroa), a team of scientists from NIWA and the University of Otago conducted a series of trace-metal clean deckboard incubation experiments to generate early data on this topic. 
 </p>
 
 <p>&nbsp;</p>
 
-<b>Eukaryotic phytoplankton responses to climate change in New Zealand coastal waters</b>
+<b>Eukaryotic phytoplankton responses to ocean acidification and warming in New Zealand coastal waters</b>
 
 <p style="text-align:justify">
-The phytoplankton are a phylogenetically diverse group of autotrophic organisms, grouped together as a result of their functional similarity and shared occupancy of the photic ocean. Approximately 30% of global primary production can be attributed to eukaryotic phytoplankton, and these organisms underpin marine foodwebs. As part of New Zealand's interdisciplinary [CARIM](http://www.carim.nz) mesocosm project, we aim characterise eukaryotic phytoplankton community responses to ocean acidification and warming and identify trends in genetic diversity within specific taxonomic groups, using 18S rRNA gene amplicon sequencing and qPCR. 
+The phytoplankton are a phylogenetically diverse group of autotrophic organisms, grouped together as a result of their functional similarity and shared occupancy of the photic ocean. Approximately 30% of global primary production can be attributed to eukaryotic phytoplankton, and these organisms underpin marine foodwebs. As part of New Zealand's interdisciplinary [CARIM](http://www.carim.nz) mesocosm project, we aim characterise eukaryotic phytoplankton community responses to ocean acidification and warming and identify trends in genetic diversity within specific taxonomic groups using 18S rRNA gene amplicon sequencing and qPCR. 
 </p>
 
 <p>&nbsp;</p>

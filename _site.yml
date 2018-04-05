@@ -11,9 +11,6 @@ navbar:
   - text: ' Bioconductor'
     icon: fa-spinner
     href: bioconductor.html
-  - text: ' CoDa'
-    icon: fa-pie-chart
-    href: coda.html
   right:
   - text: ' Publications'
     icon: fa-mortar-board
