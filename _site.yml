@@ -8,9 +8,11 @@ navbar:
   - text: ' Blog'
     icon: fa-coffee
     href: blog.html
-  - text: ' Bioconductor'
+  - text: ' Lab Resources'
     icon: fa-spinner
-    href: bioconductor.html
+    menu:
+    - text: ' Bioconductor'
+      href: bioconductor.html
   right:
   - text: ' Publications'
     icon: fa-mortar-board
@@ -20,9 +22,9 @@ navbar:
     href: cv.html
 output:
   html_document:
-    theme: flatly
+    theme: paper
     highlight: textmate
     lib_dir: site_libs
     self_contained: no
-output_dir: "."
+output_dir: '.'
 
