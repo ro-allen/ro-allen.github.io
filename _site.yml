@@ -11,8 +11,10 @@ navbar:
   - text: ' Lab Resources'
     icon: fa-spinner
     menu:
-    - text: ' Bioconductor'
+    - text: ' Bioconductor Pipeline'
       href: bioconductor.html
+    - text: ' Exploratory Analysis'
+    - text: ' R Chunks'
   right:
   - text: ' Publications'
     icon: fa-mortar-board
