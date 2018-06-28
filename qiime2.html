@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -100,34 +100,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 60px;
+  padding-top: 64px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 
 .section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 .section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 .section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 .section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 .section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
+  padding-top: 69px;
+  margin-top: -69px;
 }
 </style>
 
@@ -194,9 +194,9 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-database"></span>
+    <span class="fa fa-spinner"></span>
      
-     Pipelines
+     Lab Resources
      
     <span class="caret"></span>
   </a>
@@ -204,19 +204,11 @@ $(document).ready(function () {
     <li>
       <a href="bioconductor.html"> Bioconductor</a>
     </li>
-    <li>
-      <a href="qiime2.html"> QIIME2</a>
-    </li>
   </ul>
 </li>
-<li>
-  <a href="coda.html">
-    <span class="fa fa-pie-chart"></span>
-     
-     CoDa
-  </a>
-</li>
-<li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
   <a href="publications.html">
     <span class="fa fa-mortar-board"></span>
      
@@ -231,9 +223,6 @@ $(document).ready(function () {
   </a>
 </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -247,7 +236,138 @@ $(document).ready(function () {
 </div>
 
 
-<p>QIIME2 Pipeline</p>
+<a href="https://qiime2.org">QIIME2</a> is an open source bioinformatics pipeline for processing amplicon sequencing data. QIIME2 runs through command line (<em>Terminal</em> by default) and has the capacity to display interactive graphical outputs in compatible web browsers. Data can be exported from QIIME2 at various stages. Previous versions QIIME traditionally relied on clustering of OTUs at 97% similarity, but QIIME2 facilitates higher resolution amplicon sequence variants (ASVs) using either <a href="https://www.nature.com/articles/nmeth.3869?WT.feed_name=subjects_statistical-methods">DADA2</a> or <a href="http://msystems.asm.org/content/2/2/e00191-16">Deblur</a>. This page provides a complete walkthrough of the QIIME2 pipeline, using illumina MiSeq v2 data from the <em>GEOTRACES</em> ocean acidification experiment. This page is developed from the QIIME2 <a href="https://docs.qiime2.org/2017.11/tutorials/moving-pictures/">“Moving Pictures” tutorial</a>. Further resources can be found in the active QIIME2 <a href="https://forum.qiime2.org">forum</a>.
+<p>
+ 
+</p>
+<center>
+<font color="red"> <strong>Ensure QIIME2 is installed</strong><br />
+</font> <a href="https://docs.qiime2.org/2017.11/install/native/">QIIME2 Native Installation Guide</a>
+</center>
+<p>
+ 
+</p>
+<div id="read-files" class="section level3">
+<h3>Read files</h3>
+<p>The format of illumina files for import to QIIME2 is <a href="https://docs.qiime2.org/2017.11/tutorials/importing/">Casava 1.8 paired-end demultiplexed fastq</a>. For the <em>GEOTRACES</em> project, the raw input files are formatted as follows:</p>
+<p>processed_16s-OA18_S134_L001_R1_001.fastq.gz<br />
+processed_16s-OA18_S134_L001_R2_001.fastq.gz<br />
+processed_16s-OA19_S135_L001_R1_001.fastq.gz<br />
+processed_16s-OA19_S135_L001_R2_001.fastq.gz</p>
+<p>
+ 
+</p>
+</div>
+<div id="make-directory-activate-qiime2" class="section level3">
+<h3>Make directory &amp; activate QIIME2</h3>
+<p>Make a new directory for your data, and activate QIIME2 using a command dependent the name used for your QIIME2 installation (qiim2-2017.10 in my case).</p>
+<pre class="bash"><code>allro261:~ rohanallen$ mkdir geotraces-exp
+
+allro261:~ rohanallen$ source activate qiim2-2017.10 #dependent. 
+
+(qiim2-2017.10) allro261:~ rohanallen$ cd geotraces-exp</code></pre>
+<p>
+ 
+</p>
+</div>
+<div id="zip-fastq-files" class="section level3">
+<h3>Zip fastq files</h3>
+<p>Zip all fastq files into a new Geotraces_exp_fastq directory, for files must be zipped for imported into the QIIME2 environment.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ gzip -r Geotraces_exp_fastq</code></pre>
+</div>
+<div id="import-files" class="section level3">
+<h3>Import files</h3>
+<p>Import files.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools import   --type &#39;SampleData[PairedEndSequencesWithQuality]&#39;   --input-path Geotraces_exp_fastq   --source-format CasavaOneEightSingleLanePerSampleDirFmt   --output-path demux-paired-end.qz
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime demux summarize --i-data demux-paired-end.qz.qza --o-visualization demux.qzv
+
+#Saved Visualization to: demux.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view demux.qzv</code></pre>
+<p>Viewing the <em>demux.qzv</em> in your web browser will show the sequence count per sample (which can be downloaded as a PDF if desired). An interactive Quality Plot is also generated, providing information on quality score by base position in the forward and reverse reads.</p>
+</div>
+<div id="sequence-quality-control-and-feature-table-construction" class="section level3">
+<h3>Sequence quality control and feature table construction</h3>
+<p>At this stage in the qiime2 pipeline the user has the option of using DADA2 or Deblur to generate a feature table (e.g. an ASV/OTU table). At this stage, I personally prefer DADA2 as it is well documented as a method for resolving true amplicon sequence variants from technical errors (See Callaghan et al. 2016;2017).</p>
+<p>Assuming DADA2 is the selected option, the q2-dada2 plugin will additionally filter any remaining phiX reads (artefacts from illumina sequence data) and will filter chimeric sequences.</p>
+<p>The <em>dada2 denoise-single</em> method requires two parameters that are used in quality filtering: <em>–p-trim-left m</em>, which trims off the first <em>m</em> bases of each sequence, and <em>–p-trunc-len n</em> which truncates each sequence at position <em>m</em>. This allows you to remove low quality sequences, as determined from viewing the previously generated <em>demux.qzv</em> interactive quality plot. Note that trim and truncation positions are independent between forward and reverse reads.</p>
+<p>In this case, I selected 19 and 20 as the trim position for forward and reverse reads, respectively. This was done to remove primers, which were still present in the raw sequences. I selected 240 as the truncation for forward reads, and 181 as the truncation for reverse reads as base 181 was the point at which the mean quality score of reverse reads fell below 30. A minimum overlap of 20 nucleotides + the variation in sequencing length (difference between longest and shortest reads) must be used, this is to ensure that a minimum of 20 nucleotides overlap is maintained even between the two shortest reads in the sample.</p>
+<p><em>Note that the previous paragraph was revisited, based on the advice of DADA2 writers, that the final 10 nucleotides should always be truncated due to higher incidences of error, therefore the forward reads should be truncated at 240. Furthermore, the reverse reads are significantly lower quality (as is often the case in returned illumina sequencing data) and should be truncated conservatively. If low quality reads are not truncated, the DADA2 algorithm ends up discarding more sequences than necessary leaving a smaller data pool at the end of the process.</em></p>
+<p><em>Second Note; the trim position function is really to provide an opportunity to trim off the illumina adapter sequences and primer sequences. If these are not removed, this will significantly impact downstream processing accuracy. Using EMP protocols, returned MiSeq data should not have residual primers, but it is important to check just incase. In the case of the Geotraces data, primers are still present in the raw sequence files and should be removed by trimming</em></p>
+<p>Notably, this step is computationally demanding, and can take minutes to hours depending on the number of sequences being processed.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime dada2 denoise-paired --i-demultiplexed-seqs demux-paired-end.qz.qza --p-trunc-len-f 240 --p-trunc-len-r 181 --p-trim-left-r 20 --p-trim-left-f 19 --o-representative-sequences rep-seqs-geotraces-exp.qza --o-table table-geotraces-exp.qza
+
+#Saved FeatureTable[Frequency] to: table-geotraces-exp.qza
+#Saved FeatureData[Sequence] to: rep-seqs-geotraces-exp.qza</code></pre>
+</div>
+<div id="feature-table-creation" class="section level3">
+<h3>Feature table creation</h3>
+<p>DADA2 quality filtering is complete at this stage, so the next step is to construct a feature table, within which the data can be explored. The rep-seqs qvz connects exact sequences to their feature ID; these sequences can be put through NCBI BLAST through the QIIME2 platform if desired. The table qvz offers information about the abundance of each ASV in each sample, as well as metadata regarding overall prevelance of individual ASVs.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-table summarize --i-table table-geotraces-exp.qza --o-visualization table-geotraces-exp.qzv
+
+#Saved Visualization to: table-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-table tabulate-seqs --i-data rep-seqs-geotraces-exp.qza --o-visualization rep-seqs-geotraces-exp.qzv
+
+#Saved Visualization to: rep-seqs-geotraces-exp.qzv
+
+#These qzv outputs can be viewed in your web browser as follows:
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view rep-seqs-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view table-geotraces-exp.qzv</code></pre>
+</div>
+<div id="phylogenetic-tree-construction-for-unifrac" class="section level3">
+<h3>Phylogenetic tree construction for UniFrac</h3>
+<p>Here we construct a phylogenetic tree, <em>Phylogeny[Rooted]</em>, to be used in constructing weighted and unweighted unifrac distances for diversity metrics. The first step is to perform a multiple sequence alignment, followed by filtering (mask) of highlight variable positions. Next a phylogenetic tree is created from the masked alignment using FastTree (unrooted) and finally ading a midpoint root.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime alignment mafft --i-sequences rep-seqs-geotraces-exp.qza --o-alignment aligned-rep-seqs-geotraces-exp.qza
+
+#Saved FeatureData[AlignedSequence] to: aligned-rep-seqs-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime alignment mask --i-alignment aligned-rep-seqs-geotraces-exp.qza --o-masked-alignment masked-aligned-rep-seqs-geotraces-exp.qza
+
+#Saved FeatureData[AlignedSequence] to: masked-aligned-rep-seqs-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime phylogeny fasttree --i-alignment masked-aligned-rep-seqs-geotraces-exp.qza --o-tree unrooted-tree-geotraces-exp.qza
+
+#Saved Phylogeny[Unrooted] to: unrooted-tree-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime phylogeny midpoint-root --i-tree unrooted-tree-geotraces-exp.qza --o-rooted-tree rooted-tree-geotraces-exp.qza
+
+#Saved Phylogeny[Rooted] to: rooted-tree-geotraces-exp.qza</code></pre>
+</div>
+<div id="rarefaction-plotting-alpha-diversity" class="section level3">
+<h3>Rarefaction plotting (Alpha Diversity)</h3>
+<p>At this point we can explore the relationship between sampling depth and alpha diversity identified in each sample, to justify whether sequencing depth is appropriate for these data. The <em>–p-max-depth</em> value should be the maximum number of quality filtered reads in the largest sample.</p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime diversity alpha-rarefaction --i-table table-geotraces-exp.qza --i-phylogeny rooted-tree-geotraces-exp.qza --p-max-depth 84132 --o-visualization alpha-rarefaction-geotraces-exp.qzv
+
+#Saved Visualization to: alpha-rarefaction-geotraces-exp.qzv</code></pre>
+</div>
+<div id="taxonomic-assignment-and-analysis" class="section level3">
+<h3>Taxonomic assignment and analysis</h3>
+<p>At this stage, we have generate some broad metrics related to alpha diversity (and in theory, we could have generated beta-diversity metrics), howver no information is available about the taxonomic identify of each ASV. To elucidate the taxonomic composition of the samples, qiime2 attempts to identify ASVs using a pre-trained Naive Bayes classifier and the <em>q2-feature-classifier</em> plugin. Feature classifiers are automatically available based on Greengenes 13_8 99% OTUs and SILVA classifications, respectively. However, the authors of qiime2 recommend manually training classifiers for your particular study. This is because Naive Bayes classifiers perform best when they are trained only on the region of the target sequences that was sequences (Werner et al. 2012). Additional resources of creating your own feature classifiers are available through the qiime2 website.</p>
+<p>At this stage, the plan is to perform taxonomic analysis using Greengenes 13_8 99% OTUs from 515F/806R and Silva 119 99% OTUs independently, favouring assignments from Greengenes - but filling in blanks with Silva data (this will be done manually outside the qiime2 environment). In this specific case, the primers used were indeed 515F/806R, however in further marine work the reverse primer will not be the same and subsequently a new classifier must be trained.</p>
+<p>In this case, the first stage is to download the Greengenes 13_8 99% 515/806 Classifier from the qiime2 resources page. This must then be placed in the working directory (in this case, geotraces-exp) before running bash commands.</p>
+<p><em>Warning, this stage absolutely eats memory, be cautious if running on a laptop vs a lab computer</em></p>
+<pre class="bash"><code>(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-classifier classify-sklearn --i-classifier gg-13-8-99-515-806-nb-classifier.qza --i-reads rep-seqs-geotraces-exp.qza --o-classification gg-taxonomy-geotraces-exp.qza
+
+#Saved FeatureData[Taxonomy] to: gg-taxonomy-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-classifier classify-sklearn --i-classifier silva-119-99-515-806-nb-classifier.qza --i-reads rep-seqs-geotraces-exp.qza --o-classification silva-taxonomy-geotraces-exp.qza
+
+#Saved FeatureData[Taxonomy] to: silva-taxonomy-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime metadata tabulate --m-input-file gg-taxonomy-geotraces-exp.qza --o-visualization gg-taxonomy-geotraces-exp.qzv
+
+#Saved Visualization to: gg-taxonomy-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime metadata tabulate --m-input-file silva-taxonomy-geotraces-exp.qza --o-visualization silva-taxonomy-geotraces-exp.qzv
+
+#Saved Visualization to: silva-taxonomy-geotraces-exp.qzv</code></pre>
+</div>
+<div id="metadata" class="section level3">
+<h3>Metadata?</h3>
+</div>
 
 
 

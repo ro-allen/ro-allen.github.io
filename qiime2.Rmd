@@ -1,4 +1,164 @@
 ---
 title: "QIIME2 Pipeline"
 ---
-QIIME2 Pipeline
+[QIIME2](https://qiime2.org) is an open source bioinformatics pipeline for processing amplicon sequencing data. QIIME2 runs through command line (*Terminal* by default) and has the capacity to display interactive graphical outputs in compatible web browsers. Data can be exported from QIIME2 at various stages. Previous versions QIIME traditionally relied on clustering of OTUs at 97% similarity, but QIIME2 facilitates higher resolution amplicon sequence variants (ASVs) using either [DADA2](https://www.nature.com/articles/nmeth.3869?WT.feed_name=subjects_statistical-methods) or [Deblur](http://msystems.asm.org/content/2/2/e00191-16). This page provides a complete walkthrough of the QIIME2 pipeline, using illumina MiSeq v2 data from the *GEOTRACES* ocean acidification experiment. This page is developed from the QIIME2 ["Moving Pictures" tutorial](https://docs.qiime2.org/2017.11/tutorials/moving-pictures/). Further resources can be found in the active QIIME2 [forum](https://forum.qiime2.org).
+<p>&nbsp;</p>
+
+<center>
+<font color="red">
+**Ensure QIIME2 is installed**  
+</font>
+[QIIME2 Native Installation Guide](https://docs.qiime2.org/2017.11/install/native/)
+</center>
+
+<p>&nbsp;</p>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=60), tidy=TRUE)
+```
+### Read files
+The format of illumina files for import to QIIME2 is [Casava 1.8 paired-end demultiplexed fastq](https://docs.qiime2.org/2017.11/tutorials/importing/). For the *GEOTRACES* project, the raw input files are formatted as follows:
+
+processed_16s-OA18_S134_L001_R1_001.fastq.gz  
+processed_16s-OA18_S134_L001_R2_001.fastq.gz  
+processed_16s-OA19_S135_L001_R1_001.fastq.gz  
+processed_16s-OA19_S135_L001_R2_001.fastq.gz  
+
+<p>&nbsp;</p>
+
+###Make directory & activate QIIME2
+Make a new directory for your data, and activate QIIME2 using a command dependent the name used for your QIIME2 installation (qiim2-2017.10 in my case).
+```{bash eval=FALSE}
+allro261:~ rohanallen$ mkdir geotraces-exp
+
+allro261:~ rohanallen$ source activate qiim2-2017.10 #dependent. 
+
+(qiim2-2017.10) allro261:~ rohanallen$ cd geotraces-exp
+```
+
+<p>&nbsp;</p>
+
+###Zip fastq files
+Zip all fastq files into a new Geotraces_exp_fastq directory, for files must be zipped for imported into the QIIME2 environment. 
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ gzip -r Geotraces_exp_fastq
+```
+
+###Import files
+Import files.
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools import   --type 'SampleData[PairedEndSequencesWithQuality]'   --input-path Geotraces_exp_fastq   --source-format CasavaOneEightSingleLanePerSampleDirFmt   --output-path demux-paired-end.qz
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime demux summarize --i-data demux-paired-end.qz.qza --o-visualization demux.qzv
+
+#Saved Visualization to: demux.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view demux.qzv
+```
+
+Viewing the *demux.qzv* in your web browser will show the sequence count per sample (which can be downloaded as a PDF if desired). An interactive Quality Plot is also generated, providing information on quality score by base position in the forward and reverse reads. 
+
+###Sequence quality control and feature table construction
+
+At this stage in the qiime2 pipeline the user has the option of using DADA2 or Deblur to generate a feature table (e.g. an ASV/OTU table). At this stage, I personally prefer DADA2 as it is well documented as a method for resolving true amplicon sequence variants from technical errors (See Callaghan et al. 2016;2017).
+
+Assuming DADA2 is the selected option, the q2-dada2 plugin will additionally filter any remaining phiX reads (artefacts from illumina sequence data) and will filter chimeric sequences.
+
+The *dada2 denoise-single* method requires two parameters that are used in quality filtering: *--p-trim-left m*, which trims off the first *m* bases of each sequence, and *--p-trunc-len n* which truncates each sequence at position *m*. This allows you to remove low quality sequences, as determined from viewing the previously generated *demux.qzv* interactive quality plot. Note that trim and truncation positions are independent between forward and reverse reads. 
+
+In this case, I selected 19 and 20 as the trim position for forward and reverse reads, respectively. This was done to remove primers, which were still present in the raw sequences. I selected 240 as the truncation for forward reads, and 181 as the truncation for reverse reads as base 181 was the point at which the mean quality score of reverse reads fell below 30. A minimum overlap of 20 nucleotides + the variation in sequencing length (difference between longest and shortest reads) must be used, this is to ensure that a minimum of 20 nucleotides overlap is maintained even between the two shortest reads in the sample. 
+
+*Note that the previous paragraph was revisited, based on the advice of DADA2 writers, that the final 10 nucleotides should always be truncated due to higher incidences of error, therefore the forward reads should be truncated at 240. Furthermore, the reverse reads are significantly lower quality (as is often the case in returned illumina sequencing data) and should be truncated conservatively. If low quality reads are not truncated, the DADA2 algorithm ends up discarding more sequences than necessary leaving a smaller data pool at the end of the process.*
+
+*Second Note; the trim position function is really to provide an opportunity to trim off the illumina adapter sequences and primer sequences. If these are not removed, this will significantly impact downstream processing accuracy. Using EMP protocols, returned MiSeq data should not have residual primers, but it is important to check just incase. In the case of the Geotraces data, primers are still present in the raw sequence files and should be removed by trimming*
+
+Notably, this step is computationally demanding, and can take minutes to hours depending on the number of sequences being processed. 
+
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime dada2 denoise-paired --i-demultiplexed-seqs demux-paired-end.qz.qza --p-trunc-len-f 240 --p-trunc-len-r 181 --p-trim-left-r 20 --p-trim-left-f 19 --o-representative-sequences rep-seqs-geotraces-exp.qza --o-table table-geotraces-exp.qza
+
+#Saved FeatureTable[Frequency] to: table-geotraces-exp.qza
+#Saved FeatureData[Sequence] to: rep-seqs-geotraces-exp.qza
+```
+
+###Feature table creation
+
+DADA2 quality filtering is complete at this stage, so the next step is to construct a feature table, within which the data can be explored. The rep-seqs qvz connects exact sequences to their feature ID; these sequences can be put through NCBI BLAST through the QIIME2 platform if desired. The table qvz offers information about the abundance of each ASV in each sample, as well as metadata regarding overall prevelance of individual ASVs. 
+
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-table summarize --i-table table-geotraces-exp.qza --o-visualization table-geotraces-exp.qzv
+
+#Saved Visualization to: table-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-table tabulate-seqs --i-data rep-seqs-geotraces-exp.qza --o-visualization rep-seqs-geotraces-exp.qzv
+
+#Saved Visualization to: rep-seqs-geotraces-exp.qzv
+
+#These qzv outputs can be viewed in your web browser as follows:
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view rep-seqs-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime tools view table-geotraces-exp.qzv
+```
+
+###Phylogenetic tree construction for UniFrac
+
+Here we construct a phylogenetic tree, *Phylogeny[Rooted]*, to be used in constructing weighted and unweighted unifrac distances for diversity metrics. The first step is to perform a multiple sequence alignment, followed by filtering (mask) of highlight variable positions. Next a phylogenetic tree is created from the masked alignment using FastTree (unrooted) and finally ading a midpoint root. 
+
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime alignment mafft --i-sequences rep-seqs-geotraces-exp.qza --o-alignment aligned-rep-seqs-geotraces-exp.qza
+
+#Saved FeatureData[AlignedSequence] to: aligned-rep-seqs-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime alignment mask --i-alignment aligned-rep-seqs-geotraces-exp.qza --o-masked-alignment masked-aligned-rep-seqs-geotraces-exp.qza
+
+#Saved FeatureData[AlignedSequence] to: masked-aligned-rep-seqs-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime phylogeny fasttree --i-alignment masked-aligned-rep-seqs-geotraces-exp.qza --o-tree unrooted-tree-geotraces-exp.qza
+
+#Saved Phylogeny[Unrooted] to: unrooted-tree-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime phylogeny midpoint-root --i-tree unrooted-tree-geotraces-exp.qza --o-rooted-tree rooted-tree-geotraces-exp.qza
+
+#Saved Phylogeny[Rooted] to: rooted-tree-geotraces-exp.qza
+```
+
+###Rarefaction plotting (Alpha Diversity)
+
+At this point we can explore the relationship between sampling depth and alpha diversity identified in each sample, to justify whether sequencing depth is appropriate for these data. The *--p-max-depth* value should be the maximum number of quality filtered reads in the largest sample. 
+
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime diversity alpha-rarefaction --i-table table-geotraces-exp.qza --i-phylogeny rooted-tree-geotraces-exp.qza --p-max-depth 84132 --o-visualization alpha-rarefaction-geotraces-exp.qzv
+
+#Saved Visualization to: alpha-rarefaction-geotraces-exp.qzv
+```
+
+###Taxonomic assignment and analysis
+
+At this stage, we have generate some broad metrics related to alpha diversity (and in theory, we could have generated beta-diversity metrics), howver no information is available about the taxonomic identify of each ASV. To elucidate the taxonomic composition of the samples, qiime2 attempts to identify ASVs using a pre-trained Naive Bayes classifier and the *q2-feature-classifier* plugin. Feature classifiers are automatically available based on Greengenes 13_8 99% OTUs and SILVA classifications, respectively. However, the authors of qiime2 recommend manually training classifiers for your particular study. This is because Naive Bayes classifiers perform best when they are trained only on the region of the target sequences that was sequences (Werner et al. 2012). Additional resources of creating your own feature classifiers are available through the qiime2 website. 
+
+At this stage, the plan is to perform taxonomic analysis using Greengenes 13_8 99% OTUs from 515F/806R and Silva 119 99% OTUs independently, favouring assignments from Greengenes - but filling in blanks with Silva data (this will be done manually outside the qiime2 environment). In this specific case, the primers used were indeed 515F/806R, however in further marine work the reverse primer will not be the same and subsequently a new classifier must be trained. 
+
+In this case, the first stage is to download the Greengenes 13_8 99% 515/806 Classifier from the qiime2 resources page. This must then be placed in the working directory (in this case, geotraces-exp) before running bash commands. 
+
+*Warning, this stage absolutely eats memory, be cautious if running on a laptop vs a lab computer*
+
+```{bash eval=FALSE}
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-classifier classify-sklearn --i-classifier gg-13-8-99-515-806-nb-classifier.qza --i-reads rep-seqs-geotraces-exp.qza --o-classification gg-taxonomy-geotraces-exp.qza
+
+#Saved FeatureData[Taxonomy] to: gg-taxonomy-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime feature-classifier classify-sklearn --i-classifier silva-119-99-515-806-nb-classifier.qza --i-reads rep-seqs-geotraces-exp.qza --o-classification silva-taxonomy-geotraces-exp.qza
+
+#Saved FeatureData[Taxonomy] to: silva-taxonomy-geotraces-exp.qza
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime metadata tabulate --m-input-file gg-taxonomy-geotraces-exp.qza --o-visualization gg-taxonomy-geotraces-exp.qzv
+
+#Saved Visualization to: gg-taxonomy-geotraces-exp.qzv
+
+(qiim2-2017.10) allro261:geotraces-exp rohanallen$ qiime metadata tabulate --m-input-file silva-taxonomy-geotraces-exp.qza --o-visualization silva-taxonomy-geotraces-exp.qzv
+
+#Saved Visualization to: silva-taxonomy-geotraces-exp.qzv
+```
+
+###Metadata?
