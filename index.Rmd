@@ -11,15 +11,6 @@
 
 <p>&nbsp;</p>
 
-</p>
-<center>
-<div style="width:200px; height=200px">
-<p><a href="https://www.researchgate.net/profile/Ro_Allen"><img src="researchgate_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://github.com/ro-allen"><img src="github_icon.svg" style="width:15.0%" /></a> &emsp;&emsp; <a href="https://scholar.google.co.uk/citations?user=D15DFzgAAAAJ&amp;hl=en"><img src="gscholar.svg" style="width:15.0%" /></a></p>
-</div>
-</center>
-
-<p>&nbsp;</p>
-
 <p style="text-align:justify">
 I am a PhD candidate at the University of Otago Department of Botany, supervised by [Dr. Linn Hoffmann](https://www.researchgate.net/profile/Linn_Hoffmann) and [Dr. Tina Summerfield](https://www.researchgate.net/profile/Tina_Summerfield).  Previously, I completed an M.Res. in marine biology at Plymouth University supervised by [Prof. Jason Hall-Spencer](https://www.researchgate.net/profile/Jason_Hall-Spencer) and [Dr. Andy Foggo](https://www.researchgate.net/profile/Andrew_Foggo). My research interests centre around the fundamental dynamics of the marine microbiome, whilst my PhD thesis focusses on the use of high-throughput amplicon sequencing to investigate the community level responses of marine protists and bacteria to climate change. I am particularly interested in the handling of high-throughput sequencing data. 
 </p>

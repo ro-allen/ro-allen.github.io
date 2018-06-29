@@ -15,6 +15,7 @@ navbar:
       href: bioconductor.html
     - text: ' Exploratory Analysis'
     - text: ' R Chunks'
+    - text: ' Protocols'
   right:
   - text: ' Publications'
     icon: fa-mortar-board
@@ -22,6 +23,13 @@ navbar:
   - text: ' CV'
     icon: fa-file-text
     href: cv.html
+  - text: Twitter
+    icon: fa-twitter
+    href: https://twitter.com/rojallen
+  - text: Github
+    icon: fa-github
+    href: https://github.com/ro-allen
+
 output:
   html_document:
     theme: paper
