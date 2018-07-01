@@ -3,6 +3,10 @@ title: "R Chunks"
 ---
 
 <p>&nbsp;</p>
+<p style="text-align:justify">
+The purpose of this page is to document a collection of R code chunks, which I have created to make analysing and visualising microbial community composition data easier within the R and phyloseq environment. 
+
+<p>&nbsp;</p>
 
 ###Splitting Proteobacteria
 <p style="text-align:justify">
