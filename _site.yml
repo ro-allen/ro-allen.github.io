@@ -15,6 +15,7 @@ navbar:
       href: bioconductor.html
     - text: ' Exploratory Analysis'
     - text: ' R Chunks'
+      href: rchunks.html
     - text: ' Protocols'
   right:
   - text: ' Publications'

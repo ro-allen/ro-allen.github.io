@@ -11,7 +11,7 @@
 
 
 
-<title>Blog</title>
+<title>R Chunks</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -250,7 +250,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">R Chunks</h1>
 
 </div>
 
@@ -258,34 +258,45 @@ $(document).ready(function () {
 <p>
  
 </p>
-<div id="hectors-dolphins-catlins-national-park" class="section level3">
-<h3>Hector’s Dolphins, Catlins National Park</h3>
-<hr />
-<p>The Catlins National Park on the Southern coast of New Zealand’s South Island is home to a wild pod of <a href="https://en.wikipedia.org/wiki/Hector&#39;s_dolphin">Hector’s dolphins</a>, the smallest and rarest dolphin on the planet. The pod is resident to the aptly named porpoise bay, near Waikawa. The characterisic rounded dorsal fins of the dolphins can be spotted easily from the shoreline. We were fortunate enough to be approached by the pod a few minutes after entering the water for a swim. What followed was an incredible half an hour of dolphins investigating and playing in the water alongside us. One more item ticked off the bucket list…</p>
-<center>
-<iframe src="https://player.vimeo.com/video/251634959" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-</iframe>
-<p>
-<a href="https://vimeo.com/251634959">Hector's Dolphins</a> from <a href="https://vimeo.com/user25298218">Rohan Allen</a> on <a href="https://vimeo.com">Vimeo</a>.
-</p>
-</center>
-<p>
- 
-</p>
-</div>
-<div id="shikine-jima-expedition-2017" class="section level3">
-<h3>Shikine-Jima Expedition 2017</h3>
-<hr />
+<div id="splitting-proteobacteria" class="section level3">
+<h3>Splitting Proteobacteria</h3>
 <p style="text-align:justify">
-In May 2017 I set off to Japan on a research expedition supported by the University of Otago <a href="http://www.otago.ac.nz/oceanacidification/index.html">Ocean Acidification Research Theme</a>. My destination was Shikine-Jima, a small Japanese island approximately 160 km South of Tokyo. Shikine-Jima is a volcanic island positioned at the interface of subtropical and temperate regions in the Pacific Ocean. Only a handful of residents populate the island year-round, but during the holidays visitors arrive <em>en-masse</em> from mainland Japan to visit the islands famous onsen (hot-springs). <a href="https://www.sciencedirect.com/science/article/pii/S2352485515000298">Mikama Bay on the South side of Shikine-Jima is a CO<sub>2</sub> seep</a>, where high-purity CO<sub>2</sub> gas bubbles through the seabed creating an area where CO<sub>2</sub> concentrations are as high as they are projected to be globally by 2100. This phenomenon allows us to use Mikama Bay as a window into the potential future of Earth’s coastal marine ecosystems. I conducted a series of experiments on the island, investigating the effects of elevated CO<sub>2</sub> on the marine microbial communities which underpin shallow marine ecosystems.
-</p>
-<center>
-<iframe src="https://player.vimeo.com/video/223917352" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-</iframe>
-<p>
-<a href="https://vimeo.com/223917352">Shikine Research Expedition</a> from <a href="https://vimeo.com/user25298218">Rohan Allen</a> on <a href="https://vimeo.com">Vimeo</a>.
-</p>
-</center>
+<p>When plotting microbial community composition at the phylum level, it is common practice to represent proteobacteria at the class level. This is because of the enormous phylogenetic diversity constrained within the protebacteria phylum. Below is a quick function, which can be used to replace the phylum level classification of proteobacteria with the corresponding class level classification for each ASV. The function requires only your phyloseq object as an input. There are two iterations of the function, depending on whether your tax_table() is using silva or greengenes taxonomy.</p>
+<p>Note that this function is exclusively to make plotting easier.</p>
+<pre class="r"><code># Silva classification
+split_proteo_silva &lt;- function(physeq) {
+  one = as.data.frame(tax_table(physeq))
+  two = as.data.frame(lapply(one, as.character), stringsAsFactors = F)
+  two$Phylum[two$Phylum==&quot;Proteobacteria&quot;] = two$Class[two$Phylum==&quot;Proteobacteria&quot;]
+  two[] = lapply(two, factor)
+  three = tax_table(two)
+  rownames(three) = rownames(tax_table(physeq))
+  colnames(three) = colnames(tax_table(physeq))
+  tax_table(physeq) = three
+  return(physeq)
+}
+
+# Greengenes classification
+split_proteo_gg &lt;- function(physeq) {
+  one = as.data.frame(tax_table(physeq))
+  two = as.data.frame(lapply(one, as.character), stringsAsFactors = F)
+  two$Phylum[two$Phylum==&quot;p_Proteobacteria&quot;] = two$Class[two$Phylum==&quot;p_Proteobacteria&quot;]
+  two[] = lapply(two, factor)
+  three = tax_table(two)
+  rownames(three) = rownames(tax_table(physeq))
+  colnames(three) = colnames(tax_table(physeq))
+  tax_table(physeq) = three
+  return(physeq)
+}</code></pre>
+<p>Below is an example of function use, and a method to double check that the function has worked correctly.</p>
+<pre class="r"><code># create new phyloseq object with split proteobacteria
+new.phy = split_proteo_silva(old.phy)
+
+# check that the tax_table of the new phyloseq object displays protebacterial classes in the phylum column
+head(tax_table(new.phy))
+
+# check that the tax_table of the new and old phyloseq objects are identical (should be TRUE), excluding the phylum column
+identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])</code></pre>
 </div>
 
 

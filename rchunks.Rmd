@@ -1,0 +1,54 @@
+---
+title: "R Chunks"
+---
+
+<p>&nbsp;</p>
+
+###Splitting Proteobacteria
+<p style="text-align:justify">
+When plotting microbial community composition at the phylum level, it is common practice to represent proteobacteria at the class level. This is because of the enormous phylogenetic diversity constrained within the protebacteria phylum. Below is a quick function, which can be used to replace the phylum level classification of proteobacteria with the corresponding class level classification for each ASV. The function requires only your phyloseq object as an input. There are two iterations of the function, depending on whether your tax_table() is using silva or greengenes taxonomy. 
+
+Note that this function is exclusively to make plotting easier. 
+
+```{r, eval=FALSE}
+# Silva classification
+split_proteo_silva <- function(physeq) {
+  one = as.data.frame(tax_table(physeq))
+  two = as.data.frame(lapply(one, as.character), stringsAsFactors = F)
+  two$Phylum[two$Phylum=="Proteobacteria"] = two$Class[two$Phylum=="Proteobacteria"]
+  two[] = lapply(two, factor)
+  three = tax_table(two)
+  rownames(three) = rownames(tax_table(physeq))
+  colnames(three) = colnames(tax_table(physeq))
+  tax_table(physeq) = three
+  return(physeq)
+}
+
+# Greengenes classification
+split_proteo_gg <- function(physeq) {
+  one = as.data.frame(tax_table(physeq))
+  two = as.data.frame(lapply(one, as.character), stringsAsFactors = F)
+  two$Phylum[two$Phylum=="p_Proteobacteria"] = two$Class[two$Phylum=="p_Proteobacteria"]
+  two[] = lapply(two, factor)
+  three = tax_table(two)
+  rownames(three) = rownames(tax_table(physeq))
+  colnames(three) = colnames(tax_table(physeq))
+  tax_table(physeq) = three
+  return(physeq)
+}
+
+```
+
+Below is an example of function use, and a method to double check that the function has worked correctly. 
+
+```{r, eval=FALSE}
+
+# create new phyloseq object with split proteobacteria
+new.phy = split_proteo_silva(old.phy)
+
+# check that the tax_table of the new phyloseq object displays protebacterial classes in the phylum column
+head(tax_table(new.phy))
+
+# check that the tax_table of the new and old phyloseq objects are identical (should be TRUE), excluding the phylum column
+identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])
+```
