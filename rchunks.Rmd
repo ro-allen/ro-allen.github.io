@@ -61,7 +61,7 @@ identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])
 
 ### Extract pairwise distance vector from matrix
 <p style="text-align:justify">
-When conducting beta-diversiy analyses of microbial communities, it can be useful to extract the pairwise distances between sites as a vector. One example of this would be to use a vector of pairwise distances to compare within-group distances between groups, and subsequently analyse and plot these data. Below is a very simple function to extract only the bottom half of a distance matrix in the format generated through the [vegan](https://cran.r-project.org/web/packages/vegan/vegan.pdf) or [phyloseq](https://github.com/joey711/phyloseq) packages. This function does not extract the diagonal values of the matrix (all 0). The purpose of extracting only one half of the matrix is to avoid duplication of pairwise distances. 
+When conducting beta-diversiy analyses of microbial communities, it can be useful to extract the pairwise distances between sites as a vector. One purpose of this would be to use a vector of pairwise distances to compare within-group distances between conditions, and subsequently analyse and plot these data. Below is a very simple function to extract only the bottom half of a distance matrix in the format generated through the [vegan](https://cran.r-project.org/web/packages/vegan/vegan.pdf) or [phyloseq](https://github.com/joey711/phyloseq) packages. This function does not extract the diagonal values of the matrix (all 0). The purpose of extracting only one half of the matrix is to avoid duplication of pairwise distances. 
 
 ```{r, eval=FALSE}
 extract.matrix = function(dist.matrix) {
