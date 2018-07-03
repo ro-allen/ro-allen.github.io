@@ -22,7 +22,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -90,6 +92,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -299,6 +304,19 @@ head(tax_table(new.phy))
 
 # check that the tax_table of the new and old phyloseq objects are identical (should be TRUE), excluding the phylum column
 identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])</code></pre>
+<hr />
+<p>
+ 
+</p>
+</div>
+<div id="extract-pairwise-distance-vector-from-matrix" class="section level3">
+<h3>Extract pairwise distance vector from matrix</h3>
+<p style="text-align:justify">
+<p>When conducting beta-diversiy analyses of microbial communities, it can be useful to extract the pairwise distances between sites as a vector. One example of this would be to use a vector of pairwise distances to compare within-group distances between groups, and subsequently analyse and plot these data. Below is a very simple function to extract only the bottom half of a distance matrix in the format generated through the <a href="https://cran.r-project.org/web/packages/vegan/vegan.pdf">vegan</a> or <a href="https://github.com/joey711/phyloseq">phyloseq</a> packages. This function does not extract the diagonal values of the matrix (all 0). The purpose of extracting only one half of the matrix is to avoid duplication of pairwise distances.</p>
+<pre class="r"><code>extract.matrix = function(dist.matrix) {
+  two = as.matrix(dist.matrix)
+  two[lower.tri(as.matrix(two))]
+}</code></pre>
 </div>
 
 
