@@ -19,3 +19,6 @@ A key text for R in data science, authored by Garrett Grolemund and Hadley Wickh
 
 [Best Practives in Dataviz: An R Perspective](http://nickstrayer.me/visualization_in_r/)
 Interesting commentary on how the choice of visualisation method can influence the interpretation of data. Worth reading when deciding how best to represent your findings. 
+
+[Coding Club](https://ourcodingclub.github.io)
+A community based at Edinburgh University focussed on peer-learning statistical skills in R. The site is worth reading regularly, and is an great resource when approaching new challenges with R and its common packages. 
