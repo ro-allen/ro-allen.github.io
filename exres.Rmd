@@ -1,0 +1,21 @@
+---
+title: "External Resources"
+---
+
+<p style="text-align:justify">
+Below is a collection of useful external resources for data processing and analysis in microbial ecology.  
+
+[Modern Statistics for Modern Biology](http://web.stanford.edu/class/bios221/book/) 
+An easy to digest statistics textbook with a focus on high-throughput sequencing data, written by Prof. Susan Holmes and Dr. Wolfgang Huber. 
+
+[Bioconductor workflow for microbiome data analysis: from raw reads to community analyses](https://dx.doi.org/10.12688/f1000research.8986.2)
+F1000 publication (Callahan et al. 2016) of the bioconductor pipeline for microbiome data analysis. The paper includes R scripts which are clearly annotated. 
+
+[GUSTA ME: Guide to statistical analysis in microbial ecology](https://mb3is.megx.net/gustame)
+A live resource which acts as an excellent primer for common analyses in microbial ecology, with particularly clear and concise explanations of different ordination techinques. 
+
+[R for Data Science](http://r4ds.had.co.nz)
+A key text for R in data science, authored by Garrett Grolemund and Hadley Wickham. This text is free to read online, and covers essentials for using R for data analysis. 
+
+[Best Practives in Dataviz: An R Perspective](http://nickstrayer.me/visualization_in_r/)
+Interesting commentary on how the choice of visualisation method can influence the interpretation of data. Worth reading when deciding how best to represent your findings. 

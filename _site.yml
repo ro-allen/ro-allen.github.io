@@ -16,7 +16,8 @@ navbar:
     - text: ' Exploratory Analysis'
     - text: ' R Chunks'
       href: rchunks.html
-    - text: ' Protocols'
+    - text: ' External Resources'
+      href: exres.html
   right:
   - text: ' Publications'
     icon: fa-mortar-board
