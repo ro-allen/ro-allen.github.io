@@ -14,6 +14,8 @@ navbar:
     - text: ' Bioconductor Pipeline'
       href: bioconductor.html
     - text: ' Exploratory Analysis'
+    - text: ' Oceanmap Tutorial'
+      href: oceanmap.html
     - text: ' R Chunks'
       href: rchunks.html
     - text: ' External Resources'

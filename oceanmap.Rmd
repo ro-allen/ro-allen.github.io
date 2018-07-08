@@ -1,0 +1,75 @@
+---
+title: "Oceanmap Tutorial"
+---
+
+<p style="text-align:justify">
+Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal artciles, thus producing high quality maps is important as a first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package [oceanmap](https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf).
+</p>
+
+Install required packages.
+
+```{r, eval=FALSE}
+install.packages("oceanmap")
+install.packages("ncdf4")
+install.packages("raster")
+install.packages("viridis")
+```
+<p style="text-align:justify">
+
+Load required packages.
+```{r, message = FALSE}
+library(oceanmap)
+library(ncdf4)
+library(raster)
+library(viridis)
+```
+<p style="text-align:justify">
+
+Download MODIS-Aqua satellite data from the [NASA ocean data web portal](https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/). The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011. 
+
+```{r, results = "hide"}
+# path to downloaded MODIS-Aqua data
+chl.win = ('~/Desktop/PhD/Data/geotraces_transect/A20111722011263.L3m_SNSU_CHL_chlor_a_4km.nc')
+
+# read in MODIS-Aqua data
+chl.dat = nc_open(chl.win)
+
+# convert .nc data to raster data for plotting
+chl.dat.raster = nc2raster(chl.dat, "chlor_a", lonname="lon", latname="lat", date=T)
+```
+<p style="text-align:justify">
+
+In this example, we are creating a map which spans the [antimeridian](https://en.wikipedia.org/wiki/180th_meridian). As a result, the longitudinal coordinates of the raster data must be converted from the -180 to 180 format, to the 0 to 360 format. This can be done using the rotate function in the Raster package. 
+
+```{r, results = "hide"}
+chl.360 = shift(raster::rotate(shift(chl.dat.raster, 180)), 180)
+```
+<p style="text-align:justify">
+
+In it's current state, the chl.360 raster contains global data from the MODIS-Aqua satellite. In this case, we only want to plot the South West Pacific region. To allow this, we can crop the raster using the crop function in the Raster package. The extent argument sets the longitude minimum, longitude maximum, latitude minimum, and latitude maximum for the cropped region. 
+
+```{r, results = "hide"}
+chl.360.crop = raster::crop(chl.360, extent(c(160, 230, -50, -20))) 
+```
+<p style="text-align:justify">
+
+Prior to plotting, we can define a colour palette for the colour bar of the upcoming figure. I personally like the [viridis palette](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html), but many other options are available. 
+
+```{r, results = "hide"}
+vpal = viridis(100, alpha = 1, begin = 0, end = 1, option = "viridis")
+```
+<p style="text-align:justify">
+
+The chlorophyll-a map can now be generated using the v function in the oceanmap package. Note that coastlines are automatically included in the oceanmap package, which uses coastline data from [GSHHS](https://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html). Full list of arguments can be viewed using ?v. Arguments used below: *cbpos*: the position of colour bar, *pal*: palette of colour bar, *zlim*: scale limits for colour bar, *cb.xlab*: colour bar label, *bwd*: border width, *grid*: optional grid from lon/lat tickmarks, *replace.na*: replaces na raster values with zero (not recommended), *Save*: whether to save the plot (true or false), *plotname*: plotname if saving plot (do not include file extension), *fileformat*: set file format (default "png"), *width*: plot width (inches), *height*: plot height (inches). The plot will be saved to your working directory. 
+
+```{r, eval=FALSE, message=FALSE, warning=FALSE}
+v(chl.360.crop, cbpos = "r", pal = vpal, zlim = c(0,1), cb.xlab = expression("Chlorophyll-a (mg m"^-3*")"), bwd = 0.01, grid = F, replace.na = F, Save = T, plotname = "sp_rmd_plot", fileformat = "png", width = 10, height = 5)
+```
+<center>
+<div style="width:1000px; height=500px">
+![](sp_rmd_plot.png)
+</div>
+</center>
+<p style="text-align:justify">
+Further tutorials for using the oceanmap R package, from the package author, can be accessed [here](https://www.researchgate.net/profile/Robert_Bauer9/publication/315494507_oceanmap_Mapping_oceanographic_data/links/58d2987292851cd76d346f65/oceanmap-Mapping-oceanographic-data.pdf).
+

@@ -65,8 +65,7 @@ When conducting beta-diversiy analyses of microbial communities, it can be usefu
 
 ```{r, eval=FALSE}
 extract.matrix = function(dist.matrix) {
-  two = as.matrix(dist.matrix)
-  two[lower.tri(as.matrix(two))]
+  lower.tri(as.matrix(dist.matrix))
 }
 ```
 
