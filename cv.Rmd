@@ -12,7 +12,7 @@ Ro Allen
 <p>&nbsp;</p>
 
 <p style="text-align:justify">
-I am a PhD candidate at the University of Otago, New Zealand. My thesis uses high-throughput amplicon sequencing to investigate the responses of eukaryotic and prokaryotic marine microbes to ocean acidification. I am particularly interested in the fundamental dynamics of marine microbial communities, and the treatment of high throughput sequencing data. 
+I am a PhD candidate at the University of Otago, New Zealand. My thesis uses high-throughput amplicon sequencing to investigate the responses of eukaryotic and prokaryotic marine microbes to ocean acidification. I am particularly interested in the fundamental dynamics of marine microbial communities, and the treatment of high-throughput sequencing data. 
 </p>
   
 <p>&nbsp;</p>
@@ -24,7 +24,7 @@ I am a PhD candidate at the University of Otago, New Zealand. My thesis uses hig
 <p style="text-align:center">
 <b> University of Otago </b> [2016-Present]    
 PhD Candidate Botany  
-"Marine microbial community responses to ocean acidification"    
+"Marine microbial community dynamics and responses to oceanic climate change"    
 Dr. Linn Hoffmann & Dr. Tina Summerfield     
 </p>
 <p>&nbsp;</p>
@@ -47,7 +47,7 @@ Prof. Jason Hall-Spencer
 ***
 
 <p style="text-align:justify">
-[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2016)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2017)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
 </p>
 
 <p style="text-align:justify">
@@ -206,6 +206,10 @@ Prof. Jason Hall-Spencer
 ###Teaching
 
 ***
+<p style="text-align:justify">
+<b> Special Interest Lecture: </b> [Plants: How They Shape the World](http://www.otago.ac.nz/botany/study/papers/biol123.html)        
+    University of Otago [2018]  
+</p>
 
 <p style="text-align:justify">
 <b> Lecture Series: </b> [Marine and Freshwater Botany](http://www.otago.ac.nz/botany/study/papers/btny203.html)        
@@ -237,6 +241,16 @@ Prof. Jason Hall-Spencer
 ###Outreach
 
 ***
+
+<p style="text-align:justify">
+<b> Speaker: </b> [Ōku Moana & International Science Week](http://www.scifest.org.nz/events/meet-a-scientist-the-air-we-breathe)
+    University of Otago Department of Botany [2018]  
+</p>
+
+<p style="text-align:justify">
+<b> Representative: </b> [International Science Week](http://www.scifest.org.nz)   
+    University of Otago Department of Botany [2018]  
+</p>
 
 <p style="text-align:justify">
 <b> Programme Coordinator: </b> [Hands-On at Otago](http://www.otago.ac.nz/hands-on-at-otago/index.html)   

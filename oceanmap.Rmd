@@ -3,7 +3,7 @@ title: "Oceanmap Tutorial"
 ---
 
 <p style="text-align:justify">
-Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal artciles, thus producing high quality maps is important as a first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package [oceanmap](https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf).
+Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal articles, thus producing high quality maps can form an important first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package [oceanmap](https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf).
 </p>
 
 Install required packages.
@@ -25,7 +25,7 @@ library(viridis)
 ```
 <p style="text-align:justify">
 
-Download MODIS-Aqua satellite data from the [NASA ocean data web portal](https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/). The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011. 
+Download MODIS-Aqua satellite data from the [NASA ocean data portal](https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/). The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011. 
 
 ```{r, results = "hide"}
 # path to downloaded MODIS-Aqua data

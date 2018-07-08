@@ -266,7 +266,7 @@ $(document).ready(function () {
 
 
 <p style="text-align:justify">
-Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal artciles, thus producing high quality maps is important as a first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package <a href="https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf">oceanmap</a>.
+Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal articles, thus producing high quality maps can form an important first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package <a href="https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf">oceanmap</a>.
 </p>
 <p>Install required packages.</p>
 <pre class="r"><code>install.packages(&quot;oceanmap&quot;)
@@ -280,7 +280,7 @@ library(ncdf4)
 library(raster)
 library(viridis)</code></pre>
 <p style="text-align:justify">
-<p>Download MODIS-Aqua satellite data from the <a href="https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/">NASA ocean data web portal</a>. The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011.</p>
+<p>Download MODIS-Aqua satellite data from the <a href="https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/">NASA ocean data portal</a>. The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011.</p>
 <pre class="r"><code># path to downloaded MODIS-Aqua data
 chl.win = (&#39;~/Desktop/PhD/Data/geotraces_transect/A20111722011263.L3m_SNSU_CHL_chlor_a_4km.nc&#39;)
 
