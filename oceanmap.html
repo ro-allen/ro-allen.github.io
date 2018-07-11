@@ -302,7 +302,7 @@ chl.dat.raster = nc2raster(chl.dat, &quot;chlor_a&quot;, lonname=&quot;lon&quot;
 <p>The chlorophyll-a map can now be generated using the v function in the oceanmap package. Note that coastlines are automatically included in the oceanmap package, which uses coastline data from <a href="https://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html">GSHHS</a>. Full list of arguments can be viewed using ?v. Arguments used below: <em>cbpos</em>: the position of colour bar, <em>pal</em>: palette of colour bar, <em>zlim</em>: scale limits for colour bar, <em>cb.xlab</em>: colour bar label, <em>bwd</em>: border width, <em>grid</em>: optional grid from lon/lat tickmarks, <em>replace.na</em>: replaces na raster values with zero (not recommended), <em>Save</em>: whether to save the plot (true or false), <em>plotname</em>: plotname if saving plot (do not include file extension), <em>fileformat</em>: set file format (default “png”), <em>width</em>: plot width (inches), <em>height</em>: plot height (inches). The plot will be saved to your working directory.</p>
 <pre class="r"><code>v(chl.360.crop, cbpos = &quot;r&quot;, pal = vpal, zlim = c(0,1), cb.xlab = expression(&quot;Chlorophyll-a (mg m&quot;^-3*&quot;)&quot;), bwd = 0.01, grid = F, replace.na = F, Save = T, plotname = &quot;sp_rmd_plot&quot;, fileformat = &quot;png&quot;, width = 10, height = 5)</code></pre>
 <center>
-<div style="width:1000px; height=500px">
+<div style="width:750px; height=375px">
 <div class="figure">
 <img src="sp_rmd_plot.png" />
 
