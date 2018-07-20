@@ -22,3 +22,6 @@ Interesting commentary on how the choice of visualisation method can influence t
 
 [Coding Club](https://ourcodingclub.github.io)
 A community based at Edinburgh University focussed on peer-learning statistical skills in R. The site is worth reading regularly, and is an great resource when approaching new challenges with R and its common packages. 
+
+[R Consortium](https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos)
+The R consortium *YouTube* channel is full of insightful videos from R package developers, including talks from useR conferences. These act as a good resource from broadening your knowledge of R. 
