@@ -1,0 +1,59 @@
+---
+title: "ISME 17 Supplementary Information"
+---
+
+<p style="text-align:justify">
+Microbial community assembly processes in the South Pacific Gyre were resolved using a null-model approach described in [Stegen et al. (2013)](https://www.nature.com/articles/ismej201393). A fundamental assumption of the approach is that microbes which are more phylogenetically similar also occupy more similar ecological niches. This assumption can be empirically tested first by generating two distance matrices. The first, of phylogenetic similarity between each pair of amplicon sequence variants (ASVs) based on 16S rRNA gene sequences, and the second, of ecological niche similarity between each pair of ASVs based on weighted occurence values. These two distance matrices are then used to generate a mantel correlogram (Fig. 1) which illustrates the correlation between the two matrices at varying levels of phylogenetic similarity. 
+</p>
+
+<p style="text-align:justify">
+Figure 1 shows that significant positive correlation between phylogenetic similarity and ecological niche similarity is constrained to only very closely related ASVs. This is accounted for by using the $\beta$-mean nearest taxon distance meaure to quantify phylogenetic turnover between communities. 
+</p>
+
+<center>
+<div style="width:400px; height=266px">
+![](Correlogram.jpeg)
+</div>
+</center>
+
+<p style="text-align:justify">
+**Fig. 1** Mantel correlogram of the relationship between phylogenetic distance and ecological niche distance in microbial communities in the South Pacific Gyre. Ecological niche was calculated taking into account all measured environmental variables. 
+</p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:justify">
+Below, I briefly introduce the measures reported in the poster, and the overall workflow used to resolve microbial communtiy assembly processes:
+</p>
+
+<p style="text-align:justify">
+**$\beta$-mean nearest taxon distance ($\beta$MNTD)** is a measure of phylogenetic turnover between communities. The metric quantifies the phylogenetic distance between each ASV in community A, and its closest relative in community B, generating an abundance-weighted mean value for each pair of communities.  
+</p>
+
+<p style="text-align:justify">  
+**$\beta$-nearest taxon index ($\beta$NTI)** is a measure of the relationship between observed $\beta$MNTD and the distribution of $\beta$MNTD values expected under a null model distribution (simulating neutral community assembly). The measure is expressed as standard deviation according to the null model distribution. $\beta$MNTD values > +2 show greater phylogenetic turnover than expected, indicating that *variable selection* is the dominant microbial community assembly process. In contrast, values < -2 show less phylogenetic turnover than expected, indicating that *homogenising selection* is the dominant microbial community assembly process. pairs of communities with non significant $\beta$NTI values (> |2|) are further analyses using the RC<sub>bray</sub> measure described below.
+</p>
+
+<p style="text-align:justify">
+**Raup-Crick<sub>bray</sub> (RC<sub>bray</sub>)** is a measure of the relationship between observed bray-curtis dissimilarity and the distribution of bray-curtis dissimilarity values expected under a null model. The metric is superificially similar to $\beta$NTI, but does not take phylogenetic information into account, and can subsequently be used to resolve stochastic community assembly processes. RC<sub>bray</sub> values > +0.95 show that there is greater ASV turnover between communities than expected under the null model, indicating that *dispersal limitation* is the dominant community assembly process. RC<sub>bray</sub> values < =0.95 show that there is less ASV turnover between communities than expected under the null model, indicating that *homogenising dispersal* is the dominant community assembly process. RC<sub>bray</sub> values < |0.95| represent the undominated community assembly scenario described in [Stegen et al. (2015)](https://www.frontiersin.org/articles/10.3389/fmicb.2015.00370/full).   
+</p>
+
+<p style="text-align:justify">
+For further information of the measures described above, see [Stegen et al. (2013)](https://www.nature.com/articles/ismej201393).   
+</p>
+
+<p style="text-align:justify">
+The analyses are implemented according to the workflow shown in Figure 2, where observed and null model distribution $\beta$MNTD values are calculated for each pair of communities. From these values, $\beta$NTI is calculated. If pairs communities display non-significant $\beta$NTI values, they are subjected to RC<sub>bray</sub> analysis to partition stochastic community assembly processes.   
+
+
+<center>
+<div style="width:400px; height=266px">
+![](isme_model.png)
+</div>
+</center>
+
+<p style="text-align:justify">
+    
+**Fig. 2** From [Stegen et al. (2013)](https://www.nature.com/articles/ismej201393). Diagrammatic summary of the workflow used to resolve microbial community assembly processes. 
+</p>
+

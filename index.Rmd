@@ -52,10 +52,3 @@ Marine biolfilms are heterogenous microhabitats dominated by protists and bacter
 
 <p>&nbsp;</p>
 
-<b>Phytoplankton and bacterial community assembly across an oceanic front</b>
-
-<p style="text-align:justify">
-Oceanic fronts are dynamic regions where environmentally distinct water masses converge. These regions provide an opportunity to investigate environmental factors influencing microbial community composition. Developing our understanding of the respective processes that govern phytoplankton and bacterial community assembly will help inform how phytoplankton and bacteria interact with the environment, as well as eachother.  Using high spatial resolution sampling of the [Munida transect](https://www.st.nmfs.noaa.gov/copepod/time-series/nz-10101/), we aim to construct a region specific characterisation of phytoplankton and bacterial community assembly processes, using high-throughput sequencing of the 18S and 16S rRNA gene and detailed environmental data. 
-</p>
-
-

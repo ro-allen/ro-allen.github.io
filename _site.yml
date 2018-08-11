@@ -5,9 +5,6 @@ navbar:
   - text: ' Home'
     icon: fa-user
     href: index.html
-  - text: ' Blog'
-    icon: fa-coffee
-    href: blog.html
   - text: ' Lab Resources'
     icon: fa-spinner
     menu:

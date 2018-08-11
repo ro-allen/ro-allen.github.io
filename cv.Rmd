@@ -61,6 +61,14 @@ Prof. Jason Hall-Spencer
 
 ***
 <p style="text-align:justify">
+[Allen, R., Hoffmann, L., Law, C., Louisson, Z., Summerfield, T. (2018)](17.isme-microbes.org). Microbial community assembly processes in the oligotrophic South Pacific Gyre. *17th International Symposium on Microbial Ecology*. [Poster]
+</p>
+
+<p style="text-align:justify">
+[Summerfield, T., Louisson, Z., Nilsen, A., Allen, R., Orlovich, D. (2018)](17.isme-microbes.org). Investigating canopy soil microhabitats. *17th International Symposium on Microbial Ecology*. [Poster]
+</p>
+
+<p style="text-align:justify">
 [Allen, R., Summerfield, T., Harvey, B., Agostini, S., Wada, S., Rudminat, F., Hoffmann, L. (2018)](http://www.otago.ac.nz/oerc/news/index.html#events). Volcanic CO<sub>2</sub> Seeps provide insights into benthic diatom proliferation in a high CO<sub>2</sub> ocean. *3rd New Zealand Symposium on Algae and Photosynthetic Prokaryotes*. [Talk]
 </p>
 

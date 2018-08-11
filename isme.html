@@ -11,7 +11,7 @@
 
 
 
-<title>Oceanmap Tutorial</title>
+<title>ISME 17 Supplementary Information</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -253,57 +253,59 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Oceanmap Tutorial</h1>
+<h1 class="title toc-ignore">ISME 17 Supplementary Information</h1>
 
 </div>
 
 
 <p style="text-align:justify">
-Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal articles, thus producing high quality maps can form an important first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package <a href="https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf">oceanmap</a>.
+Microbial community assembly processes in the South Pacific Gyre were resolved using a null-model approach described in <a href="https://www.nature.com/articles/ismej201393">Stegen et al. (2013)</a>. A fundamental assumption of the approach is that microbes which are more phylogenetically similar also occupy more similar ecological niches. This assumption can be empirically tested first by generating two distance matrices. The first, of phylogenetic similarity between each pair of amplicon sequence variants (ASVs) based on 16S rRNA gene sequences, and the second, of ecological niche similarity between each pair of ASVs based on weighted occurence values. These two distance matrices are then used to generate a mantel correlogram (Fig. 1) which illustrates the correlation between the two matrices at varying levels of phylogenetic similarity.
 </p>
-<p>Install required packages.</p>
-<pre class="r"><code>install.packages(&quot;oceanmap&quot;)
-install.packages(&quot;ncdf4&quot;)
-install.packages(&quot;raster&quot;)
-install.packages(&quot;viridis&quot;)</code></pre>
 <p style="text-align:justify">
-<p>Load required packages.</p>
-<pre class="r"><code>library(oceanmap)
-library(ncdf4)
-library(raster)
-library(viridis)</code></pre>
-<p style="text-align:justify">
-<p>Download MODIS-Aqua satellite data from the <a href="https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/">NASA ocean data portal</a>. The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011.</p>
-<pre class="r"><code># path to downloaded MODIS-Aqua data
-chl.win = (&#39;~/Desktop/PhD/Data/geotraces_transect/A20111722011263.L3m_SNSU_CHL_chlor_a_4km.nc&#39;)
-
-# read in MODIS-Aqua data
-chl.dat = nc_open(chl.win)
-
-# convert .nc data to raster data for plotting
-chl.dat.raster = nc2raster(chl.dat, &quot;chlor_a&quot;, lonname=&quot;lon&quot;, latname=&quot;lat&quot;, date=T)</code></pre>
-<p style="text-align:justify">
-<p>In this example, we are creating a map which spans the <a href="https://en.wikipedia.org/wiki/180th_meridian">antimeridian</a>. As a result, the longitudinal coordinates of the raster data must be converted from the -180 to 180 format, to the 0 to 360 format. This can be done using the rotate function in the Raster package.</p>
-<pre class="r"><code>chl.360 = shift(raster::rotate(shift(chl.dat.raster, 180)), 180)</code></pre>
-<p style="text-align:justify">
-<p>In it’s current state, the chl.360 raster contains global data from the MODIS-Aqua satellite. In this case, we only want to plot the South West Pacific region. To allow this, we can crop the raster using the crop function in the Raster package. The extent argument sets the longitude minimum, longitude maximum, latitude minimum, and latitude maximum for the cropped region.</p>
-<pre class="r"><code>chl.360.crop = raster::crop(chl.360, extent(c(160, 230, -50, -20))) </code></pre>
-<p style="text-align:justify">
-<p>Prior to plotting, we can define a colour palette for the colour bar of the upcoming figure. I personally like the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis palette</a>, but many other options are available.</p>
-<pre class="r"><code>vpal = viridis(100, alpha = 1, begin = 0, end = 1, option = &quot;viridis&quot;)</code></pre>
-<p style="text-align:justify">
-<p>The chlorophyll-a map can now be generated using the v function in the oceanmap package. Note that coastlines are automatically included in the oceanmap package, which uses coastline data from <a href="https://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html">GSHHS</a>. Full list of arguments can be viewed using ?v. Arguments used below: <em>cbpos</em>: the position of colour bar, <em>pal</em>: palette of colour bar, <em>zlim</em>: scale limits for colour bar, <em>cb.xlab</em>: colour bar label, <em>bwd</em>: border width, <em>grid</em>: optional grid from lon/lat tickmarks, <em>replace.na</em>: replaces na raster values with zero (not recommended), <em>Save</em>: whether to save the plot (true or false), <em>plotname</em>: plotname if saving plot (do not include file extension), <em>fileformat</em>: set file format (default “png”), <em>width</em>: plot width (inches), <em>height</em>: plot height (inches). The plot will be saved to your working directory.</p>
-<pre class="r"><code>v(chl.360.crop, cbpos = &quot;r&quot;, pal = vpal, zlim = c(0,1), cb.xlab = expression(&quot;Chlorophyll-a (mg m&quot;^-3*&quot;)&quot;), bwd = 0.01, grid = F, replace.na = F, Save = T, plotname = &quot;sp_rmd_plot&quot;, fileformat = &quot;png&quot;, width = 10, height = 5)</code></pre>
+Figure 1 shows that significant positive correlation between phylogenetic similarity and ecological niche similarity is constrained to only very closely related ASVs. This is accounted for by using the <span class="math inline">\(\beta\)</span>-mean nearest taxon distance meaure to quantify phylogenetic turnover between communities.
+</p>
 <center>
-<div style="width:750px; height=375px">
+<div style="width:400px; height=266px">
 <div class="figure">
-<img src="sp_rmd_plot.png" />
+<img src="Correlogram.jpeg" />
 
 </div>
 </div>
 </center>
 <p style="text-align:justify">
-<p>Further tutorials for using the oceanmap R package, from the package author, can be accessed <a href="https://www.researchgate.net/profile/Robert_Bauer9/publication/315494507_oceanmap_Mapping_oceanographic_data/links/58d2987292851cd76d346f65/oceanmap-Mapping-oceanographic-data.pdf">here</a>.</p>
+<strong>Fig. 1</strong> Mantel correlogram of the relationship between phylogenetic distance and ecological niche distance in microbial communities in the South Pacific Gyre. Ecological niche was calculated taking into account all measured environmental variables.
+</p>
+<p>
+ 
+</p>
+<p style="text-align:justify">
+Below, I briefly introduce the measures reported in the poster, and the overall workflow used to resolve microbial communtiy assembly processes:
+</p>
+<p style="text-align:justify">
+<strong><span class="math inline">\(\beta\)</span>-mean nearest taxon distance (<span class="math inline">\(\beta\)</span>MNTD)</strong> is a measure of phylogenetic turnover between communities. The metric quantifies the phylogenetic distance between each ASV in community A, and its closest relative in community B, generating an abundance-weighted mean value for each pair of communities.
+</p>
+<p style="text-align:justify">
+<strong><span class="math inline">\(\beta\)</span>-nearest taxon index (<span class="math inline">\(\beta\)</span>NTI)</strong> is a measure of the relationship between observed <span class="math inline">\(\beta\)</span>MNTD and the distribution of <span class="math inline">\(\beta\)</span>MNTD values expected under a null model distribution (simulating neutral community assembly). The measure is expressed as standard deviation according to the null model distribution. <span class="math inline">\(\beta\)</span>MNTD values &gt; +2 show greater phylogenetic turnover than expected, indicating that <em>variable selection</em> is the dominant microbial community assembly process. In contrast, values &lt; -2 show less phylogenetic turnover than expected, indicating that <em>homogenising selection</em> is the dominant microbial community assembly process. pairs of communities with non significant <span class="math inline">\(\beta\)</span>NTI values (&gt; |2|) are further analyses using the RC<sub>bray</sub> measure described below.
+</p>
+<p style="text-align:justify">
+<strong>Raup-Crick<sub>bray</sub> (RC<sub>bray</sub>)</strong> is a measure of the relationship between observed bray-curtis dissimilarity and the distribution of bray-curtis dissimilarity values expected under a null model. The metric is superificially similar to <span class="math inline">\(\beta\)</span>NTI, but does not take phylogenetic information into account, and can subsequently be used to resolve stochastic community assembly processes. RC<sub>bray</sub> values &gt; +0.95 show that there is greater ASV turnover between communities than expected under the null model, indicating that <em>dispersal limitation</em> is the dominant community assembly process. RC<sub>bray</sub> values &lt; =0.95 show that there is less ASV turnover between communities than expected under the null model, indicating that <em>homogenising dispersal</em> is the dominant community assembly process. RC<sub>bray</sub> values &lt; |0.95| represent the undominated community assembly scenario described in <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2015.00370/full">Stegen et al. (2015)</a>.
+</p>
+<p style="text-align:justify">
+For further information of the measures described above, see <a href="https://www.nature.com/articles/ismej201393">Stegen et al. (2013)</a>.
+</p>
+<p style="text-align:justify">
+<p>The analyses are implemented according to the workflow shown in Figure 2, where observed and null model distribution <span class="math inline">\(\beta\)</span>MNTD values are calculated for each pair of communities. From these values, <span class="math inline">\(\beta\)</span>NTI is calculated. If pairs communities display non-significant <span class="math inline">\(\beta\)</span>NTI values, they are subjected to RC<sub>bray</sub> analysis to partition stochastic community assembly processes.</p>
+<center>
+<div style="width:400px; height=266px">
+<div class="figure">
+<img src="isme_model.png" />
+
+</div>
+</div>
+</center>
+<p style="text-align:justify">
+<strong>Fig. 2</strong> From <a href="https://www.nature.com/articles/ismej201393">Stegen et al. (2013)</a>. Diagrammatic summary of the workflow used to resolve microbial community assembly processes.
+</p>
 
 
 
