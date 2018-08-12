@@ -20,6 +20,14 @@ title: "Publications"
 ###Conference Papers
 ***
 <p style="text-align:justify">
+[Allen, R., Hoffmann, L., Law, C., Louisson, Z., Summerfield, T. (2018)](17.isme-microbes.org). Microbial community assembly processes in the oligotrophic South Pacific Gyre. *17th International Symposium on Microbial Ecology*. [Poster]
+</p>
+
+<p style="text-align:justify">
+[Summerfield, T., Louisson, Z., Nilsen, A., Allen, R., Orlovich, D. (2018)](17.isme-microbes.org). Investigating canopy soil microhabitats. *17th International Symposium on Microbial Ecology*. [Poster]
+</p>
+
+<p style="text-align:justify">
 [Allen, R., Summerfield, T., Harvey, B., Agostini, S., Wada, S., Rudminat, F., Hoffmann, L. (2018)](http://www.otago.ac.nz/oerc/news/index.html#events). Volcanic CO<sub>2</sub> Seeps provide insights into benthic diatom proliferation in a high CO<sub>2</sub> ocean. *3rd New Zealand Symposium on Algae and Photosynthetic Prokaryotes*. [Talk]
 </p>
 
@@ -28,24 +36,28 @@ title: "Publications"
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Hoffmann, L., Law, C., Rudminat, F., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*
+[Allen, R., Hoffmann, L., Law, C., Rudminat, F., Summerfield, T. (2017)](http://www.nzmolecol.org/conferences). South Pacific gyre bacterioplankton responses to oceanic climate change. *New Zealand Molecular Ecology Conference*. [Talk]
 </p>
 
 <p style="text-align:justify">
-[Gutierrez-Rodriguez, A., Safi, K., Gall, M., MacAskill, S., Allen, R., Rudminat, F., Hoffmann, L., Nodder, S. (2017)](https://www.uts.edu.au/research-and-teaching/our-research/climate-change-cluster/events/c3-2017-colloquium-aquafluo-ii). Phytoplankton photophysiology and productivity across contrasting subtropical and subantarctic waters of the South West Pacific. *Climate Change Cluster Colloquium – AquaFluo II*.
+[Gutierrez-Rodriguez, A., Safi, K., Gall, M., MacAskill, S., Allen, R., Rudminat, F., Hoffmann, L., Nodder, S. (2017)](https://www.uts.edu.au/research-and-teaching/our-research/climate-change-cluster/events/c3-2017-colloquium-aquafluo-ii). Phytoplankton photophysiology and productivity across contrasting subtropical and subantarctic waters of the South West Pacific. *Climate Change Cluster Colloquium – AquaFluo II*. [Talk]
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Summerfield, T., Law, C., Hoffmann, L.  (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification  
-*10th New Zealand Ocean Acidification Workshop*.
+[Allen, R., Summerfield, T., Law, C.,  Hoffmann, L. (2017)](http://nzoac.nz/workshops/). The ecological and evolutionary importance of genetic diversity in phytoplankton responses to ocean acidification
+*10th New Zealand Ocean Acidification Workshop*. [Talk]
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://nzoac.nz/workshops/). The effect of ocean acidification on coral reef invertebrate recruitment at CO<sub>2</sub> seeps in Papua New Guinea. *9th New Zealand Ocean Acidification Workshop*.
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://nzoac.nz/workshops/). The effect of ocean acidification on coral reef invertebrate recruitment at CO<sub>2</sub> seeps in Papua New Guinea. *9th New Zealand Ocean Acidification Workshop*. [Talk]
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology*. 
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2016)](http://www.biosch.hku.hk/icmpe8/). Elevated CO<sub>2</sub> disrupts invertebrate colonization on tropical coral reefs. *8th International Conference on Marine Pollution and Ecotoxicology*. [Poster]
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Foggo, A., Fabricius, K., Balistreri, A., Hall-Spencer, J. (2015)](https://www.qub.ac.uk/sites/12thmba/). The impact of ocean acidification on invertebrate settlement at CO<sub>2</sub> seeps. *12th Marine Biological Association Postgraduate Conference*. [Poster]
 </p>
 
 <p>&nbsp;</p>

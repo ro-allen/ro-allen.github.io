@@ -1,6 +1,15 @@
 ---
 title: "ISME 17 Supplementary Information"
 ---
+<p>&nbsp;</p>
+
+<blockquote>
+  <h3>Career Statement</h3>
+  <p style="text-align:justify">My goal is to advance our fundamental understanding of how and why microbial communities assemble and display biogeographic patterns, leveraging rapidly developing molecular techniques and statistically conscious experimental designs to approach both hypothesis driven and exploratory studies. This understanding, ultimately, will contribute to our ability to predict, manipulate, and harness microbial communities, with far-reaching implications across a range of systems. </p>
+  <p><a href="cv.html" class="btn btn-primary">View CV</a></p>
+</blockquote>
+
+<p>&nbsp;</p>
 
 <p style="text-align:justify">
 Microbial community assembly processes in the South Pacific Gyre were resolved using a null-model approach described in [Stegen et al. (2013)](https://www.nature.com/articles/ismej201393). A fundamental assumption of the approach is that microbes which are more phylogenetically similar also occupy more similar ecological niches. This assumption can be empirically tested first by generating two distance matrices. The first, of phylogenetic similarity between each pair of amplicon sequence variants (ASVs) based on 16S rRNA gene sequences, and the second, of ecological niche similarity between each pair of ASVs based on weighted occurence values. These two distance matrices are then used to generate a mantel correlogram (Fig. 1) which illustrates the correlation between the two matrices at varying levels of phylogenetic similarity. 
@@ -44,7 +53,7 @@ For further information of the measures described above, see [Stegen et al. (201
 
 <p style="text-align:justify">
 The analyses are implemented according to the workflow shown in Figure 2, where observed and null model distribution $\beta$MNTD values are calculated for each pair of communities. From these values, $\beta$NTI is calculated. If pairs communities display non-significant $\beta$NTI values, they are subjected to RC<sub>bray</sub> analysis to partition stochastic community assembly processes.   
-
+</p>
 
 <center>
 <div style="width:400px; height=266px">
@@ -52,8 +61,9 @@ The analyses are implemented according to the workflow shown in Figure 2, where 
 </div>
 </center>
 
+<p>&nbsp;</p>
+
 <p style="text-align:justify">
-    
 **Fig. 2** From [Stegen et al. (2013)](https://www.nature.com/articles/ismej201393). Diagrammatic summary of the workflow used to resolve microbial community assembly processes. 
 </p>
 
