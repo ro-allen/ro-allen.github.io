@@ -13,7 +13,7 @@ Ro Allen
 
 <blockquote>
   <h3>Career Statement</h3>
-  <p style="text-align:justify">My goal is to advance our fundamental understanding of how and why microbial communities assemble and display biogeographic patterns, leveraging rapidly developing molecular techniques and statistically conscious experimental designs to approach both hypothesis driven and exploratory studies. This understanding, ultimately, will contribute to our ability to predict, manipulate, and harness microbial communities, with far-reaching implications across a range of systems. </p>
+  <p style="text-align:justify">My goal is to advance our fundamental understanding of marine microbial ecology, leveraging rapidly developing molecular and statistical techniques to approach both hypothesis driven and exploratory studies. This understanding, ultimately, will contribute to our ability to predict, manipulate, and harness microbial communities, with far-reaching implications across a range of systems. </p>
 </blockquote>
 
 <p>&nbsp;</p>
@@ -47,6 +47,9 @@ Prof. Jason Hall-Spencer
 ###Publications
 
 ***
+<p style="text-align:justify">
+[Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (Submitted)](). Bacterial responses to ocean acidifiation and warming in the oligotrophic South Pacific Gyre. 
+</p>
 
 <p style="text-align:justify">
 [Allen, R., Foggo, A., Fabricius, K., Balistreri, A., & Hall-Spencer, J. M. (2017)](http://www.sciencedirect.com/science/article/pii/S0025326X1631013X). Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. *Marine Pollution Bulletin*, 124, 2, 607-613.
@@ -103,6 +106,7 @@ Prof. Jason Hall-Spencer
 </p>
 
 <p>&nbsp;</p>
+
 
 ###Key Skills
 
