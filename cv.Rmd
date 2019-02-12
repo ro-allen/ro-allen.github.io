@@ -48,7 +48,11 @@ Prof. Jason Hall-Spencer
 
 ***
 <p style="text-align:justify">
-[Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (Submitted)](). Bacterial responses to ocean acidifiation and warming in the oligotrophic South Pacific Gyre. 
+[Allen, R., Hoffmann, L. J., Larcombe, M. J., Louisson, Z., Summerfield, T. C. (In Review)](). Selection dominates microbial community assembly in the oligotrophic ocean. 
+</p>
+
+<p style="text-align:justify">
+[Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (In Revision)](). Bacterial responses to ocean acidifiation and warming in the oligotrophic South Pacific Gyre. 
 </p>
 
 <p style="text-align:justify">
@@ -106,7 +110,6 @@ Prof. Jason Hall-Spencer
 </p>
 
 <p>&nbsp;</p>
-
 
 ###Key Skills
 

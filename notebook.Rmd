@@ -1,0 +1,22 @@
+---
+title: "Laboratory Notebook"
+---
+
+<p>&nbsp;</p>
+
+<p style="text-align:justify">
+This laboratory notebook represents a compilation of protocols for marine microbial ecology, in addition to the documentation of bioinformatic pipelines covering amplicon sequencing, metagenomics, and metatranscriptomics. It is not possible to reach these pages through the navigation menu of this website.
+</p>
+<p>&nbsp;</p>
+
+###Laboratory
+***
+####[Protocols]()
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+###Bioinformatics
+***
+####[Amplicon sequencing]()
+####[Metagenomics]()
+####[Metatranscriptomics]()
