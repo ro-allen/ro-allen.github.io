@@ -70,7 +70,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="cyborg.css" type="text/css" />
+<link rel="stylesheet" href="cyborg_mod.css" type="text/css" />
 
 
 
@@ -338,6 +338,34 @@ $(document).ready(function () {
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+<style>
+.parallax { 
+    /* The image used */
+    background-image: url("https://github.com/ro-allen/ro-allen.github.io/blob/master/clayton-tonna-17EfL8ACKvQ-unsplash.jpg");
+
+    /* Set a specific height */
+    height: 400px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.myimg{
+    width: 10%;
+    color: red;
+    position: absolute;
+    top: 150px;
+    left: 45%;
+}
+</style>
+
+<!-- Container element -->
+<div class="parallax">
+    <a href="https://github.com/holtzy/R-Markdown-Parallax"> <img class="myimg" src="https://github.com/holtzy/R-Markdown-Parallax/raw/master/Rlogo.png"> </a>
+</div>
 
 <div class="fluid-row" id="header">
 
@@ -350,10 +378,7 @@ $(document).ready(function () {
 <p>
  
 </p>
-<center>
-<div style="width:300px; height=200px">
-<p><img src="Github_pic.png" /></p>
-</div>
+<div class="mycontent">
 </center>
 <p>
  
@@ -389,8 +414,7 @@ I am currently a Postdoc in <a href="https://www.mba.ac.uk/fellows/cunliffe-grou
 <p>
  
 </p>
-<div id="current-projects" class="section level4">
-<h4>Current Projects</h4>
+<h4 id="current-projects">Current Projects</h4>
 <hr />
 <p><b>Microbial community assembly in the oligotrophic ocean</b></p>
 <p style="text-align:justify">
