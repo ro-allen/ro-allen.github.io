@@ -7,7 +7,8 @@ The purpose of this page is to document a collection of R code chunks, which I h
 
 <p>&nbsp;</p>
 
-###Splitting Proteobacteria
+#### Splitting Proteobacteria   
+***
 <p style="text-align:justify">
 When plotting microbial community composition at the phylum level, it is common practice to represent proteobacteria at the class level. This is because of the enormous phylogenetic diversity constrained within the protebacteria phylum. Below is a quick function, which can be used to replace the phylum level classification of proteobacteria with the corresponding class level classification for each ASV. The function requires only your phyloseq object as an input. There are two iterations of the function, depending on whether your tax_table() is using silva or greengenes taxonomy. 
 
@@ -47,7 +48,7 @@ Below is an example of function use, and a method to double check that the funct
 ```{r, eval=FALSE}
 
 # create new phyloseq object with split proteobacteria
-new.phy = split_proteo_silva(old.phy)
+new.phy <- split_proteo_silva(old.phy)
 
 # check that the tax_table of the new phyloseq object displays protebacterial classes in the phylum column
 head(tax_table(new.phy))
@@ -55,16 +56,15 @@ head(tax_table(new.phy))
 # check that the tax_table of the new and old phyloseq objects are identical (should be TRUE), excluding the phylum column
 identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])
 ```
-
-***
 <p>&nbsp;</p>
 
-### Extract pairwise distance vector from matrix
+#### Extract pairwise distance vector from matrix   
+***
 <p style="text-align:justify">
 When conducting beta-diversiy analyses of microbial communities, it can be useful to extract the pairwise distances between sites as a vector. One purpose of this would be to use a vector of pairwise distances to compare within-group distances between conditions, and subsequently analyse and plot these data. Below is a very simple function to extract only the bottom half of a distance matrix in the format generated through the [vegan](https://cran.r-project.org/web/packages/vegan/vegan.pdf) or [phyloseq](https://github.com/joey711/phyloseq) packages. This function does not extract the diagonal values of the matrix (all 0). The purpose of extracting only one half of the matrix is to avoid duplication of pairwise distances. 
 
 ```{r, eval=FALSE}
-extract.matrix = function(dist.matrix) {
+extract.matrix <- function(dist.matrix) {
   lower.tri(as.matrix(dist.matrix))
 }
 ```
