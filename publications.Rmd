@@ -3,15 +3,15 @@ title: "Publications"
 ---
 <p>&nbsp;</p>
 
-###Journal Articles
+#### Journal Articles    
 ***
 
 <p style="text-align:justify">
-[Allen, R., Hoffmann, L. J., Larcombe, M. J., Louisson, Z., Summerfield, T. C. (In Review)](). Selection dominates microbial community assembly in the oligotrophic ocean. 
+[Allen, R., Hoffmann, L. J., Larcombe, M. J., Louisson, Z., Summerfield, T. C. (In Review)](). Selection dominates microbial community assembly in the oligotrophic South Pacific Gyre 
 </p>
 
 <p style="text-align:justify">
-[Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (In Revision)](). Bacterial responses to ocean acidifiation and warming in the oligotrophic South Pacific Gyre. 
+[Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (2020)](https://sfamjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1758-2229.12844). Subtle bacterioplankton community responses to elevated CO<sub>2</sub> and warming in the oligotrophic South Pacific Gyre. *Environmental Microbiology Reports*, Early View. 
 </p>
 
 <p style="text-align:justify">
@@ -25,7 +25,7 @@ title: "Publications"
 
 <p>&nbsp;</p>
 
-###Conference Papers
+#### Conference Papers   
 ***
 <p style="text-align:justify">
 [Allen, R., Hoffmann, L., Law, C., Louisson, Z., Summerfield, T. (2018)](17.isme-microbes.org). Microbial community assembly processes in the oligotrophic South Pacific Gyre. *17th International Symposium on Microbial Ecology*. [Poster]

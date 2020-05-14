@@ -32,9 +32,6 @@ navbar:
 
 output:
   html_document:
-    theme: paper
-    highlight: textmate
-    lib_dir: site_libs
-    self_contained: no
+        css: cyborg.css
 output_dir: '.'
 
