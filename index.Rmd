@@ -1,16 +1,16 @@
 ---
+pagetitle: "Home"
 output:
   html_document:
       css: cyborg_mod.css
       toc: FALSE
-      includes: 
-        before_body: header.html
 ---
-<p>&nbsp;</p>
+<div>
+![](clayton-tonna-17EfL8ACKvQ-unsplash.jpg)
+</div>
 
 <div class="mycontent">
 </center>
-
 <p>&nbsp;</p>
 
 
