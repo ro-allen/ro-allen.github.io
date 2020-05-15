@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -15,16 +15,15 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -71,10 +70,9 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="cyborg.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -88,7 +86,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -99,40 +96,79 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 64px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
-
 .section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -154,19 +190,74 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -202,7 +293,6 @@ $(document).ready(function () {
     <li>
       <a href="bioconductor.html"> Bioconductor Pipeline</a>
     </li>
-    <li class="dropdown-header"> Exploratory Analysis</li>
     <li>
       <a href="oceanmap.html"> Oceanmap Tutorial</a>
     </li>
@@ -275,33 +365,37 @@ library(viridis)</code></pre>
 <p style="text-align:justify">
 <p>Download MODIS-Aqua satellite data from the <a href="https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/Mapped/">NASA ocean data portal</a>. The data downloaded for this tutorial is seasonal 4 km resolution chlorophyll-a data from the Boreal Summer of 2011.</p>
 <pre class="r"><code># path to downloaded MODIS-Aqua data
-chl.win = (&#39;~/Desktop/PhD/Data/geotraces_transect/A20111722011263.L3m_SNSU_CHL_chlor_a_4km.nc&#39;)
+chl.win &lt;- (&#39;~/Desktop/PhD/Data/geotraces_transect/A20111722011263.L3m_SNSU_CHL_chlor_a_4km.nc&#39;)
 
 # read in MODIS-Aqua data
-chl.dat = nc_open(chl.win)
+chl.dat &lt;- nc_open(chl.win)
 
 # convert .nc data to raster data for plotting
-chl.dat.raster = nc2raster(chl.dat, &quot;chlor_a&quot;, lonname=&quot;lon&quot;, latname=&quot;lat&quot;, date=T)</code></pre>
+chl.dat.raster &lt;- nc2raster(chl.dat, &quot;chlor_a&quot;, lonname=&quot;lon&quot;, latname=&quot;lat&quot;, date=T)</code></pre>
 <p style="text-align:justify">
 <p>In this example, we are creating a map which spans the <a href="https://en.wikipedia.org/wiki/180th_meridian">antimeridian</a>. As a result, the longitudinal coordinates of the raster data must be converted from the -180 to 180 format, to the 0 to 360 format. This can be done using the rotate function in the Raster package.</p>
-<pre class="r"><code>chl.360 = shift(raster::rotate(shift(chl.dat.raster, 180)), 180)</code></pre>
+<pre class="r"><code>chl.flip &lt;- flip(chl.dat.raster, &quot;y&quot;)
+chl.360 &lt;- shift(raster::rotate(shift(chl.flip, 180)), 180)</code></pre>
 <p style="text-align:justify">
 <p>In it’s current state, the chl.360 raster contains global data from the MODIS-Aqua satellite. In this case, we only want to plot the South West Pacific region. To allow this, we can crop the raster using the crop function in the Raster package. The extent argument sets the longitude minimum, longitude maximum, latitude minimum, and latitude maximum for the cropped region.</p>
 <pre class="r"><code>chl.360.crop = raster::crop(chl.360, extent(c(160, 230, -50, -20))) </code></pre>
 <p style="text-align:justify">
 <p>Prior to plotting, we can define a colour palette for the colour bar of the upcoming figure. I personally like the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis palette</a>, but many other options are available.</p>
-<pre class="r"><code>vpal = viridis(100, alpha = 1, begin = 0, end = 1, option = &quot;viridis&quot;)</code></pre>
+<pre class="r"><code>vpal &lt;- viridis(100, alpha = 1, begin = 0, end = 1, option = &quot;magma&quot;)</code></pre>
 <p style="text-align:justify">
 <p>The chlorophyll-a map can now be generated using the v function in the oceanmap package. Note that coastlines are automatically included in the oceanmap package, which uses coastline data from <a href="https://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html">GSHHS</a>. Full list of arguments can be viewed using ?v. Arguments used below: <em>cbpos</em>: the position of colour bar, <em>pal</em>: palette of colour bar, <em>zlim</em>: scale limits for colour bar, <em>cb.xlab</em>: colour bar label, <em>bwd</em>: border width, <em>grid</em>: optional grid from lon/lat tickmarks, <em>replace.na</em>: replaces na raster values with zero (not recommended), <em>Save</em>: whether to save the plot (true or false), <em>plotname</em>: plotname if saving plot (do not include file extension), <em>fileformat</em>: set file format (default “png”), <em>width</em>: plot width (inches), <em>height</em>: plot height (inches). The plot will be saved to your working directory.</p>
-<pre class="r"><code>v(chl.360.crop, cbpos = &quot;r&quot;, pal = vpal, zlim = c(0,1), cb.xlab = expression(&quot;Chlorophyll-a (mg m&quot;^-3*&quot;)&quot;), bwd = 0.01, grid = F, replace.na = F, Save = T, plotname = &quot;sp_rmd_plot&quot;, fileformat = &quot;png&quot;, width = 10, height = 5)</code></pre>
+<pre class="r"><code>v(chl.360.crop, cbpos = &quot;r&quot;, pal = &quot;jet&quot;, zlim = c(0,1), cb.xlab = expression(&quot;Chlorophyll-a (mg m&quot;^-3*&quot;)&quot;), bwd = 0.01, grid = F, replace.na = F, Save = T, plotname = &quot;sp_rmd_plot&quot;, fileformat = &quot;png&quot;, width = 10, height = 5)</code></pre>
+<p>
+ 
+</p>
 <center>
-<div style="width:750px; height=375px">
-<div class="figure">
-<img src="sp_rmd_plot.png" />
-
-</div>
+<div style="width:850px; height=425px">
+<p><img src="sp_rmd_plot.png" /></p>
 </div>
 </center>
+<p>
+ 
+</p>
 <p style="text-align:justify">
 <p>Further tutorials for using the oceanmap R package, from the package author, can be accessed <a href="https://www.researchgate.net/profile/Robert_Bauer9/publication/315494507_oceanmap_Mapping_oceanographic_data/links/58d2987292851cd76d346f65/oceanmap-Mapping-oceanographic-data.pdf">here</a>.</p>
 
@@ -322,6 +416,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

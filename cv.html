@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>cv.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -71,10 +70,9 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="cyborg.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -88,7 +86,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -99,40 +96,79 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 64px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
-
 .section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -154,19 +190,74 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -270,7 +361,7 @@ $(document).ready(function () {
 </p>
 <blockquote>
 <h3>
-Career Statement
+Research Statement
 </h3>
 <p style="text-align:justify">
 My goal is to advance our fundamental understanding of marine microbial ecology, leveraging rapidly developing molecular and statistical techniques to approach both hypothesis driven and exploratory studies. This understanding, ultimately, will contribute to our ability to predict, manipulate, and harness microbial communities, with far-reaching implications across a range of systems.
@@ -279,12 +370,20 @@ My goal is to advance our fundamental understanding of marine microbial ecology,
 <p>
  
 </p>
-<div id="education" class="section level3">
-<h3>Education</h3>
+<div id="education-employment" class="section level4">
+<h4>Education &amp; Employment</h4>
 <hr />
 <p style="text-align:center">
-<b> University of Otago </b> [2016-Present]<br />
-PhD Candidate Botany<br />
+<b> The Marine Biological Association of the United Kingdom </b> [2019-Present]<br />
+Postdoctoral Researcher<br />
+Dr. Michael Cunliffe
+</p>
+<p>
+ 
+</p>
+<p style="text-align:center">
+<b> University of Otago </b> [2016-2019]<br />
+PhD Botany (Exceptional Thesis Award)<br />
 “Marine microbial community dynamics and responses to oceanic climate change”<br />
 Dr. Linn Hoffmann &amp; Dr. Tina Summerfield
 </p>
@@ -309,14 +408,11 @@ Prof. Jason Hall-Spencer
  
 </p>
 </div>
-<div id="publications" class="section level3">
-<h3>Publications</h3>
+<div id="publications" class="section level4">
+<h4>Publications</h4>
 <hr />
 <p style="text-align:justify">
-<a href="">Allen, R., Hoffmann, L. J., Larcombe, M. J., Louisson, Z., Summerfield, T. C. (In Review)</a>. Selection dominates microbial community assembly in the oligotrophic ocean.
-</p>
-<p style="text-align:justify">
-<a href="">Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (In Revision)</a>. Bacterial responses to ocean acidifiation and warming in the oligotrophic South Pacific Gyre.
+<a href="https://sfamjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1758-2229.12844">Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (2020)</a>. Subtle bacterioplankton community responses to elevated CO<sub>2</sub> and warming in the oligotrophic South Pacific Gyre. <em>Environmental Microbiology Reports</em>, Early View.
 </p>
 <p style="text-align:justify">
 <a href="http://www.sciencedirect.com/science/article/pii/S0025326X1631013X">Allen, R., Foggo, A., Fabricius, K., Balistreri, A., &amp; Hall-Spencer, J. M. (2017)</a>. Tropical CO<sub>2</sub> seeps reveal the impact of ocean acidification on coral reef invertebrate recruitment. <em>Marine Pollution Bulletin</em>, 124, 2, 607-613.
@@ -328,9 +424,12 @@ Prof. Jason Hall-Spencer
  
 </p>
 </div>
-<div id="conference-papers" class="section level3">
-<h3>Conference Papers</h3>
+<div id="conference-papers" class="section level4">
+<h4>Conference Papers</h4>
 <hr />
+<p style="text-align:justify">
+<a href="http://nzoac.nz/workshops/">Allen, R., Summerfield, T., Harvey, B., Agostini, S., Hoffmann, L. (2019)</a>. Biofilm succession in an acidified ocean: mechanistic insights from a volcanic CO<sub>2</sub> seep study. <em>12th New Zealand Ocean Acidification Workshop</em>. [Talk]
+</p>
 <p style="text-align:justify">
 <a href="17.isme-microbes.org">Allen, R., Hoffmann, L., Law, C., Louisson, Z., Summerfield, T. (2018)</a>. Microbial community assembly processes in the oligotrophic South Pacific Gyre. <em>17th International Symposium on Microbial Ecology</em>. [Poster]
 </p>
@@ -365,8 +464,8 @@ Prof. Jason Hall-Spencer
  
 </p>
 </div>
-<div id="key-skills" class="section level3">
-<h3>Key Skills</h3>
+<div id="key-skills" class="section level4">
+<h4>Key Skills</h4>
 <hr />
 <style>
 .column-left{
@@ -407,8 +506,8 @@ Prof. Jason Hall-Spencer
  
 </p>
 </div>
-<div id="grants" class="section level3">
-<h3>Grants</h3>
+<div id="grants" class="section level4">
+<h4>Grants</h4>
 <hr />
 <p style="text-align:justify">
 <b> Doctoral Scholarship </b> (~$100,000)<br />
@@ -442,8 +541,8 @@ Plymouth University [2015]
  
 </p>
 </div>
-<div id="awards" class="section level3">
-<h3>Awards</h3>
+<div id="awards" class="section level4">
+<h4>Awards</h4>
 <hr />
 <p style="text-align:justify">
 <b> Best Talk Award </b><br />
@@ -457,9 +556,21 @@ University of Otago Department of Botany Colloquium [2017]
  
 </p>
 </div>
-<div id="teaching" class="section level3">
-<h3>Teaching</h3>
+<div id="teaching" class="section level4">
+<h4>Teaching</h4>
 <hr />
+<p style="text-align:justify">
+<b> Guest Lecturer: </b> <a href="https://www.plymouth.ac.uk/courses/postgraduate/mres-marine-biology">Molecular and Cellular Approaches in Marine Biology</a><br />
+The Marine Biological Association [2019-Present]
+</p>
+<p style="text-align:justify">
+<b> Guest Lecturer: </b> <a href="https://www.plymouth.ac.uk/courses/postgraduate/mres-marine-biology">Marine Ecology and Conservation</a><br />
+The Marine Biological Association [2019-Present]
+</p>
+<p style="text-align:justify">
+<b> Guest Lecturer: </b> <a href="https://www.plymouth.ac.uk/courses/postgraduate/mres-marine-biology">Aquatic Microbial Ecology</a><br />
+Plymouth University [2019-Present]
+</p>
 <p style="text-align:justify">
 <b> Guest Lecturer: </b> <a href="http://www.otago.ac.nz/botany/study/papers/biol123.html">Plants: How They Shape the World</a><br />
 University of Otago [2018]
@@ -488,8 +599,8 @@ University of Otago [2016-Present]
  
 </p>
 </div>
-<div id="outreach" class="section level3">
-<h3>Outreach</h3>
+<div id="outreach" class="section level4">
+<h4>Outreach</h4>
 <hr />
 <p style="text-align:justify">
 <b> Speaker: </b> <a href="http://www.scifest.org.nz/events/meet-a-scientist-the-air-we-breathe">Ōku Moana: International Science Week</a><br />
@@ -523,8 +634,8 @@ University of Otago Department of Botany [2017]
  
 </p>
 </div>
-<div id="qualifications" class="section level3">
-<h3>Qualifications</h3>
+<div id="qualifications" class="section level4">
+<h4>Qualifications</h4>
 <hr />
 <p style="text-align:justify">
 HSE Part IV Professional Air Diver
@@ -560,8 +671,8 @@ Institution of Fire Engineers: Basic Fire Awareness Training
  
 </p>
 </div>
-<div id="professional-development" class="section level3">
-<h3>Professional Development</h3>
+<div id="professional-development" class="section level4">
+<h4>Professional Development</h4>
 <hr />
 <p style="text-align:justify">
 RNA-Seq: What is state of the art? Bioinformatics Workshop
@@ -582,11 +693,14 @@ University of Otago Demonstrating/Tutoring Workshop
  
 </p>
 </div>
-<div id="memberships" class="section level3">
-<h3>Memberships</h3>
+<div id="memberships" class="section level4">
+<h4>Memberships</h4>
 <hr />
 <p style="text-align:justify">
-New Zealand Ocean Acidification Community: <a href="http://nzoac.nz">Council Member</a>
+New Zealand Ocean Acidification Community: <a href="http://nzoac.nz">Council Member 2016-2019</a>
+</p>
+<p style="text-align:justify">
+<a href="https://microbiologysociety.org">Microbiology Society</a>
 </p>
 <p style="text-align:justify">
 <a href="https://www.isme-microbes.org">International Society for Microbial Ecology</a>
@@ -607,8 +721,8 @@ New Zealand Ocean Acidification Community: <a href="http://nzoac.nz">Council Mem
  
 </p>
 </div>
-<div id="extra-curricular" class="section level3">
-<h3>Extra-Curricular</h3>
+<div id="extra-curricular" class="section level4">
+<h4>Extra-Curricular</h4>
 <hr />
 <p style="text-align:justify">
 University of Otago Rugby League First XIII [2016-Present]
@@ -647,6 +761,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

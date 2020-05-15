@@ -7,10 +7,6 @@ title: "Publications"
 ***
 
 <p style="text-align:justify">
-[Allen, R., Hoffmann, L. J., Larcombe, M. J., Louisson, Z., Summerfield, T. C. (In Review)](). Selection dominates microbial community assembly in the oligotrophic South Pacific Gyre 
-</p>
-
-<p style="text-align:justify">
 [Allen, R., Hoffmann, L. J., Law, C. S., Summerfield, T. C. (2020)](https://sfamjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/1758-2229.12844). Subtle bacterioplankton community responses to elevated CO<sub>2</sub> and warming in the oligotrophic South Pacific Gyre. *Environmental Microbiology Reports*, Early View. 
 </p>
 
@@ -27,6 +23,10 @@ title: "Publications"
 
 #### Conference Papers   
 ***
+<p style="text-align:justify">
+[Allen, R., Summerfield, T., Harvey, B., Agostini, S., Hoffmann, L. (2019)](http://nzoac.nz/workshops/). Biofilm succession in an acidified ocean: mechanistic insights from a volcanic CO<sub>2</sub> seep study. *12th New Zealand Ocean Acidification Workshop*. [Talk]
+</p>
+
 <p style="text-align:justify">
 [Allen, R., Hoffmann, L., Law, C., Louisson, Z., Summerfield, T. (2018)](17.isme-microbes.org). Microbial community assembly processes in the oligotrophic South Pacific Gyre. *17th International Symposium on Microbial Ecology*. [Poster]
 </p>
@@ -70,7 +70,7 @@ title: "Publications"
 
 <p>&nbsp;</p>
 
-###Media
+#### Media    
 ***
 
 CBS News [Ocean acidification benefits invasive species](https://www.cbsnews.com/news/ocean-acidification-benefits-invasive-species/)
