@@ -1,6 +1,5 @@
 name: Ro Allen
 navbar:
-  title: Ro Allen
   left:
   - text: ' Home'
     icon: fa-user
@@ -30,8 +29,11 @@ navbar:
     icon: fa-github
     href: https://github.com/ro-allen
 
+extra:
+  logo: fibo_delta_logo.svg
+  
 output:
   html_document:
-        css: cyborg.css
+        css: cosmo.css
 output_dir: '.'
 

@@ -1,8 +1,12 @@
 ---
-title: 'Blog'
+title: "Blog"
+output:
+  html_document:
+      css: cosmo.css
+      toc: FALSE
 ---
 <p>&nbsp;</p>
-###Hector's Dolphins, Catlins National Park
+### Hector's Dolphins, Catlins National Park
 
 ***
 The Catlins National Park on the Southern coast of New Zealand's South Island is home to a wild pod of [Hector's dolphins](https://en.wikipedia.org/wiki/Hector's_dolphin), the smallest and rarest dolphin on the planet. The pod is resident to the aptly named porpoise bay, near Waikawa. The characterisic rounded dorsal fins of the dolphins can be spotted easily from the shoreline. We were fortunate enough to be approached by the pod a few minutes after entering the water for a swim. What followed was an incredible half an hour of dolphins investigating and playing in the water alongside us. One more item ticked off the bucket list...
@@ -13,13 +17,14 @@ The Catlins National Park on the Southern coast of New Zealand's South Island is
 </center>
 
 <p>&nbsp;</p>
-###Shikine-Jima Expedition 2017
+### Shikine-Jima Expedition 2017
 
 ***
 <p style="text-align:justify">
 In May 2017 I set off to Japan on a research expedition supported by the University of Otago [Ocean Acidification Research Theme](http://www.otago.ac.nz/oceanacidification/index.html). My destination was Shikine-Jima, a small Japanese island approximately 160 km South of Tokyo. Shikine-Jima is a volcanic island positioned at the interface of subtropical and temperate regions in the Pacific Ocean. Only a handful of residents populate the island year-round, but during the holidays visitors arrive *en-masse* from mainland Japan to visit the islands famous onsen (hot-springs). 
-[Mikama Bay on the South side of Shikine-Jima is a CO<sub>2</sub> seep](https://www.sciencedirect.com/science/article/pii/S2352485515000298), where high-purity CO<sub>2</sub> gas bubbles through the seabed creating an area where CO<sub>2</sub> concentrations are as high as they are projected to be globally by 2100. This phenomenon allows us to use Mikama Bay as a window into the potential future of Earth's coastal marine ecosystems. I conducted a series of experiments on the island, investigating the effects of elevated CO<sub>2</sub> on the marine microbial communities which underpin shallow marine ecosystems.
+[Mikama Bay on the South side of Shikine-Jima is a CO<sub>2</sub> seep](https://www.sciencedirect.com/science/article/pii/S2352485515000298), where high-purity CO<sub>2</sub> gas bubbles through the seabed creating an area where CO<sub>2</sub> concentrations are as high as they are projected to be globally by 2100. This phenomenon allows us to use Mikama Bay as a window into the potential future of Earth's coastal marine ecosystems. I conducted a series of experiments on the island, investigating the effects of elevated CO<sub>2</sub> on the marine microbial communities which underpin shallow marine ecosystems. 
 </p>
+<a href="#" class="btn btn-default">Default</a>
 <center>
 <iframe src="https://player.vimeo.com/video/223917352" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/223917352">Shikine Research Expedition</a> from <a href="https://vimeo.com/user25298218">Rohan Allen</a> on <a href="https://vimeo.com">Vimeo</a>.</p>

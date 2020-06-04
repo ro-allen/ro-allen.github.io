@@ -2,15 +2,6 @@
 ---
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-
-<center>
-<font size=36>
-Ro Allen
-</font>
-</center>
-
-<p>&nbsp;</p>
-
 <blockquote>
   <h3>Research Statement</h3>
   <p style="text-align:justify">My goal is to advance our fundamental understanding of marine microbial ecology, leveraging rapidly developing molecular and statistical techniques to approach both hypothesis driven and exploratory studies. This understanding, ultimately, will contribute to our ability to predict, manipulate, and harness microbial communities, with far-reaching implications across a range of systems. </p>
