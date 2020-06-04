@@ -70,7 +70,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="cosmo.css" type="text/css" />
+<link rel="stylesheet" href="cosmo_mod_content.css" type="text/css" />
 
 
 
@@ -297,7 +297,7 @@ $(document).ready(function () {
       <a href="oceanmap.html"> Oceanmap Tutorial</a>
     </li>
     <li>
-      <a href="rchunks.html"> R Chunks</a>
+      <a href="rchunks.html"> R Code</a>
     </li>
     <li>
       <a href="exres.html"> External Resources</a>
@@ -343,16 +343,22 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Bioconductor Pipeline</h1>
 
 </div>
 
 
+<body>
+<div class="mycontent">
+<h1>
+Bioconductor Pipeline
+</h1>
+<hr />
 <p>The <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4955027.2/">bioconductor pipeline</a> is an amplicon sequencing pipeline which can be fully implemented in the R environment. The pipeline relies on the denoising alogrithm <a href="https://www.nature.com/articles/nmeth.3869?WT.feed_name=subjects_statistical-methods">DADA2</a> to generate a table of specific amplicon sequence variants (ASVs) rather than clustered operational taxonomic units (OTUs). This page provides a complete walkthrough of the bioconductor pipeline, using illumina MiSeq v2 data from the <em>GEOTRACES</em> ocean acidification experiment. This page is modified from a <a href="https://benjjneb.github.io/dada2/tutorial.html">tutorial produced by the pipeline authors</a>.</p>
 <p>
  
 </p>
-<p>###Install DADA2 The first stage is to install DADA2 if it is not already available on your computer.</p>
+<h3 id="install-dada2">Install DADA2</h3>
+<p>The first stage is to install DADA2 if it is not already available on your computer.</p>
 <pre class="r"><code>source(&quot;https://bioconductor.org/biocLite.R&quot;)
 biocLite(&quot;dada2&quot;)
 biocLite(&quot;phyloseq&quot;)</code></pre>
@@ -362,7 +368,8 @@ library(ggplot2)</code></pre>
 <p>
  
 </p>
-<p>###Read files .fastq.gz files must be unzipped to .fastq files prior to processing in the dada2 pipeline. Unzipped files should be saved in a specific folder. Note that unzipping these files will use a substantial amount of memory. <em>Reading files will fail if they are not unzipped</em>.</p>
+<h3 id="read-files">Read files</h3>
+<p>.fastq.gz files must be unzipped to .fastq files prior to processing in the dada2 pipeline. Unzipped files should be saved in a specific folder. Note that unzipping these files will use a substantial amount of memory. <em>Reading files will fail if they are not unzipped</em>.</p>
 <p>Reading files into dada2 first requires an appropriate path to be set. This should lead to the folder in which the raw .fastq files for your project are saved. It is important that only .fastq files from your specific project are in this folder, as the script will read all files in this folder. Confirm that the correct path has been set, using the list.files command.</p>
 <pre class="r"><code>path = &quot;~/geotraces-exp/Geotraces_exp_fastq&quot;
 # check the file path is correct using list.files(path).
@@ -382,7 +389,8 @@ fnRs = sort(list.files(path, pattern = &quot;_R2_001.fastq&quot;, full.names = T
 <p>
  
 </p>
-<p>###Plot quality scores from .fastq files Plot the Q scores associated with each .fastq file. Look for drop offs in sequence quality, whilst considering that a QS of 30 is equivalent to a 99.9% probability of accurate base calling and a QS of 20 is equivalent to a 99% probaility of accurate base calling. The number of plots is 36 in this case, as there are 36 samples; this should be adjusted to the number of samples in your investigation.</p>
+<h3 id="plot-quality-scores-from-.fastq-files">Plot quality scores from .fastq files</h3>
+<p>Plot the Q scores associated with each .fastq file. Look for drop offs in sequence quality, whilst considering that a QS of 30 is equivalent to a 99.9% probability of accurate base calling and a QS of 20 is equivalent to a 99% probaility of accurate base calling. The number of plots is 36 in this case, as there are 36 samples; this should be adjusted to the number of samples in your investigation.</p>
 <pre class="r"><code>qp.f = plotQualityProfile(fnFs[1:36])
 qp.r = plotQualityProfile(fnRs[1:36])
 
@@ -392,7 +400,8 @@ plotQualityProfile(fnFs[1:2])</code></pre>
 <p>
  
 </p>
-<p>###Filter and trim (quality control) The first step in the filtering and trimming script is to setup a new directory in which the filtered and trimmed .fastq files will be saved. This is achieved using the <em>file.path()</em> function to create a subdirectory in the <em>path</em> location. Create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them (&quot;_F_filt.fastq.gz&quot; / &quot;_R_filt.fastq.gz&quot;)</p>
+<h3 id="filter-and-trim-quality-control">Filter and trim (quality control)</h3>
+<p>The first step in the filtering and trimming script is to setup a new directory in which the filtered and trimmed .fastq files will be saved. This is achieved using the <em>file.path()</em> function to create a subdirectory in the <em>path</em> location. Create file paths for filtered forward and reverse reads respectively, with a predetermined suffix which allows us to differentiate them (&quot;_F_filt.fastq.gz&quot; / &quot;_R_filt.fastq.gz&quot;)</p>
 <p>After inspecting the quality plots, determine the trim and truncate parameters for .fastq files.</p>
 <p><em>Check raw .fastq files for primer sequences, and remove using the trim function if necessary</em></p>
 <p>In this instance, forward and reverse primers are still present. The forward primer is 19 bp, whilst the reverse primer is 20 bp, these will be removed by setting the trim parameters to c(19,20). The truncation length should be set to cut off where any signfiicant drop off in quality occurs, but it is advisable to remove approximately the last 10 bp anyway as these reads can be unreliable.</p>
@@ -408,7 +417,8 @@ head(out)  #check the results</code></pre>
 <p>
  
 </p>
-<p>###Learning error rates The dada2 algorithm relies on a error model calculated from each amplicon dataset. This model is then used downstream to distinguish true sequence variants from sequence variants which have arisen from sequencing errors (using a probability approach). From the pipeline authors: <em>“The learnErrors method learns the error model from the data, by alternating estimation of the error rates and inference of sample composition until they converge on a jointly consistent solution. As in many optimization problems, the algorithm must begin with an initial guess, for which the maximum possible error rates in this data are used (the error rates if only the most abundant sequence is correct and all the rest are errors).”</em></p>
+<h3 id="learning-error-rates">Learning error rates</h3>
+<p>The dada2 algorithm relies on a error model calculated from each amplicon dataset. This model is then used downstream to distinguish true sequence variants from sequence variants which have arisen from sequencing errors (using a probability approach). From the pipeline authors: <em>“The learnErrors method learns the error model from the data, by alternating estimation of the error rates and inference of sample composition until they converge on a jointly consistent solution. As in many optimization problems, the algorithm must begin with an initial guess, for which the maximum possible error rates in this data are used (the error rates if only the most abundant sequence is correct and all the rest are errors).”</em></p>
 <pre class="r"><code># calculating the error model
 errF = learnErrors(filtFs, multithread = TRUE)
 errR = learnErrors(filtRs, multithread = TRUE)
@@ -422,7 +432,8 @@ The error rates for each possible between-base call are shown. The red line repr
 <p>
  
 </p>
-<p>###Dereplicate sequences Dereplication merges all identical sequence reads into a new file containing only unique sequences, with a corresponding abundance metadata. This is done to reduce the computational demand of calculations downstream by removing redundant comparisons. The pipeline then runs signficantly faster.</p>
+<h3 id="dereplicate-sequences">Dereplicate sequences</h3>
+<p>Dereplication merges all identical sequence reads into a new file containing only unique sequences, with a corresponding abundance metadata. This is done to reduce the computational demand of calculations downstream by removing redundant comparisons. The pipeline then runs signficantly faster.</p>
 <p>Sequence quality scores are retained during this process, as a consensus quality profile is generate from all identical sequences being dereplicated to a single unique sequence. The quality profiles are then used to inform the error model of the denoising step, which increases dada2’s accuracy.</p>
 <pre class="r"><code>derepFs = derepFastq(filtFs, verbose = TRUE)
 derepRs = derepFastq(filtRs, verbose = TRUE)
@@ -431,7 +442,8 @@ names(derepRs) = r.names</code></pre>
 <p>
  
 </p>
-<p>###DADA2 core sequence variant inference algorithm At this stage the DADA2 takes all the information provided in the dereplicated sequences and the error models to determine which sequences represent true amplicon sequence variants, and which sequences have arisen from errors. Thus we end up with a list of true amplicon sequence variants, avoiding the archaic practice of clustering.</p>
+<h3 id="dada2-core-sequence-variant-inference-algorithm">DADA2 core sequence variant inference algorithm</h3>
+<p>At this stage the DADA2 takes all the information provided in the dereplicated sequences and the error models to determine which sequences represent true amplicon sequence variants, and which sequences have arisen from errors. Thus we end up with a list of true amplicon sequence variants, avoiding the archaic practice of clustering.</p>
 <pre class="r"><code>dadaFs = dada(derepFs, err = errF, multithread = TRUE)
 dadaRs = dada(derepRs, err = errR, multithread = TRUE)
 dadaFs[[1]]
@@ -440,7 +452,8 @@ By calling <em>dadaFs[[1]]</em> the number of real sequences (named sample seque
 <p>
  
 </p>
-<p>###Merge paired reads The forward and reverse reads are then merged using the <em>mergePairs</em> function. Note that the forward and reverse reads must be in matching order at this stage.</p>
+<h3 id="merge-paired-reads">Merge paired reads</h3>
+<p>The forward and reverse reads are then merged using the <em>mergePairs</em> function. Note that the forward and reverse reads must be in matching order at this stage.</p>
 <pre class="r"><code>mergers = mergePairs(dadaFs, derepFs, dadaRs, derepRs, verbose = TRUE)
 
 # Check merger success by sample ([[1]] refers to sample 1)
@@ -448,14 +461,16 @@ head(mergers[[1]])</code></pre>
 <p>
  
 </p>
-<p>###Generate sequence table Construct a sequence table from the merged sequence object. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.</p>
+<h3 id="generate-sequence-table">Generate sequence table</h3>
+<p>Construct a sequence table from the merged sequence object. Viewing this table will reveal a number of amplicon lengths which are outside the expected range of your region, these are likely to be erroneous.</p>
 <pre class="r"><code>seqtab = makeSequenceTable(mergers)
 dim(seqtab)
 table(nchar(getSequences(seqtab)))</code></pre>
 <p>
  
 </p>
-<p>###Plot amplicon length distribution Plot amplicon length frequency to visualise the distribution of amplicon sizes, informing the amplicon length range to conserve versus the length range to discard.</p>
+<h3 id="plot-amplicon-length-distribution">Plot amplicon length distribution</h3>
+<p>Plot amplicon length frequency to visualise the distribution of amplicon sizes, informing the amplicon length range to conserve versus the length range to discard.</p>
 <pre class="r"><code>ex = as.data.frame(table(nchar(getSequences(seqtab))))
 ex.plot = ggplot(ex, aes(Var1, Freq)) + geom_bar(stat = &quot;identity&quot;, 
     aes(fill = Var1)) + ylab(&quot;Frequency&quot;) + xlab(&quot;Merged Sequence Length&quot;) + 
@@ -466,19 +481,22 @@ ex.plot</code></pre>
 <p>
  
 </p>
-<p>###Excise amplicons of desired length In this case, only amplicons between 250 and 256bp in length are selected. Amplicons outside of this range are discarded.</p>
+<h3 id="excise-amplicons-of-desired-length">Excise amplicons of desired length</h3>
+<p>In this case, only amplicons between 250 and 256bp in length are selected. Amplicons outside of this range are discarded.</p>
 <pre class="r"><code>seqtab.ex = seqtab[, nchar(colnames(seqtab)) %in% seq(250, 256)]
 table(nchar(getSequences(seqtab.ex)))</code></pre>
 <p>
  
 </p>
-<p>###Remove chimeras Note that if you lose a large number of sequence reads at this stage, it is likely that primer sequences still remain in your reads. These should have been removed manually at the trim and truncate stage.</p>
+<h3 id="remove-chimeras">Remove chimeras</h3>
+<p>Note that if you lose a large number of sequence reads at this stage, it is likely that primer sequences still remain in your reads. These should have been removed manually at the trim and truncate stage.</p>
 <pre class="r"><code>seqtab.ex.chi = removeBimeraDenovo(seqtab.ex, method = &quot;consensus&quot;, 
     multithread = T, verbose = T)</code></pre>
 <p>
  
 </p>
-<p>###Track sequence loss Track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.</p>
+<h3 id="track-sequence-loss">Track sequence loss</h3>
+<p>Track the number of sequence reads per sample remaining after each stage of processing. This provides an opportunity to identify points in the pipeline where large proportions of sequences were lost, which may be worth revisiting and tweaking. Commonly, 15-20% of reads are lost over the course of the pipeline.</p>
 <pre class="r"><code>getN = function(x) sum(getUniques(x))
 track = cbind(out, sapply(dadaFs, getN), sapply(mergers, getN), 
     rowSums(seqtab.ex), rowSums(seqtab.ex.chi))
@@ -489,14 +507,16 @@ head(track)</code></pre>
 <p>
  
 </p>
-<p>###Assign taxonomy It is important to consider which taxonomic database to use for this step. The two most common options are SILVA and Greengenes. Typically, Greengenes offers more reliable taxonomic classifications, but has less coverage, and is not updated regularly (last update ~2014). SILVA is a curate database which is updated frequently, but can be less reliable than Greengenes in certain cases. Some studies use integrated approaches where taxonomies are assigned from numerous databases, and checked for agreement. The bioconductor pipeline team maintain taxonomic classfiers from the SILVA, Greengenes, and RDP databases for the Earth Microbiome Project (EMP) primers 515-F (or Y for marine samples) &amp; 806R. In this case, these classifiers can be <a href="https://benjjneb.github.io/dada2/training.html">downloaded directly</a>.</p>
+<h3 id="assign-taxonomy">Assign taxonomy</h3>
+<p>It is important to consider which taxonomic database to use for this step. The two most common options are SILVA and Greengenes. Typically, Greengenes offers more reliable taxonomic classifications, but has less coverage, and is not updated regularly (last update ~2014). SILVA is a curate database which is updated frequently, but can be less reliable than Greengenes in certain cases. Some studies use integrated approaches where taxonomies are assigned from numerous databases, and checked for agreement. The bioconductor pipeline team maintain taxonomic classfiers from the SILVA, Greengenes, and RDP databases for the Earth Microbiome Project (EMP) primers 515-F (or Y for marine samples) &amp; 806R. In this case, these classifiers can be <a href="https://benjjneb.github.io/dada2/training.html">downloaded directly</a>.</p>
 <p>Once you have downloaded your desired classifier, place it in a folder, and call the specific file path in the <em>assignTaxonomy</em> function. This step may take a significant amount of time, depending of computing power, sample number, and sequencing depth.</p>
 <pre class="r"><code>gg.taxa = assignTaxonomy(seqtab.ex.chi, &quot;~/geotraces-exp/Geotraces_exp_unzipped/gg_13_8_train_set_97.fa&quot;, 
     multithread = T)</code></pre>
 <p>
  
 </p>
-<p>###Upload metadata The metadata file associated with your sequences should be uploaded with samples as rows and variables as columns. Various file formats can be supported with the ultimate goal of creating a metadata dataframe in R which can then be incorporated into a phyloseq object. It is critical that the sample order in your metadata table matches the sample order in your sequence table (in this case <em>seqtab.ex.chi</em>).</p>
+<h3 id="upload-metadata">Upload metadata</h3>
+<p>The metadata file associated with your sequences should be uploaded with samples as rows and variables as columns. Various file formats can be supported with the ultimate goal of creating a metadata dataframe in R which can then be incorporated into a phyloseq object. It is critical that the sample order in your metadata table matches the sample order in your sequence table (in this case <em>seqtab.ex.chi</em>).</p>
 <pre class="r"><code>sd.geo = read.csv(&quot;~/geotraces-exp/geo-mapping.csv&quot;)
 head(sd.geo)
 # if your variable names (column names) are unclear, rename
@@ -504,7 +524,8 @@ head(sd.geo)
 <p>
  
 </p>
-<p>###Rename samples and ASVs Before constructing the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream.</p>
+<h3 id="rename-samples-and-asvs">Rename samples and ASVs</h3>
+<p>Before constructing the phyloseq object, it is important to rename all the samples (which will currently named by their file name) and ASVs (which will currently be named by their full sequence). This will make handling the phyloseq object easier downstream.</p>
 <pre class="r"><code># create a vector for sample names
 s.vec = as.vector(1:36)  #number should reflect your total number of samples
 s.nam = cbind(&quot;sample_&quot;, s.vec)
@@ -533,10 +554,13 @@ head(seqtab.ex.chi)</code></pre>
 <p>
  
 </p>
-<p>###Construct a phyloseq object Finally, a phyloseq object is created which can be handled easily for statistical analyses. The phyloseq object from this tutorial is notably missing a phylogenetic tree. This can easily be constructed and will be added to this tutorial at a later date.</p>
+<h3 id="construct-a-phyloseq-object">Construct a phyloseq object</h3>
+<p>Finally, a phyloseq object is created which can be handled easily for statistical analyses. The phyloseq object from this tutorial is notably missing a phylogenetic tree. This can easily be constructed and will be added to this tutorial at a later date.</p>
 <pre class="r"><code>geo.ex = phyloseq(tax_table(gg.taxa), otu_table(seqtab.ex.chi, 
     taxa_are_rows = FALSE), sample_data(sd.geo))
 geo.ex</code></pre>
+</div>
+<body>
 
 
 

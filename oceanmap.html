@@ -70,7 +70,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="cosmo.css" type="text/css" />
+<link rel="stylesheet" href="cosmo_mod_content.css" type="text/css" />
 
 
 
@@ -297,7 +297,7 @@ $(document).ready(function () {
       <a href="oceanmap.html"> Oceanmap Tutorial</a>
     </li>
     <li>
-      <a href="rchunks.html"> R Chunks</a>
+      <a href="rchunks.html"> R Code</a>
     </li>
     <li>
       <a href="exres.html"> External Resources</a>
@@ -343,11 +343,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Oceanmap Tutorial</h1>
 
 </div>
 
 
+<body>
+<div class="mycontent">
+<h1>
+Oceanmap Tutorial
+</h1>
+<hr />
 <p style="text-align:justify">
 Plotting maps of ocean regions is a key skill for all marine scientists. Maps frequently feature as the opening figure of journal articles, thus producing high quality maps can form an important first impresssion for readers. Despite this, software tools for producing high-quality maps are non-trivial to use. Here, I provide a short tutorial to mapping chlorophyll-a concentration data from the MODIS-Aqua satellite in the South Pacific Ocean, using the R package <a href="https://cran.r-project.org/web/packages/oceanmap/oceanmap.pdf">oceanmap</a>.
 </p>
@@ -397,7 +402,9 @@ chl.360 &lt;- shift(raster::rotate(shift(chl.flip, 180)), 180)</code></pre>
  
 </p>
 <p style="text-align:justify">
-<p>Further tutorials for using the oceanmap R package, from the package author, can be accessed <a href="https://www.researchgate.net/profile/Robert_Bauer9/publication/315494507_oceanmap_Mapping_oceanographic_data/links/58d2987292851cd76d346f65/oceanmap-Mapping-oceanographic-data.pdf">here</a>.</p>
+Further tutorials for using the oceanmap R package, from the package author, can be accessed <a href="https://www.researchgate.net/profile/Robert_Bauer9/publication/315494507_oceanmap_Mapping_oceanographic_data/links/58d2987292851cd76d346f65/oceanmap-Mapping-oceanographic-data.pdf">here</a>.
+</div>
+<body>
 
 
 

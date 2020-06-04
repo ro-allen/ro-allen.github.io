@@ -1,7 +1,14 @@
 ---
-title: "External Resources"
+pagetitle: "External Resources"
+output:
+  html_document:
+      css: cosmo_mod_content.css
+      toc: FALSE
 ---
-
+<body>
+<div class="mycontent">
+<h1>External Resources</h1>
+***
 <p style="text-align:justify">
 Below is a collection of useful external resources for data processing and analysis in microbial ecology.  
 
@@ -25,3 +32,5 @@ A community based at Edinburgh University focussed on peer-learning statistical 
 
 [R Consortium](https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos)
 The R consortium *YouTube* channel is full of insightful videos from R package developers, including talks from useR conferences. These act as a good resource from broadening your knowledge of R. 
+</div>
+</body>

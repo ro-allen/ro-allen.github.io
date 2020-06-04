@@ -11,7 +11,7 @@
 
 
 
-<title>R Chunks</title>
+<title>R Code</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -70,7 +70,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="cosmo.css" type="text/css" />
+<link rel="stylesheet" href="cosmo_mod_content.css" type="text/css" />
 
 
 
@@ -297,7 +297,7 @@ $(document).ready(function () {
       <a href="oceanmap.html"> Oceanmap Tutorial</a>
     </li>
     <li>
-      <a href="rchunks.html"> R Chunks</a>
+      <a href="rchunks.html"> R Code</a>
     </li>
     <li>
       <a href="exres.html"> External Resources</a>
@@ -343,11 +343,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">R Chunks</h1>
 
 </div>
 
 
+<body>
+<div class="mycontent">
+<h1>
+R Code
+</h1>
+<hr />
 <p style="text-align:justify">
 <p>The purpose of this page is to document a collection of R code chunks, which I have created to make analysing and visualising microbial community composition data easier within the R and <a href="https://joey711.github.io/phyloseq/">phyloseq</a> environment.</p>
 <p>
@@ -405,6 +410,8 @@ identical(tax_table(new.phy)[1:100, 3:7], tax_table(old.phy)[1:100, 3:7])</code>
 <pre class="r"><code>extract.matrix &lt;- function(dist.matrix) {
   lower.tri(as.matrix(dist.matrix))
 }</code></pre>
+</div>
+</body>
 </div>
 
 

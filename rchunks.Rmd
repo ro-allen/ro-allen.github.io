@@ -1,7 +1,14 @@
 ---
-title: "R Chunks"
+pagetitle: "R Code"
+output:
+  html_document:
+      css: cosmo_mod_content.css
+      toc: FALSE
 ---
-
+<body>
+<div class="mycontent">
+<h1>R Code</h1>
+***
 <p style="text-align:justify">
 The purpose of this page is to document a collection of R code chunks, which I have created to make analysing and visualising microbial community composition data easier within the R and [phyloseq](https://joey711.github.io/phyloseq/) environment. 
 
@@ -68,4 +75,5 @@ extract.matrix <- function(dist.matrix) {
   lower.tri(as.matrix(dist.matrix))
 }
 ```
-
+</div>
+</body>

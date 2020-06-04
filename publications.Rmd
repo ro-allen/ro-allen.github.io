@@ -1,6 +1,14 @@
 ---
-title: "Publications"
+pagetitle: "Publications"
+output:
+  html_document:
+      css: cosmo_mod_content.css
+      toc: FALSE
 ---
+<body>
+<div class="mycontent">
+<h1>Publications</h1>
+***
 <p>&nbsp;</p>
 
 #### Journal Articles    
@@ -87,3 +95,5 @@ X-Ray Magazine [Ocean acidification may well be helping invasive species](http:/
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xvlHH0y2hwE" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 </center>
+</div>
+</body>

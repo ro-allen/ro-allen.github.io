@@ -11,7 +11,7 @@ navbar:
       href: bioconductor.html
     - text: ' Oceanmap Tutorial'
       href: oceanmap.html
-    - text: ' R Chunks'
+    - text: ' R Code'
       href: rchunks.html
     - text: ' External Resources'
       href: exres.html
