@@ -1,10 +1,13 @@
 name: Ro Allen
 navbar:
   left:
-  - text: ' Home'
-    icon: fa-user
+  - text: '  Home'
+    icon: fa-home
     href: index.html
-  - text: ' Lab Resources'
+  - text: '  About'
+    icon: fa-user
+    href: About.html
+  - text: '  Lab Resources'
     icon: fa-spinner
     menu:
     - text: ' Bioconductor Pipeline'
@@ -16,16 +19,16 @@ navbar:
     - text: ' External Resources'
       href: exres.html
   right:
-  - text: ' Publications'
+  - text: '  Publications'
     icon: fa-mortar-board
     href: publications.html
-  - text: ' CV'
+  - text: '  CV'
     icon: fa-file-text
     href: cv.html
-  - text: Twitter
+  - text: '  Twitter'
     icon: fa-twitter
     href: https://twitter.com/rojallen
-  - text: Github
+  - text: '  Github'
     icon: fa-github
     href: https://github.com/ro-allen
 

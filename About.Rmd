@@ -1,42 +1,29 @@
 ---
-title: "About"
+pagetitle: "About"
 output:
   html_document:
-      css: cosmo.css
+      css: cosmo_mod_content.css
       toc: FALSE
 ---
+<body>
+<div class="mycontent">
+<h1>About</h1>
+*** 
 <p>&nbsp;</p>
-<style>
-.column-left{
-  float: left;
-  width: 30%;
-  text-align: left;
-}
-.column-right{
-  float: right;
-  width: 60%;
-  text-align: left;
-}
-</style>
 
-<div class="column-left">
-<img src="Github_pic.png">
-</div>
-<div class="column-right">
-<p style="text-align:justify">
-<p>&nbsp;</p>
-I am currently a Postdoctoral Researcher in [Dr. Michael Cunliffe's](https://www.mba.ac.uk/fellows/cunliffe-group) laboratory at the Marine Biological Association of the United Kingdom, investigating the significance of planktonic marine fungi in the global carbon cycle. I completed my PhD at the University of Otago Department of Botany in 2019, supervised by [Dr. Linn Hoffmann](https://www.researchgate.net/profile/Linn_Hoffmann) and [Dr. Tina Summerfield](https://www.researchgate.net/profile/Tina_Summerfield), and an M.Res. in marine biology at Plymouth University and the Marine Biological Association supervised by [Prof. Jason Hall-Spencer](https://www.researchgate.net/profile/Jason_Hall-Spencer) and [Dr. Andy Foggo](https://www.researchgate.net/profile/Andrew_Foggo). My research interests centre around the fundamental ecological dynamics of the microbial communities, whilst my PhD thesis focussed on the use of high-throughput sequencing to investigate the community level responses of marine protists and bacteria to climate change.   
+
+<table>
+  <tr>
+    <td style="width:25%;"><img src="Github_pic.png"><p>&nbsp;</p><p>&nbsp;</p></p><p>&nbsp;</p></p>
+</td>
+    <td style="width:45%; padding: 10%">
+    <p style="text-align:justify">
+I am Postdoctoral Researcher in [Dr. Michael Cunliffe's](https://www.mba.ac.uk/fellows/cunliffe-group) laboratory at the Marine Biological Association of the United Kingdom, investigating the significance of planktonic marine fungi in the global carbon cycle. I completed my PhD at the University of Otago Department of Botany in 2019, supervised by [Dr. Linn Hoffmann](https://www.researchgate.net/profile/Linn_Hoffmann) and [Dr. Tina Summerfield](https://www.researchgate.net/profile/Tina_Summerfield), and an M.Res. in marine biology at Plymouth University and the Marine Biological Association supervised by [Prof. Jason Hall-Spencer](https://www.researchgate.net/profile/Jason_Hall-Spencer) and [Dr. Andy Foggo](https://www.researchgate.net/profile/Andrew_Foggo). My research interests centre around the fundamental ecological dynamics of the microbial communities, whilst my PhD thesis focussed on the use of high-throughput sequencing to investigate the community level responses of marine protists and bacteria to climate change.   
 </p>
-<p>
+<p>&nbsp;</p>
 <a href="roalle@mba.ac.uk" class="btn btn-default" style="float: right;">Contact</a>
-</p>
+</td>
+  </tr>
+</table>
 </div>
-
-<a class="twitter-timeline"
-   href="https://twitter.com/rojallen"
-   data-width="300"
-   data-height="300"
-   data-chrome="nofooter noscrollbar noborders transparent"
-   data-theme="dark"
-   data-tweet-limit="1">Tweets by @rojallen</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
